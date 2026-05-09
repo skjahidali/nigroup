@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +14,7 @@
     --color-green-950: #052e16;
     --color-orange-400: #fb923c;
     --color-orange-500: #f97316;
+    --color-orange-50: #fff7ed;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -396,7 +401,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card {
-    group: true;
     background: var(--color-white);
     border-radius: 1rem;
     overflow: hidden;
@@ -765,7 +769,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-list {
     list-style: none;
-    space-y: 0.5rem;
 }
 
 .about-list li {
@@ -1164,10 +1167,6 @@ h1, h2, h3, h4, h5, h6 {
         animation: scroll 60s linear infinite;
     }
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -1468,4 +1467,19 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     overflow-x: hidden;
+}
+
+/* Bug fix: Careers anchor section */
+.careers {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #fff7ed 0%, #ffffff 55%, #f0fdf4 100%);
+}
+
+/* Bug fix: make inline bank logos fit */
+.logo-item img {
+    max-width: 150px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
