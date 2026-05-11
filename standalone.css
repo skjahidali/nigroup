@@ -1483,3 +1483,85 @@ body {
     height: auto;
     object-fit: contain;
 }
+/* Animation + Responsive Fix */
+.reveal,
+.animated-step,
+.project-card,
+.service-card,
+.director-card,
+.stat {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active,
+.animated-step.active,
+.project-card.active,
+.service-card.active,
+.director-card.active,
+.stat.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-step:hover,
+.project-card:hover,
+.service-card:hover,
+.director-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+  .header-container {
+    gap: 1rem;
+  }
+
+  .logo-img {
+    height: 2.4rem;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding-top: 6rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .projects-grid,
+  .services-grid,
+  .steps-grid,
+  .directors-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .footer-grid,
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+}

@@ -48,3 +48,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// Scroll animation fix for live domain
+const revealItems = document.querySelectorAll(
+  '.animated-step, .project-card, .service-card, .director-card, .stat'
+);
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px',
+  }
+);
+
+revealItems.forEach((item) => revealObserver.observe(item));
