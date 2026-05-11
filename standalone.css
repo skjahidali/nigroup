@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 * {
     margin: 0;
     padding: 0;
@@ -1167,15 +1163,13 @@ h1, h2, h3, h4, h5, h6 {
         animation: scroll 60s linear infinite;
     }
 }
-@layer base {
-  html {
+html {
     scroll-behavior: smooth;
-  }
+}
 
-  body {
+body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
-  }
 }
 
 @keyframes fadeInUp {
@@ -1262,7 +1256,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@layer components {
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
@@ -1294,7 +1287,6 @@ h1, h2, h3, h4, h5, h6 {
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
-}
 .logo-item {
     background: #ffffff;
     min-width: 180px;
@@ -1469,12 +1461,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Bug fix: Careers anchor section */
-.careers {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, #fff7ed 0%, #ffffff 55%, #f0fdf4 100%);
-}
-
 /* Bug fix: make inline bank logos fit */
 .logo-item img {
     max-width: 150px;
@@ -1564,4 +1550,230 @@ body {
   .footer-socials {
     justify-content: center;
   }
+}
+/* FIXED Animation */
+.reveal,
+.animated-step,
+.project-card,
+.service-card,
+.director-card,
+.stat {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease;
+}
+
+.js-enabled .reveal,
+.js-enabled .animated-step,
+.js-enabled .project-card,
+.js-enabled .service-card,
+.js-enabled .director-card,
+.js-enabled .stat {
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.js-enabled .reveal.active,
+.js-enabled .animated-step.active,
+.js-enabled .project-card.active,
+.js-enabled .service-card.active,
+.js-enabled .director-card.active,
+.js-enabled .stat.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* FINAL BUG FIX */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.carousel-track {
+    width: max-content;
+    will-change: transform;
+}
+
+.logo-item {
+    flex-shrink: 0;
+}
+
+.logo-item img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-image,
+.service-image,
+.director-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carousel-item {
+        width: 150px;
+        height: 90px;
+    }
+
+    .logo-item {
+        min-width: 150px;
+        height: 90px;
+        padding: 14px;
+    }
+
+    .logo-item img {
+        max-width: 110px;
+        max-height: 50px;
+    }
+}
+
+/* =========================
+   FINAL MODERN ANIMATION
+========================= */
+
+.project-card,
+.service-card,
+.director-card,
+.testimonial-card,
+.step-card,
+.vision-card,
+.mission-card,
+.stat,
+.section-header,
+.about-image,
+.about-text,
+.carousel-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+/* Animation for elements when js-enabled and need animation */
+.js-enabled .project-card:not(.active),
+.js-enabled .service-card:not(.active),
+.js-enabled .director-card:not(.active),
+.js-enabled .testimonial-card:not(.active),
+.js-enabled .step-card:not(.active),
+.js-enabled .vision-card:not(.active),
+.js-enabled .mission-card:not(.active),
+.js-enabled .stat:not(.active),
+.js-enabled .section-header:not(.active),
+.js-enabled .carousel-item:not(.active) {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.js-enabled .project-card.active,
+.js-enabled .service-card.active,
+.js-enabled .director-card.active,
+.js-enabled .testimonial-card.active,
+.js-enabled .step-card.active,
+.js-enabled .vision-card.active,
+.js-enabled .mission-card.active,
+.js-enabled .stat.active,
+.js-enabled .section-header.active,
+.js-enabled .carousel-item.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Different animations for variety */
+
+.js-enabled .project-card:nth-child(odd):not(.active),
+.js-enabled .service-card:nth-child(odd):not(.active) {
+    transform: translateX(-70px);
+}
+
+.js-enabled .project-card:nth-child(even):not(.active),
+.js-enabled .service-card:nth-child(even):not(.active) {
+    transform: translateX(70px);
+}
+
+.js-enabled .director-card:not(.active) {
+    transform: scale(0.92);
+}
+
+.js-enabled .director-card.active {
+    transform: scale(1) !important;
+}
+
+.js-enabled .testimonial-card:not(.active) {
+    transform: translateY(80px);
+}
+
+.js-enabled .stat:not(.active) {
+    transform: scale(0.8);
+}
+
+.js-enabled .stat.active {
+    transform: scale(1) !important;
+}
+
+/* Hover animations */
+
+.project-card:hover,
+.service-card:hover,
+.director-card:hover,
+.testimonial-card:hover,
+.step-card:hover {
+    transform: translateY(-12px) !important;
+}
+
+/* Smooth Image Zoom */
+
+.project-image,
+.service-image,
+.director-image img,
+.about-image img {
+    transition:
+        transform 0.7s ease,
+        filter 0.5s ease;
+}
+
+.project-card:hover .project-image,
+.service-card:hover .service-image,
+.director-card:hover .director-image img,
+.about-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .js-enabled .project-card,
+    .js-enabled .service-card,
+    .js-enabled .director-card,
+    .js-enabled .testimonial-card,
+    .js-enabled .step-card {
+        transform: translateY(50px);
+    }
+
+    .project-card:hover,
+    .service-card:hover,
+    .director-card:hover,
+    .testimonial-card:hover,
+    .step-card:hover {
+        transform: translateY(-6px) !important;
+    }
 }

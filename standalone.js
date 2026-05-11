@@ -50,7 +50,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 // Scroll animation fix for live domain
 const revealItems = document.querySelectorAll(
-  '.animated-step, .project-card, .service-card, .director-card, .stat'
+  '.animated-step, .project-card, .service-card, .director-card, .stat, .carousel-item, .testimonial-card, .vision-card, .mission-card, .section-header'
 );
 
 const revealObserver = new IntersectionObserver(
@@ -68,3 +68,4 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
+document.body.classList.add('js-enabled');
