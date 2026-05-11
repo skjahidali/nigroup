@@ -3,13 +3,26 @@ const header = document.querySelector('.header');
 const menuToggle = document.getElementById('menuToggle');
 const navMobile = document.getElementById('navMobile');
 
+const headerLogo = document.getElementById('headerLogo');
+const defaultHeaderLogoSrc = headerLogo?.dataset.defaultSrc;
+const coloredHeaderLogoSrc = headerLogo?.dataset.coloredSrc;
+
+const updateHeaderLogo = () => {
+    if (!headerLogo || !defaultHeaderLogoSrc || !coloredHeaderLogoSrc) return;
+    const isScrolled = window.scrollY > 60;
+    headerLogo.src = isScrolled ? coloredHeaderLogoSrc : defaultHeaderLogoSrc;
+};
+
 window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
+    updateHeaderLogo();
 });
+
+window.addEventListener('load', updateHeaderLogo);
 
 // Mobile menu toggle
 menuToggle.addEventListener('click', () => {

@@ -119,13 +119,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-    height: 3rem;
+    height: 3.5rem;
     width: auto;
     transition: all 0.3s ease;
 }
 
 .header.scrolled .logo-img {
-    height: 2.5rem;
+    height: 3rem;
 }
 
 .nav-desktop {
@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
     transition: color 0.2s;
@@ -160,10 +160,10 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem;
     border-radius: 9999px;
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     background: var(--color-orange-500);
     color: var(--color-white);
@@ -1346,7 +1346,7 @@ body {
 }
 
 .footer-logo {
-    max-width: 170px !important;
+    max-width: 190px !important;
     height: auto !important;
 }
 
@@ -1363,7 +1363,7 @@ body {
 
 .footer-bottom p {
     margin: 0 !important;
-    font-size: 13px !important;
+    font-size: 14px !important;
     color: #9ca3af !important;
 }
 
@@ -1372,7 +1372,7 @@ body {
 }
 
 .footer-title {
-    font-size: 13px !important;
+    font-size: 0.95rem !important;
     color: #ffffff !important;
     margin-bottom: 20px !important;
     font-weight: 600 !important;
@@ -1381,7 +1381,7 @@ body {
 }
 
 .footer-desc {
-    font-size: 13px !important;
+    font-size: 0.95rem !important;
     color: #d1d5db !important;
     line-height: 1.6 !important;
     margin-bottom: 20px !important;
@@ -1400,7 +1400,7 @@ body {
 .footer-links a {
     color: #d1d5db !important;
     text-decoration: none !important;
-    font-size: 13px !important;
+    font-size: 0.95rem !important;
     transition: color 0.3s ease !important;
 }
 
@@ -1409,7 +1409,7 @@ body {
 }
 
 .footer-contact {
-    font-size: 13px !important;
+    font-size: 0.95rem !important;
 }
 
 .footer-contact p {
@@ -1442,13 +1442,13 @@ body {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 44px !important;
+    height: 44px !important;
     border-radius: 8px !important;
     background: rgba(255,255,255,0.1) !important;
     color: #ffffff !important;
     text-decoration: none !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
     transition: all 0.3s ease !important;
 }
 
@@ -1505,7 +1505,28 @@ body {
   }
 
   .logo-img {
-    height: 2.4rem;
+    height: 3rem;
+  }
+
+  .nav-mobile .nav-link {
+    font-size: 1rem;
+  }
+
+  .footer-logo {
+    max-width: 160px;
+  }
+
+  .footer-title,
+  .footer-desc,
+  .footer-links a,
+  .footer-contact {
+    font-size: 1rem;
+  }
+
+  .footer-socials a {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
   }
 
   .hero {
