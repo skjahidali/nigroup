@@ -77,6 +77,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.section-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .section-desc {
     color: var(--color-gray-500);
     font-size: 1.125rem;
@@ -251,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('https://drive.google.com/file/d/1eTzCq8fg_4dFjjKHFmuD29Rc-9hogSf0/');
+    background-image: url('Project Photo/CHAPNA_DRAFT.jpg.jpeg');
     background-size: cover;
     background-position: center;
     z-index: -2;
