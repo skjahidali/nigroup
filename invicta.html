@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVICTA - NI Group Realty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="standalone.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img id="headerLogo" class="logo-img" src="data:image/png;base64,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" data-default-src="data:image/png;base64,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" data-colored-src="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" alt="NI Group logo" title="NI Group">
+            </a>
+
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="tel:8100118686" class="phone-btn">
+                <span class="phone-icon">📞</span>
+                8100118686
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+
+        <nav class="nav-mobile" id="navMobile">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#about" class="nav-link">About Us</a>
+            <a href="index.html#services" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <a href="tel:8100118686" class="phone-btn">8100118686</a>
+        </nav>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="hero" id="project-hero" style="padding-top: 8rem; min-height: 60vh;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 15vw, 4rem);">INVICTA</h1>
+            <p class="hero-tagline">Unconquerable Living</p>
+            <p class="hero-desc" style="font-size: 1.1rem; max-width: 600px;">Experience the epitome of residential excellence at INVICTA, where modern architecture meets thoughtful design. Located in Kalikapur, Newtown – the heart of Kolkata's premium residential landscape.</p>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="projects" style="padding: 5rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem;">
+                <!-- Project Image -->
+                <div class="project-image" style="background-image: url('Project Photo/WhatsApp Image 2025-07-27 at 1.08.12 PM.jpeg'); height: 400px; border-radius: 1rem; background-size: cover; background-position: center;"></div>
+                
+                <!-- Project Info -->
+                <div>
+                    <h2 class="section-title">Project Overview</h2>
+                    <p class="section-desc" style="margin-bottom: 1.5rem;">INVICTA stands as a testament to NI Group's commitment to excellence in residential development. This completed project showcases our expertise in creating sophisticated living spaces that blend comfort with contemporary design.</p>
+                    
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: #030712; margin-bottom: 1rem; font-size: 1.2rem;">Key Highlights</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;"><span style="color: #f97316; margin-right: 0.75rem; font-size: 1.25rem;">✓</span> Premium Location in Newtown</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;"><span style="color: #f97316; margin-right: 0.75rem; font-size: 1.25rem;">✓</span> Modern Architectural Design</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;"><span style="color: #f97316; margin-right: 0.75rem; font-size: 1.25rem;">✓</span> World-Class Amenities</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;"><span style="color: #f97316; margin-right: 0.75rem; font-size: 1.25rem;">✓</span> Smart Home Features</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;"><span style="color: #f97316; margin-right: 0.75rem; font-size: 1.25rem;">✓</span> 24/7 Security & Surveillance</li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center;"><span style="color: #f97316; margin-right: 0.75rem; font-size: 1.25rem;">✓</span> Green Spaces & Landscaping</li>
+                        </ul>
+                    </div>
+
+                    <a href="index.html#contact" class="btn btn-primary">Get More Information</a>
+                </div>
+            </div>
+
+            <!-- Project Specifications -->
+            <div style="background: linear-gradient(135deg, #030712, #1a202c); color: white; padding: 3rem; border-radius: 1rem; margin-top: 3rem;">
+                <h2 class="section-title" style="color: white; margin-bottom: 2rem;">Project Specifications</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Location</p>
+                        <p style="font-size: 1.5rem; font-weight: 700;">Kalikapur, Newtown</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Status</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: #22c55e;">Completed</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Type</p>
+                        <p style="font-size: 1.5rem; font-weight: 700;">Residential Apartments</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Units</p>
+                        <p style="font-size: 1.5rem; font-weight: 700;">Multiple Configuration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="data:image/png;base64,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" alt="NI Group" class="footer-logo">                    <p class="footer-desc">NI Group is one of the fastest growing companies in real estate arena offering comprehensive real estate solutions to fulfill myriad requirements of customers.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" title="Instagram">📱</a>
+                        <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">𝕏</a>
+                        <a href="https://linkedin.com/in/nigroupofficial" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#projects">Our Projects</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Our Projects</h4>
+                    <ul class="footer-links">
+                        <li><a href="invicta.html">INVICTA</a></li>
+                        <li><a href="iris.html">IRIS</a></li>
+                        <li><a href="iqra.html">IQRA</a></li>
+                        <li><a href="inaya.html">INAYA – RESIDENCY</a></li>
+                        <li><a href="inara.html">INARA – METRO</a></li>
+                        <li><a href="ira.html">IRA – RESIDENCY</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <div class="footer-contact">
+                        <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Newtown, Kolkata, India - 700157</p>
+                        <p><strong>Phone:</strong> <a href="tel:033 6902-8234">033 6902-8234</a></p>
+                        <p><strong>Mobile:</strong> <a href="tel:8100118686">8100118686</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:Info@nigrouprealty.com">Info@nigrouprealty.com</a></p>
+                        <p><strong>Hours:</strong> Mon - Sat: 10:00AM – 7:30PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NI Group of Companies - All Rights Reserved</p>
+                <p>nigrouprealty.com | Developed by Sk Jahid Ali</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="standalone.js"></script>
+</body>
+</html>

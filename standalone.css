@@ -45,7 +45,7 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-weight: 700;.section-title
 }
 
 .text-orange {
@@ -72,18 +72,115 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
 }
 
+/* =========================
+   GLOBAL SECTION TITLE FIX
+========================= */
+
 .section-title {
-    font-size: clamp(1.875rem, 5vw, 3rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative;
+    line-height: 1.2;
+    color: #0f172a !important;
 }
 
-.section-title a {
-    color: inherit;
-    text-decoration: none;
+/* White section titles only on dark backgrounds */
+.hero .section-title,
+.testimonials .section-title,
+.newsletter .section-title,
+.footer .section-title {
+    color: #ffffff !important;
+}
+
+/* Orange top labels */
+.section-label {
+    display: inline-block;
+    color: #f97316 !important;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* Paragraph under headings */
+.section-desc {
+    color: #64748b !important;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* Beautiful underline */
+.section-title::after {
+    content: '';
+    width: 90px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f97316, #166534);
+    display: block;
+    margin: 16px auto 0;
+}
+
+/* =========================
+   FORCE VISIBLE TITLES
+========================= */
+
+.how-we-work .section-title,
+.partners-carousel .section-title,
+.services .section-title,
+.about .section-title,
+.directors .section-title,
+.testimonials .section-title,
+.newsletter .section-title,
+.projects .section-title {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* =========================
+   SECTION BACKGROUND FIX
+========================= */
+
+.how-we-work {
+    background: linear-gradient(135deg, #fff7ed 0%, #f0fdf4 100%);
+}
+
+.partners-carousel {
+    background: #ffffff;
+}
+
+.directors {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.testimonials {
+    background: #0f172a;
+}
+
+.newsletter {
+    background: linear-gradient(135deg, #166534, #15803d);
+}
+
+/* =========================
+   TESTIMONIALS TITLE WHITE
+========================= */
+
+.testimonials .section-title,
+.testimonials .section-desc {
+    color: #ffffff !important;
+}
+
+.newsletter .section-title,
+.newsletter .section-desc {
+    color: #ffffff !important;
 }
 
 .section-desc {
-    color: var(--color-gray-500);
+    color: var(--color-gray-700);
     font-size: 1.125rem;
     max-width: 42rem;
     margin: 0 auto;
@@ -484,6 +581,40 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.875rem;
     margin-bottom: 1rem;
 }
+/* Section Heading Fix */
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #0f172a; /* changed from white */
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    line-height: 1.2;
+}
+
+.projects .section-title,
+.services .section-title,
+.about .section-title,
+.directors .section-title {
+    color: #0f172a !important;
+}
+
+.testimonials .section-title,
+.newsletter .section-title,
+.hero .section-title {
+    color: #ffffff !important;
+}
+
+/* Optional modern effect */
+.projects .section-title::after {
+    content: '';
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #f97316, #166534);
+    display: block;
+    margin: 14px auto 0;
+    border-radius: 999px;
+}
 
 /* How We Work */
 .how-we-work {
@@ -727,7 +858,7 @@ h1, h2, h3, h4, h5, h6 {
 /* About Section */
 .about {
     padding: 6rem 0;
-    background: var(--color-white);
+    background: var(--color-gray-100);
 }
 
 .about-content {
@@ -1704,8 +1835,9 @@ img {
     }
 
     .footer-bottom {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column !important;
+        text-align: center !important;
+        justify-content: center !important;
     }
 
     .carousel-item {
