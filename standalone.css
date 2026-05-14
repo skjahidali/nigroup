@@ -349,11 +349,38 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:translate(-50%,-50%);
+    z-index:-2;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.35)
+    );
+    z-index:-1;
+}
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('Project Photo/CHAPNA_DRAFT.jpg.jpeg');
+    background-image: url('Project Photo/iqra.jpg');
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -402,7 +429,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(251, 146, 60, 0.8);
+    color: rgba(255, 130, 5, 0.8);
     margin-bottom: 1.5rem;
 }
 
@@ -487,6 +514,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Projects Section */
+.project-link{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+.project-link:hover{
+    color: #f97316;
+}
 .projects {
     padding: 6rem 0;
     background: var(--color-gray-50);
@@ -1556,7 +1592,17 @@ body {
     font-size: 14px !important;
     color: #9ca3af !important;
 }
+.footer-bottom a{
+    color: #22c55e !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
 
+.footer-bottom a:hover{
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
 .footer-col {
     padding: 10px 0 !important;
 }
