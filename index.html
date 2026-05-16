@@ -595,126 +595,113 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Testimonials</span>
             <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-desc">Real experiences from homeowners and investors who trusted NI Group.</p>
         </div>
 
-        <div class="testimonials-carousel">
+        <div class="testimonial-wrapper">
+            <button class="testimonial-btn prev" type="button" aria-label="Previous testimonial" onclick="moveTestimonials(-1)">&#10094;</button>
 
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card">
-                <div class="testimonial-top">
-                    <img src="Project Photo/Mukto DA.jpeg" alt="Client" class="testimonial-dp">
-
-                    <div>
-                        <h4 class="testimonial-author">Sk Matual Rahaman</h4>
-                        <p class="testimonial-role">Homeowner, INVICTA</p>
+            <div class="testimonials-carousel" id="testimonialCarousel">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <img src="Project Photo/Mukto DA.jpeg" alt="Sk Matual Rahaman" class="testimonial-dp">
+                        <div>
+                            <h4 class="testimonial-author">Sk Matual Rahaman</h4>
+                            <p class="testimonial-role">Homeowner, INVICTA</p>
+                        </div>
                     </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "NI Group delivered our dream home on time, exceeding every expectation. The quality and finishing are truly outstanding."
+                    </p>
                 </div>
 
-                <div class="testimonial-stars">★★★★★</div>
-
-                <p class="testimonial-text">
-                    "NI Group delivered our dream home on time, exceeding every expectation.
-                    The quality and finishing are truly outstanding."
-                </p>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card">
-                <div class="testimonial-top">
-                    <img src="Project Photo/Injamamul Haque.jpeg" alt="Client" class="testimonial-dp">
-
-                    <div>
-                        <h4 class="testimonial-author">Injamamul Haque</h4>
-                        <p class="testimonial-role">Investor, INARA – METRO</p>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <img src="Project Photo/Injamamul Haque.jpeg" alt="Injamamul Haque" class="testimonial-dp">
+                        <div>
+                            <h4 class="testimonial-author">Injamamul Haque</h4>
+                            <p class="testimonial-role">Investor, INARA – METRO</p>
+                        </div>
                     </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "NI Group impressed me with their transparency and commitment. A reliable investment experience."
+                    </p>
                 </div>
 
-                <div class="testimonial-stars">★★★★★</div>
-
-                <p class="testimonial-text">
-                    "NI Group impressed me with their transparency and commitment. A reliable investment experience."
-                </p>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card">
-                <div class="testimonial-top">
-                    <img src="Project Photo/Sk Rajim Ali.jpg" alt="Client" class="testimonial-dp">
-
-                    <div>
-                        <h4 class="testimonial-author">Sk Rajim Ali</h4>
-                        <p class="testimonial-role">Investor, BLUE WATER BAY</p>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <img src="Project Photo/Sk Rajim Ali.jpg" alt="Sk Rajim Ali" class="testimonial-dp">
+                        <div>
+                            <h4 class="testimonial-author">Sk Rajim Ali</h4>
+                            <p class="testimonial-role">Investor, BLUE WATER BAY</p>
+                        </div>
                     </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Professional service and trusted guidance throughout the journey. Glad to be part of NI Group."
+                    </p>
                 </div>
 
-                <div class="testimonial-stars">★★★★★</div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <img src="images/client4.jpg" alt="Sneha Roy" class="testimonial-dp">
+                        <div>
+                            <h4 class="testimonial-author">Sneha Roy</h4>
+                            <p class="testimonial-role">Resident, IRA Heights</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Beautiful architecture, premium quality construction and amazing support from the NI Group team throughout the journey."
+                    </p>
+                </div>
 
-                <p class="testimonial-text">
-                    "Professional service and trusted guidance throughout the journey. Glad to be part of NI Group."
-                </p>
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <img src="images/client5.jpg" alt="Rahul Agarwal" class="testimonial-dp">
+                        <div>
+                            <h4 class="testimonial-author">Rahul Agarwal</h4>
+                            <p class="testimonial-role">Investor, INVICTA</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Excellent location selection and modern amenities. NI Group maintains professionalism at every stage."
+                    </p>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-top">
+                        <img src="images/client6.jpg" alt="Sabiha Khan" class="testimonial-dp">
+                        <div>
+                            <h4 class="testimonial-author">Sabiha Khan</h4>
+                            <p class="testimonial-role">Homeowner, IQRA</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Very satisfied with the finishing quality and customer support. The entire process was smooth and trustworthy."
+                    </p>
+                </div>
             </div>
-<!-- Testimonial 4 -->
-<div class="testimonial-card">
-    <div class="testimonial-top">
-        <img src="images/client4.jpg" alt="Client" class="testimonial-dp">
 
-        <div>
-            <h4 class="testimonial-author">Sneha Roy</h4>
-            <p class="testimonial-role">Resident, IRA Heights</p>
-        </div>
-    </div>
-
-    <div class="testimonial-stars">★★★★★</div>
-
-    <p class="testimonial-text">
-        "Beautiful architecture, premium quality construction and amazing support from the NI Group team throughout the journey."
-    </p>
-</div>
-
-<!-- Testimonial 5 -->
-<div class="testimonial-card">
-    <div class="testimonial-top">
-        <img src="images/client5.jpg" alt="Client" class="testimonial-dp">
-
-        <div>
-            <h4 class="testimonial-author">Rahul Agarwal</h4>
-            <p class="testimonial-role">Investor, INVICTA</p>
-        </div>
-    </div>
-
-    <div class="testimonial-stars">★★★★★</div>
-
-    <p class="testimonial-text">
-        "Excellent location selection and modern amenities. NI Group maintains professionalism at every stage."
-    </p>
-</div>
-
-<!-- Testimonial 6 -->
-<div class="testimonial-card">
-    <div class="testimonial-top">
-        <img src="images/client6.jpg" alt="Client" class="testimonial-dp">
-
-        <div>
-            <h4 class="testimonial-author">Sabiha Khan</h4>
-            <p class="testimonial-role">Homeowner, IQRA</p>
-        </div>
-    </div>
-
-    <div class="testimonial-stars">★★★★★</div>
-
-    <p class="testimonial-text">
-        "Very satisfied with the finishing quality and customer support. The entire process was smooth and trustworthy."
-    </p>
-</div>
+            <button class="testimonial-btn next" type="button" aria-label="Next testimonial" onclick="moveTestimonials(1)">&#10095;</button>
         </div>
     </div>
 </section>
-          
 
     <!-- Newsletter Section -->
     <section class="newsletter">

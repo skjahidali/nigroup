@@ -14,10 +14,12 @@ const updateHeaderLogo = () => {
 };
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 60) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
     updateHeaderLogo();
 });
@@ -25,14 +27,16 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', updateHeaderLogo);
 
 // Mobile menu toggle
-menuToggle.addEventListener('click', () => {
-    navMobile.classList.toggle('active');
-});
+if (menuToggle && navMobile) {
+    menuToggle.addEventListener('click', () => {
+        navMobile.classList.toggle('active');
+    });
+}
 
 // Close menu when link is clicked
 document.querySelectorAll('.nav-mobile .nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMobile.classList.remove('active');
+        if (navMobile) navMobile.classList.remove('active');
     });
 });
 
@@ -54,9 +58,12 @@ if (newsletterForm) {
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = document.querySelector(href);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
         }
     });
@@ -82,3 +89,21 @@ const revealObserver = new IntersectionObserver(
 
 revealItems.forEach((item) => revealObserver.observe(item));
 document.body.classList.add('js-enabled');
+
+function moveTestimonials(direction) {
+    const carousel = document.getElementById("testimonialCarousel");
+    if (!carousel) return;
+
+    const card = carousel.querySelector(".testimonial-card");
+    if (!card) return;
+
+    const gap = parseInt(window.getComputedStyle(carousel).gap, 10) || 20;
+    const cardWidth = card.offsetWidth + gap;
+
+    carousel.scrollBy({
+        left: direction * cardWidth,
+        behavior: "smooth"
+    });
+}
+
+window.moveTestimonials = moveTestimonials;
