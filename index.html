@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="standalone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Favicon -->
 <link rel="icon" type="image/png" href="./NIRealty-1-png.png">
 
@@ -35,14 +36,35 @@
                 <img id="headerLogo" class="logo-img" src="data:image/png;base64,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" data-default-src="data:image/png;base64,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" data-colored-src="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" alt="NI Group logo" title="NI Group">
             </a>
 
-            <nav class="nav-desktop">
+            <nav class="nav-desktop" aria-label="Main navigation">
+
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#projects" class="nav-link">Projects</a>
-                  <a href="#services" class="nav-link">Services</a>
+                <a href="#services" class="nav-link">Services</a>
                 <a href="#about" class="nav-link">About Us</a>
-                <a href="blog" class="nav-link">Blog</a>
+                <a href="blog.html" class="nav-link">Blog</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
+
+            <a href="tel:8100118686" class="phone-btn">
+                <span class="phone-icon">☎</span>
+                <span>8100118686</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
+                <span class="menu-icon">☰</span>
+            </button>
+        </div>
+
+        <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -81,7 +103,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Our Portfolio</span>
-                <h2 class="section-title"><a href="#projects">Our Own Projects</a></h2>
+                <h2 class="section-title">Our Own Projects</h2>
                 <p class="section-desc">Each project is a testament to our commitment to quality craftsmanship and thoughtful design.</p>
             </div>
 
@@ -92,7 +114,7 @@
                     <div class="project-info">
                         <p class="project-meta">Kalikapur, Newtown · Residential Apartments</p>
                          <h3 class="project-name">
-                          <a href="" class="project-link">INVICTA</a>
+                          <a href="invicta.html" class="project-link">INVICTA</a>
                         </h3>
                         <p class="project-tagline">Unconquerable Living</p>
                     </div>
@@ -104,7 +126,7 @@
                     <div class="project-info">
                         <p class="project-meta">Kolkata · Premium Residency</p>
                          <h3 class="project-name">
-                          <a href="" class="project-link">IRIS</a>
+                          <a href="iris.html" class="project-link">IRIS</a>
                         </h3>
                         <p class="project-tagline">Elegance in Every Detail</p>
                     </div>
@@ -115,7 +137,7 @@
                     <span class="project-status upcoming">Upcoming</span>
                     <div class="project-info">
                         <p class="project-meta">Hatiara, Newtown · Residential Apartments</p>
-                        <h3 class="project-name">IQRA</h3>
+                        <h3 class="project-name"><a href="iqra.html" class="project-link">IQRA</a></h3>
                         <p class="project-tagline">Read. Rise. Reside.</p>
                     </div>
                 </div>
@@ -125,7 +147,7 @@
                     <span class="project-status upcoming">Upcoming</span>
                     <div class="project-info">
                         <p class="project-meta">Chapna, Newtown · Gated Community</p>
-                        <h3 class="project-name">BLUE WATER BAY</h3>
+                        <h3 class="project-name"><a href="blue-water-bay.html" class="project-link">BLUE WATER BAY</a></h3>
                         <p class="project-tagline">Crafted with Care</p>
                     </div>
                 </div>
@@ -135,7 +157,7 @@
                     <span class="project-status upcoming">Upcoming</span>
                     <div class="project-info">
                         <p class="project-meta">Hatiara, Newtown · Gated Community</p>
-                        <h3 class="project-name">INAYA – RESIDENCY</h3>
+                        <h3 class="project-name"><a href="inaya-residency.html" class="project-link">INAYA – RESIDENCY</a></h3>
                         <p class="project-tagline">Crafted with Care</p>
                     </div>
                 </div>
@@ -145,7 +167,7 @@
                     <span class="project-status upcoming">Upcoming</span>
                     <div class="project-info">
                         <p class="project-meta">Hatiara, Newtown · Metro-Adjacent Residency</p>
-                        <h3 class="project-name">INARA – METRO</h3>
+                        <h3 class="project-name"><a href="inara-metro.html" class="project-link">INARA – METRO</a></h3>
                         <p class="project-tagline">Connected Urban Living</p>
                     </div>
                 </div>
@@ -155,7 +177,7 @@
                     <span class="project-status upcoming">Upcoming</span>
                     <div class="project-info">
                         <p class="project-meta">Kolkata · Luxury Residency</p>
-                        <h3 class="project-name">IRA – RESIDENCY</h3>
+                        <h3 class="project-name"><a href="ira-residency.html" class="project-link">IRA – RESIDENCY</a></h3>
                         <p class="project-tagline">Where Serenity Lives</p>
                     </div>
                 </div>
@@ -164,7 +186,7 @@
                     <span class="project-status upcoming">Upcoming</span>
                     <div class="project-info">
                         <p class="project-meta">Hatiara, Newtown</p>
-                        <h3 class="project-name">New Sunrise Apartment</h3>
+                        <h3 class="project-name"><a href="new-sunrise-apartment.html" class="project-link">New Sunrise Apartment</a></h3>
                         <p class="project-tagline">Rise to a Better Lifestyles</p>
                     </div>
                 </div>
@@ -711,13 +733,17 @@
     <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <img id="footerLogo" src="data:image/png;base64,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" alt="NI Group" class="footer-logo">                    <p class="footer-desc">NI Group is one of the fastest growing companies in real estate arena offering comprehensive real estate solutions to fulfill myriad requirements of customers.</p>
-                    <div class="footer-socials">
-                        <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" title="Instagram">📱</a>
-                        <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
-                        <a href="https://www.facebook.com/Nigroup/" target="_blank" rel="noopener noreferrer" title="Twitter">𝕏</a>
-                        <a href="https://linkedin.com/in/nigroupofficial" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+                <div class="footer-col footer-brand">
+                    <img id="footerLogo" src="data:image/png;base64,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" alt="NI Group" class="footer-logo">
+                    <p class="footer-desc">
+                        NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.
+                    </p>
+
+                    <div class="footer-socials" aria-label="Social links">
+                        <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
@@ -725,51 +751,42 @@
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#projects">Our Projects</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4 class="footer-title">Our Projects</h4>
                     <ul class="footer-links">
-                        <li><a href="#projects">INVICTA</a></li>
-                        <li><a href="#projects">IRIS</a></li>
-                        <li><a href="#projects">IQRA</a></li>
-                        <li><a href="#projects">INAYA – RESIDENCY</a></li>
-                        <li><a href="#projects">INARA – METRO</a></li>
-                        <li><a href="#projects">IRA – RESIDENCY</a></li>
+                        <li><a href="invicta.html">INVICTA</a></li>
+                        <li><a href="iris.html">IRIS</a></li>
+                        <li><a href="iqra.html">IQRA</a></li>
+                        <li><a href="inara-metro.html">INARA – METRO</a></li>
+                        <li><a href="ira-residency.html">IRA – RESIDENCY</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Us</h4>
                     <div class="footer-contact">
-                        <p><strong>Address:</strong> New Sunrise Apartment, Swami Vivekananda Rd, Hatiara, Newtown, Kolkata, West Bengal 700157</p>
-                        <p><strong>Phone:</strong> <a href="tel:033 6902-8234">033 6902-8234</a></p>
-                        <p><strong>Mobile:</strong> <a href="tel:8100118686">8100118686 / 9330118686</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:Info@nigrouprealty.com">Info@nigrouprealty.com</a></p>
-                                    <p><strong>Business Email:</strong> <a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a></p>
-                        <p><strong>Hours:</strong> Mon - Sat: 10:00AM – 7:30PM</p>
+                        <p><strong>Address:</strong> New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Kolkata</p>
+                        <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902 8234</a></p>
+                        <p><strong>Mobile:</strong> <a href="tel:8100118686">8100118686</a> / <a href="tel:9330118686">9330118686</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
+                        <p><strong>Business Email:</strong> <a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a></p>
+                        <p><strong>Hours:</strong> Mon - Sat: 10:00 AM - 7:30 PM</p>
                     </div>
                 </div>
             </div>
 
-            <div 
-            
-       <div class="footer-bottom">
-    <p>© 2026 NI Group of Companies - All Rights Reserved</p>
-
-    <p>
-        nigrouprealty.com | Developed by
-        <a href="https://www.linkedin.com/in/skjahidali/" target="_blank">
-            Sk Jahid Ali
-        </a>
-    </p>
-</div>
+            <div class="footer-bottom">
+                <p>© 2026 NI Group of Companies - All Rights Reserved</p>
+                <p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
+            </div>
+        </div>
     </footer>
 
 
