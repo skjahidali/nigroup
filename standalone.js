@@ -120,3 +120,5 @@ function moveTestimonials(direction) {
 }
 
 window.moveTestimonials = moveTestimonials;
+
+
