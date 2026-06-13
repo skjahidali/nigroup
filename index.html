@@ -46,11 +46,6 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
-            <a href="tel:8100118686" class="phone-btn">
-                <span class="phone-icon">☎</span>
-                <span>8100118686</span>
-            </a>
-
             <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
                 <span class="menu-icon">☰</span>
             </button>
@@ -66,6 +61,103 @@
                 <a href="#contact" class="nav-link">Contact</a>
         </nav>
     </header>
+
+    <!-- Luxury Floating Contact -->
+<div class="luxury-contact">
+    <a href="tel:9330118686" class="luxury-btn call">
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="text">Call Now</span>
+    </a>
+
+    <a href="https://wa.me/919330118686" target="_blank" class="luxury-btn whatsapp">
+        <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+        <span class="text">WhatsApp</span>
+    </a>
+</div>
+
+<style>
+.luxury-contact{
+    position:fixed;
+    right:22px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:999999;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.luxury-btn{
+    width:58px;
+    height:58px;
+    border-radius:50px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:#fff;
+    backdrop-filter:blur(12px);
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
+    transition:all .45s ease;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.luxury-btn .icon{
+    min-width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.luxury-btn .text{
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+    padding-right:18px;
+    opacity:0;
+    letter-spacing:.3px;
+}
+
+.luxury-btn:hover{
+    width:165px;
+}
+
+.luxury-btn:hover .text{
+    opacity:1;
+}
+
+.luxury-btn.call{
+    background:linear-gradient(135deg,#0b3d2e,#15803d,#d4af37);
+}
+
+.luxury-btn.whatsapp{
+    background:linear-gradient(135deg,#075e54,#25d366,#128c7e);
+}
+
+@media(max-width:768px){
+    .luxury-contact{
+        right:16px;
+        bottom:24px;
+        top:auto;
+        transform:none;
+    }
+
+    .luxury-btn{
+        width:56px;
+        height:56px;
+    }
+
+    .luxury-btn:hover{
+        width:56px;
+    }
+
+    .luxury-btn .text{
+        display:none;
+    }
+}
+</style>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -707,20 +799,6 @@
         </div>
     </div>
 </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
-            <p class="newsletter-desc">Be the first to know about new launches, exclusive offers, and the latest updates from NI Group.</p>
-
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="text" placeholder="First Name *" required>
-                <input type="email" placeholder="Email Address *" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer" id="contact">
