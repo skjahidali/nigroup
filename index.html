@@ -62,204 +62,77 @@
         </nav>
     </header>
 
-   <!-- Premium Floating Contact -->
-<div class="premium-contact">
-
-    <a href="tel:9330118686" class="premium-btn call-btn">
-        <span class="ripple"></span>
-        <span class="icon">
-            <i class="fa-solid fa-phone"></i>
-        </span>
-        <span class="text">
-            Call Us
-            <small>Instant Support</small>
-        </span>
+   <!-- Premium Floating Contact Landscape -->
+<div class="premium-contact-landscape">
+    <a href="tel:9330118686" class="premium-land-btn call-btn">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call Us</span>
     </a>
 
-    <a href="https://wa.me/919330118686" target="_blank" class="premium-btn whatsapp-btn">
-        <span class="ripple"></span>
-        <span class="icon">
-            <i class="fa-brands fa-whatsapp"></i>
-        </span>
-        <span class="text">
-            WhatsApp
-            <small>Chat Now</small>
-        </span>
-        <span class="badge">24/7</span>
+    <a href="https://wa.me/919330118686" target="_blank" class="premium-land-btn whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
     </a>
-
 </div>
 
 <style>
-.premium-contact{
+.premium-contact-landscape{
     position:fixed;
-    right:20px;
-    top:50%;
-    transform:translateY(-50%);
+    right:24px;
+    bottom:28px;
     z-index:99999;
     display:flex;
-    flex-direction:column;
-    gap:16px;
+    gap:14px;
 }
 
-.premium-btn{
-    position:relative;
-    width:68px;
-    height:68px;
+.premium-land-btn{
+    height:56px;
+    padding:0 22px;
+    border-radius:50px;
     display:flex;
     align-items:center;
-    border-radius:100px;
-    overflow:hidden;
-    text-decoration:none;
-    backdrop-filter:blur(20px);
-    box-shadow:
-        0 10px 40px rgba(0,0,0,.25),
-        0 0 25px rgba(255,255,255,.1);
-    transition:all .45s ease;
+    gap:10px;
     color:#fff;
-    border:1px solid rgba(255,255,255,.18);
-    animation:float 3s ease-in-out infinite;
-}
-
-.premium-btn:hover{
-    width:220px;
-    transform:translateX(-8px);
-}
-
-.premium-btn .icon{
-    min-width:68px;
-    height:68px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    z-index:2;
-}
-
-.premium-btn .text{
-    display:flex;
-    flex-direction:column;
-    opacity:0;
-    transition:.4s;
-    white-space:nowrap;
-    font-weight:700;
+    text-decoration:none;
     font-size:15px;
-    z-index:2;
+    font-weight:700;
+    letter-spacing:.3px;
+    box-shadow:0 12px 35px rgba(0,0,0,.28);
+    transition:.35s ease;
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(16px);
 }
 
-.premium-btn .text small{
-    font-size:11px;
-    opacity:.85;
-    font-weight:500;
-    margin-top:2px;
+.premium-land-btn i{
+    font-size:20px;
 }
 
-.premium-btn:hover .text{
-    opacity:1;
+.premium-land-btn:hover{
+    transform:translateY(-6px);
 }
 
 .call-btn{
-    background:linear-gradient(
-        135deg,
-        #0b2d20,
-        #0f766e,
-        #d4af37
-    );
-}
-
-.call-btn:hover{
-    box-shadow:
-    0 15px 45px rgba(212,175,55,.45);
+    background:linear-gradient(135deg,#0b2d20,#0f766e,#d4af37);
 }
 
 .whatsapp-btn{
-    background:linear-gradient(
-        135deg,
-        #075e54,
-        #25d366,
-        #128c7e
-    );
+    background:linear-gradient(135deg,#075e54,#25d366,#128c7e);
 }
 
-.whatsapp-btn:hover{
-    box-shadow:
-    0 15px 45px rgba(37,211,102,.45);
-}
-
-.badge{
-    position:absolute;
-    top:8px;
-    right:10px;
-    background:#fff;
-    color:#111;
-    font-size:10px;
-    font-weight:700;
-    padding:3px 7px;
-    border-radius:20px;
-    z-index:3;
-}
-
-.ripple{
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:100px;
-    background:rgba(255,255,255,.08);
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%{
-        transform:scale(1);
-        opacity:.5;
-    }
-    70%{
-        transform:scale(1.15);
-        opacity:0;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-/* Mobile Bottom Floating Bar */
 @media(max-width:768px){
-
-    .premium-contact{
-        top:auto;
-        bottom:20px;
-        right:15px;
-        transform:none;
-        gap:12px;
+    .premium-contact-landscape{
+        left:14px;
+        right:14px;
+        bottom:18px;
+        justify-content:center;
     }
 
-    .premium-btn{
-        width:62px;
-        height:62px;
-    }
-
-    .premium-btn:hover{
-        width:62px;
-    }
-
-    .premium-btn .text,
-    .badge{
-        display:none;
-    }
-
-    .premium-btn .icon{
-        min-width:62px;
-        height:62px;
-        font-size:24px;
+    .premium-land-btn{
+        flex:1;
+        justify-content:center;
+        height:54px;
+        padding:0 12px;
+        font-size:14px;
     }
 }
 </style>
@@ -293,6 +166,142 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Registration Popup -->
+<div id="leadPopup" class="lead-popup">
+    <div class="popup-content">
+
+        <button class="close-popup" onclick="closePopup()">
+            &times;
+        </button>
+
+        <div class="popup-header">
+            <h2>🏡 Book Your Dream Home</h2>
+            <p>Get Exclusive Offers & Site Visit Assistance</p>
+        </div>
+
+        <form id="leadForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Mobile Number" required>
+            <input type="email" placeholder="Email Address">
+
+            <select required>
+                <option value="">Select Project</option>
+                <option>IRA Residency</option>
+                <option>INAYA Residency</option>
+                <option>INARA Metro</option>
+                <option>INVICTA</option>
+                <option>PARADIZIA</option>
+            </select>
+
+            <button type="submit">
+                Get Free Consultation
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<style>
+.lead-popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    opacity:0;
+    visibility:hidden;
+    transition:.4s;
+}
+
+.lead-popup.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.popup-content{
+    width:90%;
+    max-width:430px;
+    background:#fff;
+    border-radius:22px;
+    padding:30px;
+    position:relative;
+    animation:popupZoom .5s ease;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.popup-header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.popup-header h2{
+    color:#0b3d2e;
+    margin-bottom:8px;
+}
+
+.popup-header p{
+    color:#666;
+}
+
+.popup-content input,
+.popup-content select{
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.popup-content button[type="submit"]{
+    width:100%;
+    border:none;
+    background:linear-gradient(135deg,#0b3d2e,#d4af37);
+    color:#fff;
+    padding:15px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.close-popup{
+    position:absolute;
+    top:10px;
+    right:15px;
+    border:none;
+    background:none;
+    font-size:32px;
+    cursor:pointer;
+}
+
+@keyframes popupZoom{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+</style>
+
+<script>
+// Show popup after 2 seconds
+window.addEventListener('load', function(){
+    setTimeout(() => {
+        document.getElementById('leadPopup').classList.add('show');
+    }, 2000);
+});
+
+function closePopup(){
+    document.getElementById('leadPopup').classList.remove('show');
+}
+</script>
 
     <!-- Projects Section -->
      
