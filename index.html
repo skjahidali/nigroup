@@ -62,103 +62,207 @@
         </nav>
     </header>
 
-    <!-- Luxury Floating Contact -->
-<div class="luxury-contact">
-    <a href="tel:9330118686" class="luxury-btn call">
-        <span class="icon"><i class="fa-solid fa-phone"></i></span>
-        <span class="text">Call Now</span>
+   <!-- Premium Floating Contact -->
+<div class="premium-contact">
+
+    <a href="tel:9330118686" class="premium-btn call-btn">
+        <span class="ripple"></span>
+        <span class="icon">
+            <i class="fa-solid fa-phone"></i>
+        </span>
+        <span class="text">
+            Call Us
+            <small>Instant Support</small>
+        </span>
     </a>
 
-    <a href="https://wa.me/919330118686" target="_blank" class="luxury-btn whatsapp">
-        <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
-        <span class="text">WhatsApp</span>
+    <a href="https://wa.me/919330118686" target="_blank" class="premium-btn whatsapp-btn">
+        <span class="ripple"></span>
+        <span class="icon">
+            <i class="fa-brands fa-whatsapp"></i>
+        </span>
+        <span class="text">
+            WhatsApp
+            <small>Chat Now</small>
+        </span>
+        <span class="badge">24/7</span>
     </a>
+
 </div>
 
 <style>
-.luxury-contact{
+.premium-contact{
     position:fixed;
-    right:22px;
+    right:20px;
     top:50%;
     transform:translateY(-50%);
-    z-index:999999;
+    z-index:99999;
     display:flex;
     flex-direction:column;
-    gap:14px;
+    gap:16px;
 }
 
-.luxury-btn{
-    width:58px;
-    height:58px;
-    border-radius:50px;
-    overflow:hidden;
+.premium-btn{
+    position:relative;
+    width:68px;
+    height:68px;
     display:flex;
     align-items:center;
+    border-radius:100px;
+    overflow:hidden;
     text-decoration:none;
-    color:#fff;
-    backdrop-filter:blur(12px);
-    box-shadow:0 12px 35px rgba(0,0,0,.35);
+    backdrop-filter:blur(20px);
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.25),
+        0 0 25px rgba(255,255,255,.1);
     transition:all .45s ease;
-    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.18);
+    animation:float 3s ease-in-out infinite;
 }
 
-.luxury-btn .icon{
-    min-width:58px;
-    height:58px;
+.premium-btn:hover{
+    width:220px;
+    transform:translateX(-8px);
+}
+
+.premium-btn .icon{
+    min-width:68px;
+    height:68px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:23px;
+    font-size:26px;
+    z-index:2;
 }
 
-.luxury-btn .text{
-    font-size:14px;
-    font-weight:700;
-    white-space:nowrap;
-    padding-right:18px;
+.premium-btn .text{
+    display:flex;
+    flex-direction:column;
     opacity:0;
-    letter-spacing:.3px;
+    transition:.4s;
+    white-space:nowrap;
+    font-weight:700;
+    font-size:15px;
+    z-index:2;
 }
 
-.luxury-btn:hover{
-    width:165px;
+.premium-btn .text small{
+    font-size:11px;
+    opacity:.85;
+    font-weight:500;
+    margin-top:2px;
 }
 
-.luxury-btn:hover .text{
+.premium-btn:hover .text{
     opacity:1;
 }
 
-.luxury-btn.call{
-    background:linear-gradient(135deg,#0b3d2e,#15803d,#d4af37);
+.call-btn{
+    background:linear-gradient(
+        135deg,
+        #0b2d20,
+        #0f766e,
+        #d4af37
+    );
 }
 
-.luxury-btn.whatsapp{
-    background:linear-gradient(135deg,#075e54,#25d366,#128c7e);
+.call-btn:hover{
+    box-shadow:
+    0 15px 45px rgba(212,175,55,.45);
 }
 
+.whatsapp-btn{
+    background:linear-gradient(
+        135deg,
+        #075e54,
+        #25d366,
+        #128c7e
+    );
+}
+
+.whatsapp-btn:hover{
+    box-shadow:
+    0 15px 45px rgba(37,211,102,.45);
+}
+
+.badge{
+    position:absolute;
+    top:8px;
+    right:10px;
+    background:#fff;
+    color:#111;
+    font-size:10px;
+    font-weight:700;
+    padding:3px 7px;
+    border-radius:20px;
+    z-index:3;
+}
+
+.ripple{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:100px;
+    background:rgba(255,255,255,.08);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        opacity:.5;
+    }
+    70%{
+        transform:scale(1.15);
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+/* Mobile Bottom Floating Bar */
 @media(max-width:768px){
-    .luxury-contact{
-        right:16px;
-        bottom:24px;
+
+    .premium-contact{
         top:auto;
+        bottom:20px;
+        right:15px;
         transform:none;
+        gap:12px;
     }
 
-    .luxury-btn{
-        width:56px;
-        height:56px;
+    .premium-btn{
+        width:62px;
+        height:62px;
     }
 
-    .luxury-btn:hover{
-        width:56px;
+    .premium-btn:hover{
+        width:62px;
     }
 
-    .luxury-btn .text{
+    .premium-btn .text,
+    .badge{
         display:none;
+    }
+
+    .premium-btn .icon{
+        min-width:62px;
+        height:62px;
+        font-size:24px;
     }
 }
 </style>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
