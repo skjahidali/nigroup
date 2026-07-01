@@ -1,208 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - NI Group Realty</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="standalone.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join NI Group's team! Explore exciting career opportunities in real estate sales, marketing, engineering, finance, and more. Build your future with us.">
+  <meta name="keywords" content="careers, jobs, real estate jobs, Kolkata jobs, sales manager, engineer, marketing, HR">
+  <title>Careers — NI Group of Companies</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/src/standalone.css">
+  <link rel="stylesheet" href="/src/pages/careers.css">
+  <script src="/src/standalone.js" type="module"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <img id="headerLogo" class="logo-img" src="data:image/png;base64,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" data-default-src="data:image/png;base64,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" data-colored-src="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" alt="NI Group logo" title="NI Group">
-            </a>
 
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#about" class="nav-link">About Us</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </nav>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo"><div class="logo-wrapper"><img class="logo-img" src="/NI_Group_Logo_final_COL.png" alt="NI Group" width="260" height="96"></div></a>
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="index.html#projects" class="nav-link">Projects <span class="chevron">&#9660;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="invicta.html" class="dropdown-item"><span class="di-dot" style="background:#16a34a;"></span>INVICTA<span class="di-status completed">Done</span></a>
+            <a href="iris.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRIS<span class="di-status upcoming">Soon</span></a>
+            <a href="iqra.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IQRA<span class="di-status upcoming">Soon</span></a>
+            <a href="paradizia.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>Paradizia<span class="di-status upcoming">Soon</span></a>
+            <a href="inaya.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INAYA Residency<span class="di-status upcoming">Soon</span></a>
+            <a href="inara.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INARA Metro<span class="di-status upcoming">Soon</span></a>
+            <a href="ira.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRA Residency<span class="di-status upcoming">Soon</span></a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="leadership.html" class="nav-link">Leadership</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link active">Careers</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-link-wrap">
+        <span class="nav-link mobile-dropdown-toggle">Projects <span class="m-chevron" style="transition:transform .3s;">&#9660;</span></span>
+        <div class="mobile-sub-menu">
+          <a href="invicta.html" class="nav-link">INVICTA</a>
+          <a href="iris.html" class="nav-link">IRIS</a>
+          <a href="iqra.html" class="nav-link">IQRA</a>
+          <a href="paradizia.html" class="nav-link">Paradizia</a>
+          <a href="inaya.html" class="nav-link">INAYA Residency</a>
+          <a href="inara.html" class="nav-link">INARA Metro</a>
+          <a href="ira.html" class="nav-link">IRA Residency</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="leadership.html" class="nav-link">Leadership</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
 
-            <a href="tel:8100118686" class="phone-btn">
-                <span class="phone-icon">📞</span>
-                8100118686
-            </a>
+  <!-- HERO SECTION -->
+  <section class="careers-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Build Your Career with NI Group</h1>
+        <p class="hero-subtitle">Join a team that's transforming real estate and creating communities</p>
+      </div>
+    </div>
+  </section>
 
-            <button class="menu-toggle" id="menuToggle">☰</button>
+  <!-- WHY JOIN US SECTION -->
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <h2 class="section-title">Why Join Us</h2>
+      <div class="why-join-grid">
+
+        <div class="wj-card">
+          <div class="wj-icon">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h4>Growth Opportunities</h4>
+          <p>Fast-track your career with meaningful projects, mentorship, and professional development programs tailored to your ambitions.</p>
         </div>
 
-        <nav class="nav-mobile" id="navMobile">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="index.html#projects" class="nav-link">Projects</a>
-            <a href="index.html#about" class="nav-link">About Us</a>
-            <a href="index.html#services" class="nav-link">Services</a>
-            <a href="careers.html" class="nav-link">Careers</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
-            <a href="tel:8100118686" class="phone-btn">8100118686</a>
-        </nav>
-    </header>
-
-    <!-- Careers Header -->
-    <section class="hero" id="home" style="padding-top: 8rem; min-height: 50vh;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Join Our Team</h1>
-            <p class="hero-desc">Build your career with NI Group Realty</p>
+        <div class="wj-card">
+          <div class="wj-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h4>Vibrant Culture</h4>
+          <p>Work with passionate professionals in a collaborative, inclusive environment that values innovation and celebrates achievements.</p>
         </div>
-    </section>
 
-    <!-- Careers Section -->
-    <section class="projects" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Opportunities</span>
-                <h2 class="section-title">Current Openings</h2>
-                <p class="section-desc">We're looking for talented individuals to join our growing team.</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem;">
-
-                <!-- Job 2 -->
-                <div style="background: var(--color-white); border: 1px solid var(--color-gray-200); border-radius: 1rem; padding: 2rem; transition: all 0.3s;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; gap: 1rem;">
-                        <div style="flex: 1;">
-                            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--color-gray-900);">Marketing Coordinator</h3>
-                            <p style="color: var(--color-gray-500); margin-bottom: 1rem;">Kolkata • Full-time</p>
-                            <p style="color: var(--color-gray-600); line-height: 1.6; margin-bottom: 1rem;">Join our marketing team to create compelling campaigns and manage digital presence. Requirements: Bachelor's degree in Marketing or related field, proficiency in digital marketing tools, creative mindset.</p>
-                            <a href="#contact" style="color: var(--color-orange-500); text-decoration: none; font-weight: 600;">Apply Now →</a>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #15803d, #166534); padding: 1rem 1.5rem; border-radius: 0.5rem; color: white; font-weight: 600;">Mid-level</div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="wj-card">
+          <div class="wj-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <h4>Competitive Benefits</h4>
+          <p>Comprehensive salary packages, health insurance, performance bonuses, and flexible working arrangements.</p>
         </div>
-    </section>
 
-    <!-- Why Join Us -->
-    <section style="padding: 4rem 0; background: var(--color-gray-50);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Join NI Group?</h2>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
-                    <h3 style="margin-bottom: 0.5rem; color: var(--color-gray-900);">Career Growth</h3>
-                    <p style="color: var(--color-gray-600);">Continuous learning and development opportunities to advance your career.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
-                    <h3 style="margin-bottom: 0.5rem; color: var(--color-gray-900);">Competitive Pay</h3>
-                    <p style="color: var(--color-gray-600);">Competitive salaries and benefits package tailored to your experience.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
-                    <h3 style="margin-bottom: 0.5rem; color: var(--color-gray-900);">Team Culture</h3>
-                    <p style="color: var(--color-gray-600);">Work in a collaborative and supportive team environment.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
-                    <h3 style="margin-bottom: 0.5rem; color: var(--color-gray-900);">Innovation</h3>
-                    <p style="color: var(--color-gray-600);">Be part of innovative projects that shape the real estate landscape.</p>
-                </div>
-            </div>
+        <div class="wj-card">
+          <div class="wj-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Industry Impact</h4>
+          <p>Be part of building world-class real estate projects that shape communities and create lasting legacies across Kolkata.</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="projects" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Interested?</h2>
-                <p class="section-desc">Send your resume and cover letter to apply for any position.</p>
-            </div>
+      </div>
+    </div>
+  </section>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div style="background: var(--color-gray-50); padding: 2rem; border-radius: 1rem; text-align: center;">
-                    <p style="color: var(--color-gray-500); font-size: 0.875rem; margin-bottom: 0.5rem;">Email</p>
-                    <p style="font-size: 1.25rem; font-weight: 600;"><a href="mailto:info@nigrouprealty.com" style="color: var(--color-orange-500); text-decoration: none;">info@nigrouprealty.com</a></p>
-                </div>
-                <div style="background: var(--color-gray-50); padding: 2rem; border-radius: 1rem; text-align: center;">
-                    <p style="color: var(--color-gray-500); font-size: 0.875rem; margin-bottom: 0.5rem;">Phone</p>
-                    <p style="font-size: 1.25rem; font-weight: 600;"><a href="tel:9230634094" style="color: var(--color-orange-500); text-decoration: none;">9230634094</a></p>
-                </div>
-                <div style="background: var(--color-gray-50); padding: 2rem; border-radius: 1rem; text-align: center;">
-                    <p style="color: var(--color-gray-500); font-size: 0.875rem; margin-bottom: 0.5rem;">Address</p>
-                    <p style="font-size: 1.25rem; font-weight: 600;">Kolkata, India</p>
-                </div>
+  <!-- OPEN POSITIONS SECTION -->
+  <section style="padding: 80px 0; background: #f9fafb;">
+    <div class="container">
+      <h2 class="section-title">Open Positions</h2>
+      <div class="jobs-section">
+
+        <!-- Job 1 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">Sales Executive</h4>
+            <p class="job-department">Real Estate Sales</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 1-3 years</span>
             </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹3–6 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=Sales Executive Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
         </div>
-    </section>
-    
-   <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col footer-brand">
-                    <img id="footerLogo" src="data:image/png;base64,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" alt="NI Group" class="footer-logo">
-                    <p class="footer-desc">
-                        NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.
-                    </p>
 
-                    <div class="footer-socials" aria-label="Social links">
-                        <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="career.html">Career</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Our Projects</h4>
-                    <ul class="footer-links">
-                        <li><a href="invicta.html">INVICTA</a></li>
-                        <li><a href="iris.html">IRIS</a></li>
-                        <li><a href="iqra.html">IQRA</a></li>
-                        <li><a href="paradizia.html">PARADISE</a></li>
-                        <li><a href="inaya-residency.html">INAYA – RESIDENCY</a></li>
-                        <li><a href="inara-metro.html">INARA – METRO</a></li>
-                        <li><a href="ira-residency.html">IRA – RESIDENCY</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Contact Us</h4>
-                    <div class="footer-contact">
-                        <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Rd, Hatiara, Newtown, Kolkata, West Bengal - 700157</p>
-                        <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
-                        <p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a> 
-                        <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
-                        <p><strong>Business Email:</strong> <a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a></p>
-                        <p><strong>Hours:</strong> Mon - Sat: 10:00 AM - 7:30 PM</p>
-                    </div>
-                </div>
+        <!-- Job 2 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">Senior Sales Manager</h4>
+            <p class="job-department">Real Estate Sales</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 5+ years</span>
             </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 NI Group of Companies - All Rights Reserved</p>
-                <p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
-            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹8–15 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=Senior Sales Manager Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
         </div>
-    </footer>
 
+        <!-- Job 3 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">Marketing Executive</h4>
+            <p class="job-department">Digital Marketing</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 1-3 years</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹3–5 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=Marketing Executive Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
 
-    <script src="standalone.js"></script>
+        <!-- Job 4 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">Site Engineer</h4>
+            <p class="job-department">Construction</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Newtown, Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 3+ years</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹4–8 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=Site Engineer Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">Customer Relations Officer</h4>
+            <p class="job-department">Client Management</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 1-2 years</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹3–5 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=Customer Relations Officer Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">Accounts Executive</h4>
+            <p class="job-department">Finance</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 2-4 years</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹3–5 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=Accounts Executive Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Job 7 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">HR Executive</h4>
+            <p class="job-department">Human Resources</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 1-3 years</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹3–4 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=HR Executive Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Job 8 -->
+        <div class="job-card">
+          <div class="job-left">
+            <h4 class="job-title">IT Executive</h4>
+            <p class="job-department">Web/App Development</p>
+            <div class="job-tags">
+              <span class="job-tag"><i class="fa-solid fa-map-pin"></i> Kolkata</span>
+              <span class="job-tag"><i class="fa-solid fa-briefcase"></i> Full-time</span>
+              <span class="job-tag"><i class="fa-solid fa-graduation-cap"></i> 2-4 years</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <div class="job-salary">₹4–8 LPA</div>
+            <a href="mailto:info@nigrouprealty.com?subject=IT Executive Application" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY SECTION -->
+  <section class="apply-section">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Don't See Your Role?</h2>
+        <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 40px;">Send us your CV and let us know how you can contribute to NI Group's mission. We're always interested in talented professionals.</p>
+        <form class="cv-form" onsubmit="event.preventDefault(); alert('Thank you for submitting your CV! We will review it and get back to you soon.');">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div style="margin-bottom: 15px;">
+            <input type="tel" placeholder="Your Phone Number" required style="width: 100%;">
+          </div>
+          <div style="margin-bottom: 25px;">
+            <label style="display: block; color: white; margin-bottom: 10px; font-weight: 500;">Upload Your CV (PDF)</label>
+            <div class="file-upload">
+              <input type="file" accept=".pdf,.doc,.docx" required>
+              <span><i class="fa-solid fa-cloud-arrow-up"></i> Choose file or drag and drop</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-accent">Submit Your CV</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING CONTACT -->
+  <div class="premium-contact">
+    <a href="tel:9330118686" class="premium-btn call-btn"><span class="ripple-ring"></span><span class="icon"><i class="fa-solid fa-phone"></i></span><span class="text">Call Us <small>Instant Support</small></span></a>
+    <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="premium-btn whatsapp-btn"><span class="ripple-ring"></span><span class="icon"><i class="fa-brands fa-whatsapp"></i></span><span class="text">WhatsApp <small>Chat Now</small></span><span class="badge">24/7</span></a>
+  </div>
+
+  <!-- AI CHATBOT -->
+  <div class="ni-ai-agent">
+    <div class="ai-panel" id="aiPanel">
+      <div class="ai-top"><div class="ai-top-info"><div class="ai-avatar">AI</div><div><h3>NI Group AI Concierge</h3><p><span class="ai-online-dot"></span>Online</p></div></div><button onclick="toggleAI()" aria-label="Close">&#215;</button></div>
+      <div class="ai-body" id="aiBody"><div class="ai-msg bot">Assalamu Alaikum! I can help with property queries, pricing, and site visits. Ask me anything!</div></div>
+      <div class="ai-options"><button onclick="askAI('Available Projects')">&#127970; Projects</button><button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button><button onclick="askAI('Price Details')">&#8377; Price</button><button onclick="askAI('Office Location')">&#128205; Location</button></div>
+      <div class="ai-actions"><a href="tel:9330118686">&#128222; Call</a><a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a></div>
+      <div class="ai-input"><input id="aiInput" placeholder="Ask me anything…" onkeypress="if(event.key==='Enter')sendAI()"><button onclick="sendAI()" aria-label="Send">&#10148;</button></div>
+    </div>
+    <button class="ai-launch" onclick="toggleAI()"><span class="pulse"></span><b>AI</b><span class="ai-label">CHAT</span></button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <img src="/NI_Group_Logo_final_COL.png" alt="NI Group" class="footer-logo">
+          <div class="footer-brand-divider"></div>
+          <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="leadership.html">Leadership</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 class="footer-title">Our Projects</h4><ul class="footer-links"><li><a href="invicta.html">INVICTA</a></li><li><a href="iris.html">IRIS</a></li><li><a href="iqra.html">IQRA</a></li><li><a href="paradizia.html">Paradizia</a></li><li><a href="inaya.html">INAYA – RESIDENCY</a></li><li><a href="inara.html">INARA – METRO</a></li><li><a href="ira.html">IRA – RESIDENCY</a></li></ul></div>
+        <div class="footer-col"><h4 class="footer-title">Contact Us</h4><div class="footer-contact"><p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Newtown, Kolkata – 700157</p><p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p><p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a></p><p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p><p><strong>Hours:</strong> Mon – Sat: 10:00 AM – 7:30 PM</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 NI Group of Companies — All Rights Reserved</p><p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p></div>
+    </div>
+  </footer>
+
 </body>
 </html>

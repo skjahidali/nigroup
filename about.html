@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – NI Group | Trusted Real Estate Developer Kolkata</title>
+    <meta name="description" content="Learn about NI Group – Kolkata's trusted real estate developer with 10+ years of legacy, 6+ own projects, and 500+ happy families across Newtown, Hatiara and beyond.">
+    <meta name="keywords" content="NI Group about us, real estate Kolkata, Saikh Ataur Rahaman, MD Mokim Sardar, nigrouprealty, property developer Kolkata">
+    <meta property="og:title"       content="About NI Group – Building Tomorrow, Today">
+    <meta property="og:description" content="Trusted real estate developer in Kolkata. 6+ own projects, 500+ happy families, 10+ years of legacy.">
+    <meta property="og:image"       content="/NI_Group_Logo_final_COL.png">
+    <link rel="icon"             type="image/png" href="/NI_Group_Logo_final_COL.png">
+    <link rel="apple-touch-icon" sizes="180x180"  href="/NI_Group_Logo_final_COL.png">
+    <meta name="theme-color" content="#1b3a7a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="standalone.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════ -->
+<header class="header" id="header">
+    <div class="header-container">
+
+        <a href="index.html" class="logo" aria-label="NI Group Home">
+            <div class="logo-wrapper">
+                <img id="headerLogo"
+                     class="logo-img"
+                     src="/NI_Group_Logo_final_COL.png"
+                     alt="NI Group – Buy Property Now Ask Me How!"
+                     width="260"
+                     height="96">
+            </div>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Main navigation">
+            <a href="index.html"          class="nav-link">Home</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#services" class="nav-link">Services</a>
+            <a href="about.html"          class="nav-link active">About Us</a>
+            <a href="index.html#directors" class="nav-link">Leadership</a>
+            <a href="index.html#contact"  class="nav-link">Contact</a>
+        </nav>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="navMobile">&#9776;</button>
+    </div>
+
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+        <a href="index.html"          class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="about.html"          class="nav-link active">About Us</a>
+        <a href="index.html#directors" class="nav-link">Leadership</a>
+        <a href="index.html#contact"  class="nav-link">Contact</a>
+    </nav>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     FLOATING CONTACT BUTTONS
+══════════════════════════════════════════════ -->
+<div class="premium-contact" aria-label="Quick contact">
+    <a href="tel:9330118686" class="premium-btn call-btn" aria-label="Call us">
+        <span class="ripple-ring"></span>
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="text">Call Us <small>Instant Support</small></span>
+    </a>
+    <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="premium-btn whatsapp-btn" aria-label="WhatsApp">
+        <span class="ripple-ring"></span>
+        <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+        <span class="text">WhatsApp <small>Chat Now</small></span>
+        <span class="badge">24/7</span>
+    </a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AI CONCIERGE
+══════════════════════════════════════════════ -->
+<div class="ni-ai-agent">
+    <div class="ai-panel" id="aiPanel">
+        <div class="ai-top">
+            <div class="ai-top-info">
+                <div class="ai-avatar">AI</div>
+                <div>
+                    <h3>NI Group AI Concierge</h3>
+                    <p><span class="ai-online-dot"></span>Online — ready to help</p>
+                </div>
+            </div>
+            <button onclick="toggleAI()" aria-label="Close">&#215;</button>
+        </div>
+
+        <div class="ai-body" id="aiBody">
+            <div class="ai-msg bot">Assalamu Alaikum &#128075; Welcome to <b>NI Group</b>. Looking for a flat, site visit, price details or location?</div>
+        </div>
+
+        <div class="ai-options">
+            <button onclick="askAI('Available Projects')">&#127970; Projects</button>
+            <button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button>
+            <button onclick="askAI('Price Details')">&#8377; Price</button>
+            <button onclick="askAI('Office Location')">&#128205; Location</button>
+        </div>
+
+        <div class="ai-actions">
+            <a href="tel:9330118686">&#128222; Call</a>
+            <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a>
+        </div>
+
+        <div class="ai-input">
+            <input id="aiInput" placeholder="Ask about NI Group…" onkeypress="if(event.key==='Enter')sendAI()">
+            <button onclick="sendAI()" aria-label="Send">&#10148;</button>
+        </div>
+    </div>
+
+    <button class="ai-launch" onclick="toggleAI()" aria-label="Open AI Concierge">
+        <span class="pulse"></span>
+        <b>AI</b>
+        <span class="ai-label">CHAT</span>
+    </button>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT HERO
+══════════════════════════════════════════════ -->
+<section class="about-hero" id="top">
+    <div class="about-hero-content container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-sep">&#8250;</span>
+            <span>About Us</span>
+        </nav>
+        <div class="about-hero-badge">&#9670; About NI Group</div>
+        <h1 class="about-hero-title">
+            Building Tomorrow, <span>Today</span>
+        </h1>
+        <p class="about-hero-desc">
+            A decade-long legacy of trust, quality, and innovation — NI Group stands as Kolkata's
+            most trusted real estate partner, transforming aspirations into addresses.
+        </p>
+        <a href="#story" class="about-hero-cta">Discover Our Story &#8595;</a>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════════ -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="stats-bar-grid">
+            <div class="stat-bar-item">
+                <span class="stat-bar-value">10+</span>
+                <span class="stat-bar-label">Years of Legacy</span>
+            </div>
+            <div class="stat-bar-item">
+                <span class="stat-bar-value">6+</span>
+                <span class="stat-bar-label">Own Projects</span>
+            </div>
+            <div class="stat-bar-item">
+                <span class="stat-bar-value">20+</span>
+                <span class="stat-bar-label">Partner Developers</span>
+            </div>
+            <div class="stat-bar-item">
+                <span class="stat-bar-value">500+</span>
+                <span class="stat-bar-label">Happy Families</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     OUR STORY
+══════════════════════════════════════════════ -->
+<section class="story-section" id="story">
+    <div class="container">
+        <div class="story-grid">
+            <div class="story-img-wrap">
+                <div class="story-badge">
+                    <span class="story-badge-num">10+</span>
+                    <span class="story-badge-label">Years of Trust</span>
+                </div>
+                <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=900"
+                     alt="NI Group Building" class="story-img-main">
+                <img src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600"
+                     alt="NI Group Construction" class="story-img-accent">
+            </div>
+
+            <div class="story-text">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title" style="text-align:left;">Who We Are</h2>
+
+                <p class="story-desc">
+                    NI Group is a forward-thinking real estate development company committed to crafting quality
+                    living spaces that inspire lifestyles and transform communities. Founded with a vision to redefine
+                    urban living, we have grown into one of Kolkata's most trusted names in real estate.
+                </p>
+
+                <p class="story-desc">
+                    With a legacy built on trust, innovation, and excellence, we specialize in residential, commercial,
+                    and plotted developments across Kolkata and beyond. Every project we undertake is a testament to our
+                    unwavering commitment to quality craftsmanship and thoughtful design.
+                </p>
+
+                <p class="story-desc">
+                    From our flagship INVICTA project at Kalikapur, Newtown — to our upcoming portfolio of
+                    IQRA, INARA Metro, INAYA Residency, IRA Residency, IRIS, and Paradizia — NI Group continues
+                    to shape Kolkata's skyline with purpose and passion.
+                </p>
+
+                <div class="story-highlights">
+                    <div class="story-highlight">
+                        <div class="story-hl-icon">&#127959;</div>
+                        <div class="story-hl-text">
+                            <h4>Quality Construction</h4>
+                            <p>Premium materials, meticulous craftsmanship</p>
+                        </div>
+                    </div>
+                    <div class="story-highlight">
+                        <div class="story-hl-icon">&#128204;</div>
+                        <div class="story-hl-text">
+                            <h4>Prime Locations</h4>
+                            <p>Newtown, Hatiara &amp; key Kolkata zones</p>
+                        </div>
+                    </div>
+                    <div class="story-highlight">
+                        <div class="story-hl-icon">&#129309;</div>
+                        <div class="story-hl-text">
+                            <h4>Customer First</h4>
+                            <p>500+ families, end-to-end support</p>
+                        </div>
+                    </div>
+                    <div class="story-highlight">
+                        <div class="story-hl-icon">&#127968;</div>
+                        <div class="story-hl-text">
+                            <h4>Timely Delivery</h4>
+                            <p>On-schedule handovers, always</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VISION & MISSION
+══════════════════════════════════════════════ -->
+<section class="vm-section" id="vision">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Our Foundation</span>
+            <h2 class="section-title">Vision &amp; Mission</h2>
+            <p class="section-desc">Our core beliefs and strategic purpose that guide every decision at NI Group.</p>
+        </div>
+
+        <div class="vm-grid">
+            <div class="vm-card vision">
+                <div class="vm-card-icon">&#128161;</div>
+                <h3 class="vm-card-title">Our Vision</h3>
+                <p class="vm-card-text">
+                    To become a leading and trusted real estate developer in India by redefining urban living
+                    with innovative, sustainable, and value-driven spaces that stand the test of time and
+                    elevate the lives of every family we serve.
+                </p>
+            </div>
+
+            <div class="vm-card mission">
+                <div class="vm-card-icon">&#127919;</div>
+                <h3 class="vm-card-title">Our Mission</h3>
+                <ul class="vm-card-list">
+                    <li>Deliver superior real estate solutions with uncompromising quality and craftsmanship.</li>
+                    <li>Ensure timely project completion and complete customer satisfaction at every stage.</li>
+                    <li>Contribute to urban growth with sustainable, aesthetic, and community-enhancing developments.</li>
+                    <li>Build transparent relationships with customers, partners, and stakeholders based on trust.</li>
+                    <li>Continually innovate in design, planning, and delivery to set new industry benchmarks.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     OUR VALUES
+══════════════════════════════════════════════ -->
+<section class="values-section" id="values">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">What We Stand For</span>
+            <h2 class="section-title">Our Core Values</h2>
+            <p class="section-desc">The principles that define who we are and how we operate — every single day.</p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon" style="background:linear-gradient(135deg,rgba(227,30,36,.25),rgba(27,58,122,.25));">&#129293;</div>
+                <h3 class="value-title">Integrity</h3>
+                <p class="value-desc">Transparent dealings, honest communication, and ethical practices in every transaction and relationship.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon" style="background:linear-gradient(135deg,rgba(251,191,36,.2),rgba(249,115,22,.2));">&#11088;</div>
+                <h3 class="value-title">Excellence</h3>
+                <p class="value-desc">Uncompromising quality in construction, design, and customer service — from foundation to finishing.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon" style="background:linear-gradient(135deg,rgba(34,197,94,.2),rgba(16,185,129,.2));">&#127775;</div>
+                <h3 class="value-title">Innovation</h3>
+                <p class="value-desc">Embracing modern architecture, smart planning, and technology to deliver forward-thinking living spaces.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon" style="background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(99,102,241,.2));">&#129309;</div>
+                <h3 class="value-title">Customer First</h3>
+                <p class="value-desc">Every decision is made with our customers at the center — their trust is our greatest achievement.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon" style="background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(236,72,153,.2));">&#127758;</div>
+                <h3 class="value-title">Sustainability</h3>
+                <p class="value-desc">Building with a conscience — eco-friendly practices, green spaces, and responsible development.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon" style="background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(239,68,68,.2));">&#127942;</div>
+                <h3 class="value-title">Commitment</h3>
+                <p class="value-desc">We honor our promises — timely delivery, project milestones, and long-term post-sale support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MILESTONES TIMELINE
+══════════════════════════════════════════════ -->
+<section class="timeline-section" id="milestones">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Our Journey</span>
+            <h2 class="section-title">Key Milestones</h2>
+            <p class="section-desc">A decade of growth, trust, and transforming dreams into addresses across Kolkata.</p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2013 – Foundation</span>
+                <h3 class="timeline-title">NI Group Is Born</h3>
+                <p class="timeline-text">NI Group was founded by Saikh Ataur Rahaman &amp; MD Mokim Sardar with a shared dream — to bring quality, affordable homes to families across Kolkata.</p>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2016 – First Project</span>
+                <h3 class="timeline-title">First Residential Project Launched</h3>
+                <p class="timeline-text">NI Group delivered its first residential apartments, setting the standard for quality construction and timely handover that defines us today.</p>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2019 – INVICTA</span>
+                <h3 class="timeline-title">Flagship Project: INVICTA</h3>
+                <p class="timeline-text">Launched INVICTA at Kalikapur, Newtown — a landmark project that marked NI Group's position as a premium developer in the Newtown corridor.</p>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2021 – 500 Families</span>
+                <h3 class="timeline-title">500+ Happy Families Milestone</h3>
+                <p class="timeline-text">Crossed 500 happy homeowners — a proud testament to the trust families place in NI Group for the most important purchase of their lives.</p>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2023 – Expansion</span>
+                <h3 class="timeline-title">Multi-Project Portfolio Launch</h3>
+                <p class="timeline-text">Announced 6 upcoming projects — IRIS, IQRA, INAYA Residency, INARA Metro, IRA Residency, and Paradizia — across the Newtown–Hatiara growth belt.</p>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2024 – Digital</span>
+                <h3 class="timeline-title">AI-Powered Customer Experience</h3>
+                <p class="timeline-text">Launched AI concierge and digital-first customer journey tools, making property discovery seamless and transparent for every buyer.</p>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">2025+ – Future</span>
+                <h3 class="timeline-title">NI Group 2.0 — Building at Scale</h3>
+                <p class="timeline-text">Expanding across West Bengal with 20+ partner developers, new commercial ventures, and a vision to house 5,000+ families by 2028.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LEADERSHIP TEAM
+══════════════════════════════════════════════ -->
+<section class="leadership-section" id="leadership">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Leadership Team</span>
+            <h2 class="section-title">Meet Our Directors</h2>
+            <p class="section-desc">Visionary leaders shaping premium lifestyles and transforming modern communities with trust, innovation, and excellence.</p>
+        </div>
+
+        <div class="directors-grid">
+            <div class="director-card">
+                <div class="director-image-wrap">
+                    <div class="director-image" style="background-image:url('https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop');"></div>
+                    <div class="director-badge">Co-Founder &amp; Director</div>
+                </div>
+                <div class="director-info">
+                    <h3 class="director-name">Saikh Ataur Rahaman</h3>
+                    <p class="director-role">Director, NI Group of Companies</p>
+                    <p class="director-bio">Visionary real estate entrepreneur with expertise in premium housing, strategic growth, and customer-centric development solutions across Kolkata. With over a decade of experience in the property sector, Saikh Ataur Rahaman has been instrumental in establishing NI Group as one of Kolkata's most trusted real estate brands.</p>
+                    <div class="director-socials">
+                        <a href="https://www.linkedin.com/in/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://www.instagram.com/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://www.facebook.com/ataur.rahaman.792" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="director-card">
+                <div class="director-image-wrap">
+                    <div class="director-image" style="background-image:url('https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop');"></div>
+                    <div class="director-badge">Co-Founder &amp; Director</div>
+                </div>
+                <div class="director-info">
+                    <h3 class="director-name">MD Mokim Sardar</h3>
+                    <p class="director-role">Director, NI Group of Companies</p>
+                    <p class="director-bio">Experienced leader in project execution, community development, and delivering thoughtfully designed residential experiences with quality assurance. MD Mokim Sardar's hands-on approach to construction management and his deep commitment to customer satisfaction have been pillars of NI Group's growth.</p>
+                    <div class="director-socials">
+                        <a href="https://www.linkedin.com/in/md-mokim-sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://www.instagram.com/mdmokim.sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://www.facebook.com/md.mokim.sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA
+══════════════════════════════════════════════ -->
+<section class="about-cta">
+    <div class="container about-cta-content">
+        <h2>Ready to Find Your Dream Home?</h2>
+        <p>Join 500+ happy families who trusted NI Group. Explore our projects in Newtown, Hatiara, and across Kolkata — premium homes at honest prices.</p>
+        <div class="about-cta-btns">
+            <a href="index.html#projects" class="btn-cta-primary">Explore Our Projects &rarr;</a>
+            <a href="tel:9330118686"       class="btn-cta-secondary"><i class="fa-solid fa-phone"></i> Call 9330118686</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col footer-brand">
+                <img src="/NI_Group_Logo_final_COL.png"
+                     alt="NI Group – nigrouprealty.com"
+                     class="footer-logo">
+                <div class="footer-brand-divider"></div>
+                <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
+                <div class="footer-socials" aria-label="Social links">
+                    <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/NiGroup/"           target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/"                   target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://x.com/"                              target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/"                    target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#directors">Leadership</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Our Projects</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#projects">INVICTA</a></li>
+                    <li><a href="index.html#projects">IRIS</a></li>
+                    <li><a href="index.html#projects">IQRA</a></li>
+                    <li><a href="index.html#projects">Paradizia</a></li>
+                    <li><a href="index.html#projects">INAYA – RESIDENCY</a></li>
+                    <li><a href="index.html#projects">INARA – METRO</a></li>
+                    <li><a href="index.html#projects">IRA – RESIDENCY</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contact Us</h4>
+                <div class="footer-contact">
+                    <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Newtown, Kolkata – 700157</p>
+                    <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
+                    <p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
+                    <p><strong>Sales:</strong> <a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a></p>
+                    <p><strong>Web:</strong> <a href="https://www.nigrouprealty.com" target="_blank" rel="noopener noreferrer">www.nigrouprealty.com</a></p>
+                    <p><strong>Hours:</strong> Mon – Sat: 10:00 AM – 7:30 PM</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 NI Group of Companies — All Rights Reserved</p>
+            <p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="/src/standalone.js" type="module"></script>
+</body>
+</html>

@@ -1,530 +1,395 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NI Group – Building Tomorrow, Today</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>NI Group – Trusted Real Estate Developer & Builder in Kolkata | nigrouprealty.com</title>
+    <meta name="description" content="NI Group – Kolkata's trusted real estate developer. Premium apartments, gated communities and commercial spaces in Newtown, Hatiara and beyond. Buy Property Now – Ask Me How!">
+    <meta name="keywords" content="NI Group, real estate Kolkata, apartments Newtown, property developer, INVICTA, INARA Metro, IRA Residency, IQRA, INAYA, nigrouprealty">
+    <meta property="og:title"       content="NI Group – Buy Property Now Ask Me How!">
+    <meta property="og:description" content="Trusted real estate developer in Kolkata. 6+ own projects, 500+ happy families.">
+    <meta property="og:image"       content="NI_GROUP_COLOR_LOGO.png">
+    <meta property="og:url"         content="https://www.nigrouprealty.com">
+    <link rel="icon"             type="image/png" href="NI_GROUP_COLOR_LOGO.png">
+    <link rel="apple-touch-icon" sizes="180x180"  href="NI_GROUP_COLOR_LOGO.png">
+    <meta name="theme-color" content="#1b3a7a">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="standalone.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Favicon -->
-<link rel="icon" type="image/png" href="./NIRealty-1-png.png">
-
-<!-- Apple iPhone icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="./NIRealty-1-png.png">
-
-<!-- Android / PWA -->
-<link rel="icon" sizes="192x192" href="./NIRealty-1-png.png">
-
-<meta name="theme-color" content="#166534">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Website Tab Logo / Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png">
-
-<!-- Apple / iPhone -->
-<link rel="apple-touch-icon" sizes="180x180" href="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png">
+    <link rel="stylesheet" href="standalone.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="header-container">
-            <a href="#home" class="logo">
-                <img id="headerLogo" class="logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAEWCAMAAADBxNbSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAKTUlEQVR42uzd27rjNgiGYbj/m+5Bn7Yz05VYG+BH8qfDrsSO4a0s8GbMGQzhMELAACADgAwGABkAZDAAyAAggwHAvUMLGAABIAABCEAGAF8J8P7/GQDYB+ArJ2LDnxAgZ38AlgNk0QlAgT+qHQAKAFJmA1ACEHgAlACkswhASQ1CUxuAGoBcTwGg6AwMPQCKAEIPgCKA3MEAQBFA7p4BoKgG4c6tv2MAQAFA7P0eTgA2BPiec2XO4QIQe1KDAATffFgBKAX47qo1OAiGP/AtxhaAxQCxl0AQgODbCi8A8wECLpEgAMEnJWj4Q99+kAGYABBiM1EGIACPJAhAAEoFAhB/cZEGIADFoQYgZ+CzBAIQgMHRfj1AmoAnCTT0AVAp0NCHv/jAvxEgt78cKdDQB8CM+L8JIHefHizQ0AdApUBDHwCTUnE7QB67vEGgoQ+AaRm5FiBvPbhGoKEPgIl5uQ4g7xy6TKDBD4Cp2bkHIK/8u3EKNPjhTzkFGvoAmJym4wGaAfDaKdDQB0DlFGiX8eOBkI7pOhTgGhsAAlDID38tc3YewGUzADxrCrQr9NnOdwGonALtoskPgABU8wNg1+wdAnCfCgABKOSHPwAq+QGwbw6bA4xSAkAACvkBEIBSfgBsnMquAGN9ABCAQn74A6CSHwABKOUHQABW9/0AeIq/D3G1m/gBEIBSfgAEoJQf/gCo5AdAAEpKXwAe4a8HwFwOIc+OAOlegNmzEQABKOTnBkAAahZ/0wBZA9ZnWAuwohYIAQikGwHWlKIABKCQHzVIb386gGWdONqAABTyC3qVIJLuAliYfwC29icBWJp+/AFQN/0BsLu/eoAryeeZ4HdNgJkAl1K/gwSA502AeQAXM69+KwcALwG4mvcNJSEXggF4BcD1eacE4NLbtBmbCS8EuHHa2zhRAvDACTADoOX7A+AtE2ACwK1V/06tkAcwnefh/q0TwL2qcwNgzErzebMzh70UsKdPjf61bpbfat524jfz/RKAEef/lXjlAow2aH0Abjfd1AAHNzm384V4BQCsa3f2Abjf8+0EMHDmng/XFMDpCTCU4F5/3xpNf3ObyAY4tff4qh2AAn87AC0YYPDe5481cwkYKdCaAAy55JpbP89UDOF79y2yGQCtg78ogEGX/AH4vB4FYNb0N72dxCVg5t5XvpAC0Br4iwEYdsdTF4A//WG0YP60i8fucyzAkZuAyjKfDDDujruNLSUC/Pl73wF+2croDmwB4NNP8hsByvzN3sUwDHAS2th/H2KwBNAmAH75g8SfWx9+W/fRhNYgY0u3IIAjO9hcAmYBtAYAI/1dAXDSk81qWgA4dVWveAJ0a+SvC8D5S2LvBGh6gKH8tl4hmLUE3AQ47+kcgEFnvUb+GgLcXG8Nd0gethXShQkGaHqAen9Dz7mNn67nfAAwZNnVx18VQGsE0AMARvwkmT+3Pv7WnixPBZiSbZsGaP0AmhxgOL87AHoyQE/5STp/bn38Lb5bI7oGsTYAvS1AkwPM8HcYwNkuzMZ81g1gaOV5ur/Rl7qtFME5660KgNYDoCcBTPH3FoAmBthrAnRr468KoF0GsLwIDm59tPG3/n6/UICmBdi/CxOce2vjTw4woQi2aID6GiS895bpL7OzHX/VeOgM6aME9hd0OQBtD6CpAeb58xp/AGzlz+0d/oKK4Mcfnn1jgRhgRvOtiz/5GbgIoLgLs3UGNjXATH8XArQ5GyVdmG7+0gD6cQAjloADTyRpuzBVpyhPAZjq77YieGQJWl6DVJ2iPAVgrr+7iuCh/VcXwWVrdE8BeLK/KoADAZEArK0RPQVgsr87apBIgEFdGMFFAjVAB+CQv5ouTHN/bk0mwCY1SApATwS4OAG28efWxN8VNchAQMq7MM39DQLM93ctwKl7AeJrkO7+wgH6hQAXt/hjPDoA7OTP7Q3+Nh9K3wA4cedMFUBv5c+th7+hwk1VBC9usSVAb+YvFqBnAvQbAGq7MMknJk8CWOFvrHOQvgTcBPhMprwL456blf32Ww9/TQCaFqA1A1jg7yyALgE4vEXPALi5BKzit95+O8VfCEB7G8D2/txa+HsjQO8NsMhfGEAvAeh1AH0d4PIjQY0AVvlza+Fv+PK5oggebnk8CyjvwrT3dxpAB2BBDWJ1/txa+GsC0LQAu3RhKv3FACzwZxsXjeMBri7CjujClPr7DtAuA2hvA9h7+RcG0AE4D7BpEWzF/tw6+POQ06iiBrkNYLm/AID+ZoCWBFDUhan39w2g9QTo/QF+2lDzLowJ/O0DdAAGAVR3YRT8vgFs5S8EoEUB9BsBavydCNDDJ0CLyLb3A9j99BsA0K8A6N0AejVAmb/PAK0VwI1wLS0B0wFG9FSmTv8dT7/7AP3lAC0Q4NNvzlsCmtDfHkAXAXQBQFMDtCyAUn8fAfaaAEMATl3mkwIc+4qFANTy2wPoJwD0GICT2X5uII3tYP72/skEqf0dCtD7AfRqgPNi9/nF+/sEsLYVNL+rlC7MYLZTANr0WTsAoJ7fsQA9G6BlAFz4B2RGTvITrZ5m098WQL8b4JfW95ynLU4+dD1yaQnYgt+5AOfv1p7+yMdvxgC0R9+jP8kXAFoTf+sAK/1tAPR1gB8fRQ4C+GEH3w/z6/8Q4wC78PsE0N4J0Dc2uQQwpOPk0wCtj79lgK4G6GEAPQLgUI9uJbDrAA+Y/k4B6FUAv75bdBHg3BQ4f5g+CdBa+TsYoHcGuDoFzh+mzwFsxm8ZoB8HcGEN9cenJmqQwUeDA6Z6nwPYzl8DgJYJ0KMAegXA+eMcvKDXlt8qQO8A0DMA+ufPxAD0+agurhhP4AfAsTz9+gffBPjN+FyMHj54hD839Rk40m7uZmdqkIl3IKxet3363BH8FgH69aPgGujsLnYy0JYfAF8xGvsDIPy06QUg/KTJXamCyeq9/MqTC0D8SVMLQPhJEwtA+EnTGnD9mwE/ADKO5AdA+IlTCkD4aX/u/FGQY/gBkHEFPwDCD4CM9/Jbej0buYYfABlb/Br9dADCryNAByD8AMi4nB8A4dcVoAOQwheAjIsnvweADkD4AZBxNb+vABGIPi1AByD8AMi4mN8DQAcg+hoCRCD8igAyBaJPC9ABeB6/sw7OEcjk1xmgA5DJrx1ABKKvDCBTIPy0ABGIPi1AByD6pAARiD4tQAT25HfDES9HBi3oKwT4Q3gQg75KgAhEnxYgAtGnBegARJ8U4P/iBaBCfZfGwBGIvoMA/hk4IKGvGCACwacFCEH0iQHu/fvx6APfNsDfgwkt8JUDRCD6tAAhCD4xwN+iizTwCQBCMEbfi6MUGWjQLeB7e6RC44088EkAQhB8YoAYxJ4a4H9JAB/2NAD/zQX4sCcC+CaD2OsJ8J/cYA97MoDgwx4AoQfAt9kjUAAU2SNOANTQI0wAhB4A3ySPKAFQQo8YARB4AHwNPHQAUAAPEwAsZ4cDABarI/MALIRHngHIYACQAUAGA4AMADIYAGQAkAFABkM2/hJgAOVoDS3jskpBAAAAAElFTkSuQmCC" data-default-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAEWCAMAAADBxNbSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////////VXz1bAAAAAJ0Uk5T/wDltzBKAAAKTUlEQVR42uzd27rjNgiGYbj/m+5Bn7Yz05VYG+BH8qfDrsSO4a0s8GbMGQzhMELAACADgAwGABkAZDAAyAAggwHAvUMLGAABIAABCEAGAF8J8P7/GQDYB+ArJ2LDnxAgZ38AlgNk0QlAgT+qHQAKAFJmA1ACEHgAlACkswhASQ1CUxuAGoBcTwGg6AwMPQCKAEIPgCKA3MEAQBFA7p4BoKgG4c6tv2MAQAFA7P0eTgA2BPiec2XO4QIQe1KDAATffFgBKAX47qo1OAiGP/AtxhaAxQCxl0AQgODbCi8A8wECLpEgAMEnJWj4Q99+kAGYABBiM1EGIACPJAhAAEoFAhB/cZEGIADFoQYgZ+CzBAIQgMHRfj1AmoAnCTT0AVAp0NCHv/jAvxEgt78cKdDQB8CM+L8JIHefHizQ0AdApUBDHwCTUnE7QB67vEGgoQ+AaRm5FiBvPbhGoKEPgIl5uQ4g7xy6TKDBD4Cp2bkHIK/8u3EKNPjhTzkFGvoAmJym4wGaAfDaKdDQB0DlFGiX8eOBkI7pOhTgGhsAAlDID38tc3YewGUzADxrCrQr9NnOdwGonALtoskPgABU8wNg1+wdAnCfCgABKOSHPwAq+QGwbw6bA4xSAkAACvkBEIBSfgBsnMquAGN9ABCAQn74A6CSHwABKOUHQABW9/0AeIq/D3G1m/gBEIBSfgAEoJQf/gCo5AdAAEpKXwAe4a8HwFwOIc+OAOlegNmzEQABKOTnBkAAahZ/0wBZA9ZnWAuwohYIAQikGwHWlKIABKCQHzVIb386gGWdONqAABTyC3qVIJLuAliYfwC29icBWJp+/AFQN/0BsLu/eoAryeeZ4HdNgJkAl1K/gwSA502AeQAXM69+KwcALwG4mvcNJSEXggF4BcD1eacE4NLbtBmbCS8EuHHa2zhRAvDACTADoOX7A+AtE2ACwK1V/06tkAcwnefh/q0TwL2qcwNgzErzebMzh70UsKdPjf61bpbfat524jfz/RKAEef/lXjlAow2aH0Abjfd1AAHNzm384V4BQCsa3f2Abjf8+0EMHDmng/XFMDpCTCU4F5/3xpNf3ObyAY4tff4qh2AAn87AC0YYPDe5481cwkYKdCaAAy55JpbP89UDOF79y2yGQCtg78ogEGX/AH4vB4FYNb0N72dxCVg5t5XvpAC0Br4iwEYdsdTF4A//WG0YP60i8fucyzAkZuAyjKfDDDujruNLSUC/Pl73wF+2croDmwB4NNP8hsByvzN3sUwDHAS2th/H2KwBNAmAH75g8SfWx9+W/fRhNYgY0u3IIAjO9hcAmYBtAYAI/1dAXDSk81qWgA4dVWveAJ0a+SvC8D5S2LvBGh6gKH8tl4hmLUE3AQ47+kcgEFnvUb+GgLcXG8Nd0gethXShQkGaHqAen9Dz7mNn67nfAAwZNnVx18VQGsE0AMARvwkmT+3Pv7WnixPBZiSbZsGaP0AmhxgOL87AHoyQE/5STp/bn38Lb5bI7oGsTYAvS1AkwPM8HcYwNkuzMZ81g1gaOV5ur/Rl7qtFME5660KgNYDoCcBTPH3FoAmBthrAnRr468KoF0GsLwIDm59tPG3/n6/UICmBdi/CxOce2vjTw4woQi2aID6GiS895bpL7OzHX/VeOgM6aME9hd0OQBtD6CpAeb58xp/AGzlz+0d/oKK4Mcfnn1jgRhgRvOtiz/5GbgIoLgLs3UGNjXATH8XArQ5GyVdmG7+0gD6cQAjloADTyRpuzBVpyhPAZjq77YieGQJWl6DVJ2iPAVgrr+7iuCh/VcXwWVrdE8BeLK/KoADAZEArK0RPQVgsr87apBIgEFdGMFFAjVAB+CQv5ouTHN/bk0mwCY1SApATwS4OAG28efWxN8VNchAQMq7MM39DQLM93ctwKl7AeJrkO7+wgH6hQAXt/hjPDoA7OTP7Q3+Nh9K3wA4cedMFUBv5c+th7+hwk1VBC9usSVAb+YvFqBnAvQbAGq7MMknJk8CWOFvrHOQvgTcBPhMprwL456blf32Ww9/TQCaFqA1A1jg7yyALgE4vEXPALi5BKzit95+O8VfCEB7G8D2/txa+HsjQO8NsMhfGEAvAeh1AH0d4PIjQY0AVvlza+Fv+PK5oggebnk8CyjvwrT3dxpAB2BBDWJ1/txa+GsC0LQAu3RhKv3FACzwZxsXjeMBri7CjujClPr7DtAuA2hvA9h7+RcG0AE4D7BpEWzF/tw6+POQ06iiBrkNYLm/AID+ZoCWBFDUhan39w2g9QTo/QF+2lDzLowJ/O0DdAAGAVR3YRT8vgFs5S8EoEUB9BsBavydCNDDJ0CLyLb3A9j99BsA0K8A6N0AejVAmb/PAK0VwI1wLS0B0wFG9FSmTv8dT7/7AP3lAC0Q4NNvzlsCmtDfHkAXAXQBQFMDtCyAUn8fAfaaAEMATl3mkwIc+4qFANTy2wPoJwD0GICT2X5uII3tYP72/skEqf0dCtD7AfRqgPNi9/nF+/sEsLYVNL+rlC7MYLZTANr0WTsAoJ7fsQA9G6BlAFz4B2RGTvITrZ5m098WQL8b4JfW95ynLU4+dD1yaQnYgt+5AOfv1p7+yMdvxgC0R9+jP8kXAFoTf+sAK/1tAPR1gB8fRQ4C+GEH3w/z6/8Q4wC78PsE0N4J0Dc2uQQwpOPk0wCtj79lgK4G6GEAPQLgUI9uJbDrAA+Y/k4B6FUAv75bdBHg3BQ4f5g+CdBa+TsYoHcGuDoFzh+mzwFsxm8ZoB8HcGEN9cenJmqQwUeDA6Z6nwPYzl8DgJYJ0KMAegXA+eMcvKDXlt8qQO8A0DMA+ufPxAD0+agurhhP4AfAsTz9+gffBPjN+FyMHj54hD839Rk40m7uZmdqkIl3IKxet3363BH8FgH69aPgGujsLnYy0JYfAF8xGvsDIPy06QUg/KTJXamCyeq9/MqTC0D8SVMLQPhJEwtA+EnTGnD9mwE/ADKO5AdA+IlTCkD4aX/u/FGQY/gBkHEFPwDCD4CM9/Jbej0buYYfABlb/Br9dADCryNAByD8AMi4nB8A4dcVoAOQwheAjIsnvweADkD4AZBxNb+vABGIPi1AByD8AMi4mN8DQAcg+hoCRCD8igAyBaJPC9ABeB6/sw7OEcjk1xmgA5DJrx1ABKKvDCBTIPy0ABGIPi1AByD6pAARiD4tQAT25HfDES9HBi3oKwT4Q3gQg75KgAhEnxYgAtGnBegARJ8U4P/iBaBCfZfGwBGIvoMA/hk4IKGvGCACwacFCEH0iQHu/fvx6APfNsDfgwkt8JUDRCD6tAAhCD4xwN+iizTwCQBCMEbfi6MUGWjQLeB7e6RC44088EkAQhB8YoAYxJ4a4H9JAB/2NAD/zQX4sCcC+CaD2OsJ8J/cYA97MoDgwx4AoQfAt9kjUAAU2SNOANTQI0wAhB4A3ySPKAFQQo8YARB4AHwNPHQAUAAPEwAsZ4cDABarI/MALIRHngHIYACQAUAGA4AMADIYAGQAkAFABkM2/hJgAOVoDS3jskpBAAAAAElFTkSuQmCC" data-colored-src="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" alt="NI Group logo" title="NI Group">
-            </a>
 
-            <nav class="nav-desktop" aria-label="Main navigation">
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
+<header class="header" id="header">
+    <div class="header-container">
 
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
+        <a href="index.html" class="logo" aria-label="NI Group Home">
+            <div class="logo">
+                <img class="logo-img"
+                     src="Project Photo/NI GROUP COLOR LOGO.png"
+                     alt="NI Group – Buy Property Now Ask Me How!"
+                     width="260" height="96">
+            </div>
+        </a>
 
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
-                <span class="menu-icon">☰</span>
-            </button>
+        <nav class="nav-desktop" aria-label="Main navigation">
+            <a href="index.html" class="nav-link active">Home</a>
+
+            <div class="nav-dropdown">
+                <a href="#projects" class="nav-link">Projects <span class="chevron">&#9660;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="invicta.html"  class="dropdown-item">
+                        <span class="di-dot" style="background:#16a34a;"></span>
+                        INVICTA
+                        <span class="di-status completed">Done</span>
+                    </a>
+                    <a href="iris.html"    class="dropdown-item">
+                        <span class="di-dot" style="background:#d97706;"></span>
+                        IRIS
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="iqra.html"    class="dropdown-item">
+                        <span class="di-dot" style="background:#d97706;"></span>
+                        IQRA
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="paradizia.html" class="dropdown-item">
+                        <span class="di-dot" style="background:#d97706;"></span>
+                        Paradizia
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="inaya.html"   class="dropdown-item">
+                        <span class="di-dot" style="background:#d97706;"></span>
+                        INAYA Residency
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="inara.html"   class="dropdown-item">
+                        <span class="di-dot" style="background:#d97706;"></span>
+                        INARA Metro
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="ira.html"     class="dropdown-item">
+                        <span class="di-dot" style="background:#d97706;"></span>
+                        IRA Residency
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="about.html"  class="nav-link">About Us</a>
+            <a href="blog.html"   class="nav-link">Blog</a>
+            <a href="careers.html" class="nav-link">Careers</a>
+            <a href="#contact"    class="nav-link">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
+    </div>
+
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+        <a href="index.html"  class="nav-link">Home</a>
+
+        <div class="nav-link-wrap">
+            <span class="nav-link mobile-dropdown-toggle">
+                Projects <span class="m-chevron" style="transition:transform .3s;">&#9660;</span>
+            </span>
+            <div class="mobile-sub-menu">
+                <a href="invicta.html"   class="nav-link">INVICTA</a>
+                <a href="iris.html"      class="nav-link">IRIS</a>
+                <a href="iqra.html"      class="nav-link">IQRA</a>
+                <a href="paradizia.html" class="nav-link">Paradizia</a>
+                <a href="inaya.html"     class="nav-link">INAYA Residency</a>
+                <a href="inara.html"     class="nav-link">INARA Metro</a>
+                <a href="ira.html"       class="nav-link">IRA Residency</a>
+            </div>
         </div>
 
-        <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+        <a href="about.html"      class="nav-link">About Us</a>
+        <a href="blog"       class="nav-link">Blog</a>
+        <a href="careers"    class="nav-link">Careers</a>
+        <a href="#contact"        class="nav-link">Contact</a>
+    </nav>
+</header>
 
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-    </header>
-
-   
-<!-- Premium Floating Contact -->
-<div class="premium-contact">
-
-    <a href="tel:9330118686" class="premium-btn call-btn">
-        <span class="ripple"></span>
-        <span class="icon">
-            <i class="fa-solid fa-phone"></i>
-        </span>
-        <span class="text">
-            Call Us
-            <small>Instant Support</small>
-        </span>
+<!-- ═══ FLOATING CONTACT ═════════════════════════════════ -->
+<div class="premium-contact" aria-label="Quick contact">
+    <a href="tel:9330118686" class="premium-btn call-btn" aria-label="Call us">
+        <span class="ripple-ring"></span>
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="text">Call Us <small>Instant Support</small></span>
     </a>
-
-    <a href="https://wa.me/919330118686" target="_blank" class="premium-btn whatsapp-btn">
-        <span class="ripple"></span>
-        <span class="icon">
-            <i class="fa-brands fa-whatsapp"></i>
-        </span>
-        <span class="text">
-            WhatsApp
-            <small>Chat Now</small>
-        </span>
+    <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="premium-btn whatsapp-btn" aria-label="WhatsApp">
+        <span class="ripple-ring"></span>
+        <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+        <span class="text">WhatsApp <small>Chat Now</small></span>
         <span class="badge">24/7</span>
     </a>
-
 </div>
 
-<style>
-.premium-contact{
-    position:fixed;
-    right:20px;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:99999;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-
-.premium-btn{
-    position:relative;
-    width:68px;
-    height:68px;
-    display:flex;
-    align-items:center;
-    border-radius:100px;
-    overflow:hidden;
-    text-decoration:none;
-    backdrop-filter:blur(20px);
-    box-shadow:
-        0 10px 40px rgba(0,0,0,.25),
-        0 0 25px rgba(255,255,255,.1);
-    transition:all .45s ease;
-    color:#fff;
-    border:1px solid rgba(255,255,255,.18);
-    animation:float 3s ease-in-out infinite;
-}
-
-.premium-btn:hover{
-    width:220px;
-    transform:translateX(-8px);
-}
-
-.premium-btn .icon{
-    min-width:68px;
-    height:68px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:26px;
-    z-index:2;
-}
-
-.premium-btn .text{
-    display:flex;
-    flex-direction:column;
-    opacity:0;
-    transition:.4s;
-    white-space:nowrap;
-    font-weight:700;
-    font-size:15px;
-    z-index:2;
-}
-
-.premium-btn .text small{
-    font-size:11px;
-    opacity:.85;
-    font-weight:500;
-    margin-top:2px;
-}
-
-.premium-btn:hover .text{
-    opacity:1;
-}
-
-.call-btn{
-    background:linear-gradient(
-        135deg,
-        #0b2d20,
-        #0f766e,
-        #d4af37
-    );
-}
-
-.call-btn:hover{
-    box-shadow:
-    0 15px 45px rgba(212,175,55,.45);
-}
-
-.whatsapp-btn{
-    background:linear-gradient(
-        135deg,
-        #075e54,
-        #25d366,
-        #128c7e
-    );
-}
-
-.whatsapp-btn:hover{
-    box-shadow:
-    0 15px 45px rgba(37,211,102,.45);
-}
-
-.badge{
-    position:absolute;
-    top:8px;
-    right:10px;
-    background:#fff;
-    color:#111;
-    font-size:10px;
-    font-weight:700;
-    padding:3px 7px;
-    border-radius:20px;
-    z-index:3;
-}
-
-.ripple{
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:100px;
-    background:rgba(255,255,255,.08);
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%{
-        transform:scale(1);
-        opacity:.5;
-    }
-    70%{
-        transform:scale(1.15);
-        opacity:0;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-/* Mobile Bottom Floating Bar */
-@media(max-width:768px){
-
-    .premium-contact{
-        top:auto;
-        bottom:20px;
-        right:15px;
-        transform:none;
-        gap:12px;
-    }
-
-    .premium-btn{
-        width:62px;
-        height:62px;
-    }
-
-    .premium-btn:hover{
-        width:62px;
-    }
-
-    .premium-btn .text,
-    .badge{
-        display:none;
-    }
-
-    .premium-btn .icon{
-        min-width:62px;
-        height:62px;
-        font-size:24px;
-    }
-}
-</style>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">Kolkata's Trusted Real Estate Developer</div>
-            <h1 class="hero-title">Crafting <span class="text-orange">Your Home</span><br>Story</h1>
-            <p class="hero-tagline">Building Tomorrow, Today</p>
-            <p class="hero-desc">Building more than homes — we create spaces where families find comfort, happiness, and a place to belong.</p>
-
-            <div class="hero-ctas">
-                <a href="#projects" class="btn btn-primary">Explore Our Projects</a>
-                <a href="#about" class="btn btn-secondary">Know More About Us</a>
+<!-- ═══ AI CONCIERGE ═════════════════════════════════════ -->
+<div class="ni-ai-agent">
+    <div class="ai-panel" id="aiPanel">
+        <div class="ai-top">
+            <div class="ai-top-info">
+                <div class="ai-avatar">AI</div>
+                <div>
+                    <h3>NI Group AI Concierge</h3>
+                    <p><span class="ai-online-dot"></span>Online — ready to help</p>
+                </div>
             </div>
+            <button onclick="toggleAI()" aria-label="Close">&#215;</button>
+        </div>
+        <div class="ai-body" id="aiBody">
+            <div class="ai-msg bot">Assalamu Alaikum &#128075; Welcome to <b>NI Group</b>. Looking for a flat, site visit, price details or location?</div>
+        </div>
+        <div class="ai-options">
+            <button onclick="askAI('Available Projects')">&#127970; Projects</button>
+            <button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button>
+            <button onclick="askAI('Price Details')">&#8377; Price</button>
+            <button onclick="askAI('Office Location')">&#128205; Location</button>
+        </div>
+        <div class="ai-actions">
+            <a href="tel:9330118686">&#128222; Call</a>
+            <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a>
+        </div>
+        <div class="ai-input">
+            <input id="aiInput" placeholder="Ask about NI Group projects…" onkeypress="if(event.key==='Enter')sendAI()">
+            <button onclick="sendAI()" aria-label="Send">&#10148;</button>
+        </div>
+    </div>
+    <button class="ai-launch" onclick="toggleAI()" aria-label="Open AI Concierge">
+        <span class="pulse"></span>
+        <b>AI</b>
+        <span class="ai-label">CHAT</span>
+    </button>
+</div>
 
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">6+</div>
-                    <div class="stat-label">Own Projects</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">20+</div>
-                    <div class="stat-label">Partner Developers</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">10+</div>
-                    <div class="stat-label">Years Legacy</div>
-                </div>
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">&#10022; Kolkata's Trusted Real Estate Developer</div>
+
+        <h1 class="hero-title">
+            Buy Property<br>
+            <span class="text-orange">Now</span><br>
+            <span class="hero-highlight">Ask Me How!</span>
+        </h1>
+
+        <p class="hero-tagline">Smart Investments &nbsp;•&nbsp; Trusted Guidance &nbsp;•&nbsp; Dream Homes</p>
+
+        <p class="hero-desc">
+            Building more than homes — we create spaces where families find comfort, happiness,
+            and a place to belong. Discover premium properties across Kolkata with NI Group.
+        </p>
+
+        <div class="hero-ctas">
+            <a href="#projects"   class="btn btn-primary"><i class="fa-solid fa-building"></i> Explore Projects</a>
+            <a href="about.html"  class="btn btn-secondary"><i class="fa-solid fa-circle-info"></i> Know More</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-value">6+</div>
+                <div class="stat-label">Own Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">20+</div>
+                <div class="stat-label">Partner Developers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">10+</div>
+                <div class="stat-label">Years Legacy</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Happy Families</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+<!-- ═══ STATS BAR ══════════════════════════════════════════ -->
+<section class="hero-stats-bar">
+    <div class="container">
+        <div class="stats-bar-inner">
+            <div class="sbi-item">
+                <span class="sbi-value">10+</span>
+                <span class="sbi-label">Years of Excellence</span>
+            </div>
+            <div class="sbi-item">
+                <span class="sbi-value">6+</span>
+                <span class="sbi-label">Own Landmark Projects</span>
+            </div>
+            <div class="sbi-item">
+                <span class="sbi-value">20+</span>
+                <span class="sbi-label">Channel Partners</span>
+            </div>
+            <div class="sbi-item">
+                <span class="sbi-value">500+</span>
+                <span class="sbi-label">Families Served</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Registration Popup -->
-<div id="leadPopup" class="lead-popup">
+<!-- ═══ LEAD POPUP ════════════════════════════════════════ -->
+<div id="leadPopup" class="lead-popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <div class="popup-content">
-
-        <button class="close-popup" onclick="closePopup()">
-            &times;
-        </button>
-
+        <button class="close-popup" onclick="closePopup()" aria-label="Close">&times;</button>
         <div class="popup-header">
-            <h2>🏡 Book Your Dream Home</h2>
-            <p>Get Exclusive Offers & Site Visit Assistance</p>
+            <h2 id="popupTitle">&#127968; Book Your Dream Home</h2>
+            <p>Get exclusive offers &amp; site visit assistance</p>
         </div>
-
-        <form id="leadForm">
-            <input type="text" placeholder="Full Name" required>
-            <input type="tel" placeholder="Mobile Number" required>
-            <input type="email" placeholder="Email Address">
-
-            <select required>
+        <form id="leadForm" onsubmit="submitLead(event)">
+            <input type="text"  name="name"    placeholder="Full Name"       required autocomplete="name">
+            <input type="tel"   name="mobile"  placeholder="Mobile Number"   required autocomplete="tel">
+            <input type="email" name="email"   placeholder="Email Address"          autocomplete="email">
+            <select name="project" required>
                 <option value="">Select Project</option>
-                <option>IRA Residency</option>
+                <option>INVICTA</option>
+                <option>IRIS</option>
+                <option>IQRA</option>
+                <option>Paradizia</option>
                 <option>INAYA Residency</option>
                 <option>INARA Metro</option>
-                <option>INVICTA</option>
-                <option>PARADIZIA</option>
+                <option>IRA Residency</option>
             </select>
-
-            <button type="submit">
-                Get Free Consultation
-            </button>
+            <button type="submit">Get Free Consultation &rarr;</button>
         </form>
-
     </div>
 </div>
 
-<style>
-.lead-popup{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
-    opacity:0;
-    visibility:hidden;
-    transition:.4s;
-}
-
-.lead-popup.show{
-    opacity:1;
-    visibility:visible;
-}
-
-.popup-content{
-    width:90%;
-    max-width:430px;
-    background:#fff;
-    border-radius:22px;
-    padding:30px;
-    position:relative;
-    animation:popupZoom .5s ease;
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
-}
-
-.popup-header{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.popup-header h2{
-    color:#0b3d2e;
-    margin-bottom:8px;
-}
-
-.popup-header p{
-    color:#666;
-}
-
-.popup-content input,
-.popup-content select{
-    width:100%;
-    padding:14px;
-    margin-bottom:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:14px;
-}
-
-.popup-content button[type="submit"]{
-    width:100%;
-    border:none;
-    background:linear-gradient(135deg,#0b3d2e,#d4af37);
-    color:#fff;
-    padding:15px;
-    border-radius:12px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.close-popup{
-    position:absolute;
-    top:10px;
-    right:15px;
-    border:none;
-    background:none;
-    font-size:32px;
-    cursor:pointer;
-}
-
-@keyframes popupZoom{
-    from{
-        transform:scale(.8);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-</style>
-
-<script>
-// Show popup after 2 seconds
-window.addEventListener('load', function(){
-    setTimeout(() => {
-        document.getElementById('leadPopup').classList.add('show');
-    }, 2000);
-});
-
-function closePopup(){
-    document.getElementById('leadPopup').classList.remove('show');
-}
-</script>
-
-    <!-- Projects Section -->
-     
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Portfolio</span>
-                <h2 class="section-title">Our Own Projects</h2>
-                <p class="section-desc">Each project is a testament to our commitment to quality craftsmanship and thoughtful design.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('Project Photo/Invicta1.jpg');"></div>
-                    <span class="project-status completed">Completed</span>
-                    <div class="project-info">
-                        <p class="project-meta">Kalikapur, Newtown · Residential Apartments</p>
-                         <h3 class="project-name">
-                          <a href="invicta.html" class="project-link">INVICTA</a>
-                        </h3>
-                        <p class="project-tagline">Unconquerable Living</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('Project Photo/IRIS SS.jpeg');"></div>
-                    <span class="project-status ongoing">Upcoming</span>
-                    <div class="project-info">
-                        <p class="project-meta">Kolkata · Premium Residency</p>
-                         <h3 class="project-name">
-                          <a href="iris.html" class="project-link">IRIS</a>
-                        </h3>
-                        <p class="project-tagline">Elegance in Every Detail</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('Project Photo/iqra.jpg');"></div>
-                    <span class="project-status upcoming">Upcoming</span>
-                    <div class="project-info">
-                        <p class="project-meta">Hatiara, Newtown · Residential Apartments</p>
-                        <h3 class="project-name"><a href="iqra.html" class="project-link">IQRA</a></h3>
-                        <p class="project-tagline">Read. Rise. Reside.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('Project Photo/CHAPNA_DRAFT.jpg.jpeg');"></div>
-                    <span class="project-status upcoming">Upcoming</span>
-                    <div class="project-info">
-                        <p class="project-meta">Chapna, Newtown · Gated Community</p>
-                        <h3 class="project-name"><a href="paradizia.html" class="project-link">Paradizia</a></h3>
-                        <p class="project-tagline">Crafted with Care</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('Project Photo/3d-building-Inaya.jpg');"></div>
-                    <span class="project-status upcoming">Upcoming</span>
-                    <div class="project-info">
-                        <p class="project-meta">Hatiara, Newtown · Gated Community</p>
-                        <h3 class="project-name"><a href="inaya-residency.html" class="project-link">INAYA – RESIDENCY</a></h3>
-                        <p class="project-tagline">Crafted with Care</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                      <div class="project-image" style="background-image: url('Project Photo/INARA.jpeg');"></div>
-                    <span class="project-status upcoming">Upcoming</span>
-                    <div class="project-info">
-                        <p class="project-meta">Hatiara, Newtown · Metro-Adjacent Residency</p>
-                        <h3 class="project-name"><a href="inara-metro.html" class="project-link">INARA – METRO</a></h3>
-                        <p class="project-tagline">Connected Urban Living</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('Project Photo/IRA.jpeg');"></div>
-                    <span class="project-status upcoming">Upcoming</span>
-                    <div class="project-info">
-                        <p class="project-meta">Kolkata · Luxury Residency</p>
-                        <h3 class="project-name"><a href="ira-residency.html" class="project-link">IRA – RESIDENCY</a></h3>
-                        <p class="project-tagline">Where Serenity Lives</p>
-                    </div>
-                </div>
-        
-                </div>
-            </div>
-            </div>
+<!-- ═══ PROJECTS ══════════════════════════════════════════ -->
+<section class="projects" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Our Portfolio</span>
+            <h2 class="section-title">Our Own Projects</h2>
+            <p class="section-desc">
+                Each project is a testament to our commitment to quality craftsmanship and thoughtful design.
+            </p>
         </div>
-    </section>
 
-   <!-- How We Work Section -->
-<section class="how-we-work">
+        <div class="projects-grid">
+
+            <!-- INVICTA -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/Invicta1.jpg" alt="INVICTA" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status completed">Completed</span>
+                <div class="project-info">
+                    <p class="project-meta">Kalikapur, Newtown &bull; Residential Apartments</p>
+                    <h3 class="project-name">
+                        <a href="invicta.html" class="project-link">INVICTA</a>
+                    </h3>
+                    <p class="project-tagline">Unconquerable Living</p>
+                </div>
+            </div>
+
+            <!-- IRIS -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/IRIS SS.jpeg" alt="IRIS" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status upcoming">Upcoming</span>
+                <div class="project-info">
+                    <p class="project-meta">Kolkata &bull; Premium Residency</p>
+                    <h3 class="project-name">
+                        <a href="iris.html" class="project-link">IRIS</a>
+                    </h3>
+                    <p class="project-tagline">Elegance in Every Detail</p>
+                </div>
+            </div>
+
+            <!-- IQRA -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/iqra.jpg" alt="IQRA" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status upcoming">Upcoming</span>
+                <div class="project-info">
+                    <p class="project-meta">Hatiara, Newtown &bull; Residential Apartments</p>
+                    <h3 class="project-name">
+                        <a href="iqra.html" class="project-link">IQRA</a>
+                    </h3>
+                    <p class="project-tagline">Read. Rise. Reside.</p>
+                </div>
+            </div>
+
+            <!-- PARADIZIA -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/CHAPNA_DRAFT.jpg.jpeg" alt="Paradizia" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status upcoming">Upcoming</span>
+                <div class="project-info">
+                    <p class="project-meta">Chapna, Newtown &bull; Gated Community</p>
+                    <h3 class="project-name">
+                        <a href="paradizia.html" class="project-link">Paradizia</a>
+                    </h3>
+                    <p class="project-tagline">Crafted with Care</p>
+                </div>
+            </div>
+
+            <!-- INAYA -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/3d-building-Inaya.jpg" alt="INAYA Residency" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status upcoming">Upcoming</span>
+                <div class="project-info">
+                    <p class="project-meta">Hatiara, Newtown &bull; Gated Community</p>
+                    <h3 class="project-name">
+                        <a href="inaya.html" class="project-link">INAYA – RESIDENCY</a>
+                    </h3>
+                    <p class="project-tagline">Where Every Moment Matters</p>
+                </div>
+            </div>
+
+            <!-- INARA -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/INARA.jpeg" alt="INARA Metro" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status upcoming">Upcoming</span>
+                <div class="project-info">
+                    <p class="project-meta">Hatiara, Newtown &bull; Metro-Adjacent Residency</p>
+                    <h3 class="project-name">
+                        <a href="inara.html" class="project-link">INARA – METRO</a>
+                    </h3>
+                    <p class="project-tagline">Connected Urban Living</p>
+                </div>
+            </div>
+
+            <!-- IRA -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Project Photo/IRA.jpeg" alt="IRA Residency" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
+                </div>
+                <span class="project-status upcoming">Upcoming</span>
+                <div class="project-info">
+                    <p class="project-meta">Kolkata &bull; Luxury Residency</p>
+                    <h3 class="project-name">
+                        <a href="ira.html" class="project-link">IRA – RESIDENCY</a>
+                    </h3>
+                    <p class="project-tagline">Where Serenity Lives</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HOW WE WORK ════════════════════════════════════════ -->
+<section class="how-we-work" id="process">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Our Process</span>
@@ -532,45 +397,40 @@ function closePopup(){
             <p class="section-desc">End-to-end assistance — from your first search to long after you've settled in.</p>
         </div>
 
-        <div class="steps-grid attractive-steps">
+        <div class="steps-grid">
             <div class="step-card animated-step">
                 <span class="step-number">01</span>
-                <div class="step-icon">🔍</div>
+                <div class="step-icon">&#128269;</div>
                 <h3 class="step-title">Select Property</h3>
                 <p class="step-desc">Browse our curated portfolio of premium properties tailored to your lifestyle and budget.</p>
             </div>
-
             <div class="step-card animated-step">
                 <span class="step-number">02</span>
-                <div class="step-icon">👥</div>
+                <div class="step-icon">&#128101;</div>
                 <h3 class="step-title">Meet Our Expert</h3>
                 <p class="step-desc">Connect with our seasoned real estate advisors who understand your unique requirements.</p>
             </div>
-
             <div class="step-card animated-step">
                 <span class="step-number">03</span>
-                <div class="step-icon">👁️</div>
+                <div class="step-icon">&#128064;</div>
                 <h3 class="step-title">Visit Property</h3>
                 <p class="step-desc">Experience the property first-hand with a guided site visit arranged at your convenience.</p>
             </div>
-
             <div class="step-card animated-step">
                 <span class="step-number">04</span>
-                <div class="step-icon">🔑</div>
+                <div class="step-icon">&#128273;</div>
                 <h3 class="step-title">Buy Property</h3>
                 <p class="step-desc">Complete a seamless, transparent transaction with all documentation handled professionally.</p>
             </div>
-
             <div class="step-card animated-step">
                 <span class="step-number">05</span>
-                <div class="step-icon">🏦</div>
+                <div class="step-icon">&#127970;</div>
                 <h3 class="step-title">Loan Assistance</h3>
                 <p class="step-desc">We coordinate with leading banks and HFIs to secure the best financing for your dream home.</p>
             </div>
-
             <div class="step-card animated-step">
                 <span class="step-number">06</span>
-                <div class="step-icon">🎧</div>
+                <div class="step-icon">&#127911;</div>
                 <h3 class="step-title">Customer Support</h3>
                 <p class="step-desc">Post-purchase dedicated support to ensure a smooth handover and long-term satisfaction.</p>
             </div>
@@ -578,362 +438,224 @@ function closePopup(){
     </div>
 </section>
 
-<!-- Associated Developers Carousel -->
-<section class="partners-carousel" style="background: white;">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Channel Partners</span>
-      <h2 class="section-title">Associated Developers</h2>
-    </div>
+<!-- ═══ AI AUTOMATION ═════════════════════════════════════ -->
+<section class="ai-auto-section" id="ai-automation">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Smart Technology</span>
+            <h2 class="section-title">AI-Powered Property Experience</h2>
+            <p class="section-desc">NI Group harnesses artificial intelligence to make property buying smarter, faster, and completely transparent.</p>
+        </div>
 
-    <div class="carousel-container">
-      <div class="carousel-track">
+        <div class="ai-auto-grid">
 
-        <div class="carousel-item logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Merlin-Logo.png" alt="Merlin Group"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe9Rbp333XtGQCKyGyZ-3Bkj1VXl61AvFVcQ&s" alt="Srijan Group"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLE2gjqwcc9jWYr9DY1oey6UmQrOtEBxPsPw&s" alt="PS Group"></div>
-        <div class="carousel-item logo-item"><img src="https://www.alcoverealty.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnlogo1.ee3e1d65.png&w=1920&q=75" alt="Alcove Group"></div>
-        <div class="carousel-item logo-item"><img src="https://storage.googleapis.com/realtyplusmag-news-photo/news-photo/108984.Ambuja-Neotia-Group-Highest-Bidder-for-10-Acre-Plot-Near-EM-Bypass.jpg" alt="Ambuja Neotia"></div>
-        <div class="carousel-item logo-item"><img src="https://media.licdn.com/dms/image/v2/C4E0BAQFy6xxz4znmYw/company-logo_200_200/company-logo_200_200/0/1631311610007?e=2147483647&v=beta&t=x-0apHNH4ILSgr3m6s7mG_ytFXayLAL1nQI1A-4QeLs" alt="Unimark Group"></div>
-        <div class="carousel-item logo-item"><img src="https://media.licdn.com/dms/image/v2/C4D0BAQEhGER71twt9g/company-logo_200_200/company-logo_200_200/0/1671598721329/dtc_group_logo?e=2147483647&v=beta&t=L8Nm8_xiwKaWZ2g3XDRot-5CQgXEimK4dJthUeiwv-M" alt="DTC Group"></div>
-        <div class="carousel-item logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Loharuka-Group-Logo.png" alt="Loharuka Group"></div>
-        <div class="carousel-item logo-item"><img src="https://newprojects.99acres.com/projects/shivalay_ingenium_properties_llp/a_ingenium_residency/zguyy6o_1755674148_635873687_O.jpg" alt="Ingenium Group"></div>
-        <div class="carousel-item logo-item"><img src="https://www.glsrealty.in/assets/images/logo1.png" alt="GLS Realty"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWbBRF2ATOplScZe_Qgj-iQvO9x1YajxRXEQ&s" alt="Siddha Group"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5VCMt1xYGdl2fEQZ5UA7WidMR04d902NTA&s" alt="Kappa Group"></div>
+            <div>
+                <div class="ai-auto-features">
+                    <div class="ai-feat-card">
+                        <div class="ai-feat-icon">&#129302;</div>
+                        <h4 class="ai-feat-title">Instant AI Responses</h4>
+                        <p class="ai-feat-desc">Get answers to all your property questions 24/7 — pricing, availability, location, and more.</p>
+                    </div>
+                    <div class="ai-feat-card">
+                        <div class="ai-feat-icon">&#127968;</div>
+                        <h4 class="ai-feat-title">Smart Property Match</h4>
+                        <p class="ai-feat-desc">Tell us your budget and preferences — our AI recommends the perfect project for you.</p>
+                    </div>
+                    <div class="ai-feat-card">
+                        <div class="ai-feat-icon">&#128197;</div>
+                        <h4 class="ai-feat-title">Auto Site Booking</h4>
+                        <p class="ai-feat-desc">Book a site visit instantly via chat — no calls, no waiting, just seamless scheduling.</p>
+                    </div>
+                    <div class="ai-feat-card">
+                        <div class="ai-feat-icon">&#127968;</div>
+                        <h4 class="ai-feat-title">Loan Assistance</h4>
+                        <p class="ai-feat-desc">AI-guided home loan process with SBI, HDFC, Axis Bank and 6 other leading banks.</p>
+                    </div>
+                    <div class="ai-feat-card">
+                        <div class="ai-feat-icon">&#128204;</div>
+                        <h4 class="ai-feat-title">Live Location Info</h4>
+                        <p class="ai-feat-desc">Get directions, nearby amenities, and connectivity details for every project instantly.</p>
+                    </div>
+                    <div class="ai-feat-card">
+                        <div class="ai-feat-icon">&#128172;</div>
+                        <h4 class="ai-feat-title">WhatsApp Integration</h4>
+                        <p class="ai-feat-desc">Continue your property journey on WhatsApp — brochures, floor plans, and updates.</p>
+                    </div>
+                </div>
 
-        <!-- Duplicate for infinite scroll -->
-        <div class="carousel-item logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Merlin-Logo.png" alt="Merlin Group"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe9Rbp333XtGQCKyGyZ-3Bkj1VXl61AvFVcQ&s" alt="Srijan Group"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLE2gjqwcc9jWYr9DY1oey6UmQrOtEBxPsPw&s" alt="PS Group"></div>
-        <div class="carousel-item logo-item"><img src="https://www.alcoverealty.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnlogo1.ee3e1d65.png&w=1920&q=75" alt="Alcove Group"></div>
-        <div class="carousel-item logo-item"><img src="https://storage.googleapis.com/realtyplusmag-news-photo/news-photo/108984.Ambuja-Neotia-Group-Highest-Bidder-for-10-Acre-Plot-Near-EM-Bypass.jpg" alt="Ambuja Neotia"></div>
-        <div class="carousel-item logo-item"><img src="https://media.licdn.com/dms/image/v2/C4E0BAQFy6xxz4znmYw/company-logo_200_200/company-logo_200_200/0/1631311610007?e=2147483647&v=beta&t=x-0apHNH4ILSgr3m6s7mG_ytFXayLAL1nQI1A-4QeLs" alt="Unimark Group"></div>
-        <div class="carousel-item logo-item"><img src="https://media.licdn.com/dms/image/v2/C4D0BAQEhGER71twt9g/company-logo_200_200/company-logo_200_200/0/1671598721329/dtc_group_logo?e=2147483647&v=beta&t=L8Nm8_xiwKaWZ2g3XDRot-5CQgXEimK4dJthUeiwv-M" alt="DTC Group"></div>
-        <div class="carousel-item logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Loharuka-Group-Logo.png" alt="Loharuka Group"></div>
-        <div class="carousel-item logo-item"><img src="https://newprojects.99acres.com/projects/shivalay_ingenium_properties_llp/a_ingenium_residency/zguyy6o_1755674148_635873687_O.jpg" alt="Ingenium Group"></div>
-        <div class="carousel-item logo-item"><img src="https://www.glsrealty.in/assets/images/logo1.png" alt="GLS Realty"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWbBRF2ATOplScZe_Qgj-iQvO9x1YajxRXEQ&s" alt="Siddha Group"></div>
-        <div class="carousel-item logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5VCMt1xYGdl2fEQZ5UA7WidMR04d902NTA&s" alt="Kappa Group"></div>
-
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-desc">At NI Group, we specialize in real estate development and construction, delivering thoughtfully designed residential and commercial spaces.</p>
+                <div class="ai-auto-cta">
+                    <p>Experience intelligent real estate assistance — available round the clock.</p>
+                    <a href="javascript:void(0)" onclick="toggleAI()" class="btn btn-primary" style="display:inline-flex;gap:10px;">
+                        <i class="fa-solid fa-robot"></i> Launch AI Concierge
+                    </a>
+                </div>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('Project Photo/WhatsApp Image 2025-07-27 at 1.08.20 PM (2).jpeg')"></div>
-                    <h3 class="service-title">Residential Apartments</h3>
-                    <p class="service-desc">Premium flats and gated communities with smart layouts, modern amenities, and green surroundings.</p>
+            <div class="ai-demo-panel">
+                <div class="ai-demo-header">
+                    <div class="ai-demo-avatar">AI</div>
+                    <div class="ai-demo-header-text">
+                        <h4>NI Group AI Concierge</h4>
+                        <p><span class="ai-online-dot"></span>Online — ready to help</p>
+                    </div>
                 </div>
+                <div class="ai-demo-body">
+                    <div class="demo-msg bot">
+                        <div class="demo-bot-icon">AI</div>
+                        <div class="demo-bubble">Assalamu Alaikum! Welcome to NI Group. I can help you find your perfect home in Kolkata. What's your budget?</div>
+                    </div>
+                    <div class="demo-msg user">
+                        <div class="demo-user-icon">&#128100;</div>
+                        <div class="demo-bubble">Looking for a 2 BHK in Newtown, budget 40-60 lakhs</div>
+                    </div>
+                    <div class="demo-msg bot">
+                        <div class="demo-bot-icon">AI</div>
+                        <div class="demo-bubble">&#127775; Great choice! Based on your budget, I recommend <b>IQRA at Hatiara, Newtown</b> — 2 BHK apartments in a prime location. Want me to book a site visit?</div>
+                    </div>
+                    <div class="demo-msg user">
+                        <div class="demo-user-icon">&#128100;</div>
+                        <div class="demo-bubble">Yes! Book a visit for this Sunday</div>
+                    </div>
+                    <div class="demo-msg bot">
+                        <div class="demo-bot-icon">AI</div>
+                        <div class="demo-bubble">&#128197; Perfect! I'll schedule a Sunday site visit for IQRA. Please share your name and mobile number to confirm.</div>
+                    </div>
+                </div>
+                <div class="ai-demo-footer">
+                    <input class="ai-demo-input" placeholder="Try: 'Show me 3 BHK projects…'" readonly>
+                    <button class="ai-demo-send" onclick="toggleAI()">&#10148;</button>
+                </div>
+            </div>
 
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://th-i.thgim.com/public/incoming/36by8b/article68392281.ece/alternates/LANDSCAPE_1200/iStock-1475244332.jpg')"></div>
-                    <h3 class="service-title">Land Development</h3>
-                    <p class="service-desc">Fully developed residential plots with infrastructure that supports modern living.</p>
-                </div>
+        </div>
+    </div>
+</section>
 
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://cdn.prod.website-files.com/6035470ede88024713cf3bf6/661e7dfb7c685923f5b6ff55_Joint%20venture%20(1)%201.jpg')"></div>
-                    <h3 class="service-title">Commercial Projects</h3>
-                    <p class="service-desc">Smart commercial spaces designed for the evolving needs of businesses and entrepreneurs.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
-                    <h3 class="service-title">Joint Ventures & Collaborations</h3>
-                    <p class="service-desc">Partnering with landowners and investors for mutual growth and value creation.</p>
-                </div>
+<!-- ═══ ASSOCIATED DEVELOPERS ═════════════════════════════ -->
+<section class="partners-carousel">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Channel Partners</span>
+            <h2 class="section-title">Associated Developers</h2>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Merlin-Logo.png" alt="Merlin Group"></div>
+                <div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe9Rbp333XtGQCKyGyZ-3Bkj1VXl61AvFVcQ&s" alt="Srijan Group"></div>
+                <div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLE2gjqwcc9jWYr9DY1oey6UmQrOtEBxPsPw&s" alt="PS Group"></div>
+                <div class="logo-item"><img src="https://www.alcoverealty.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnlogo1.ee3e1d65.png&w=1920&q=75" alt="Alcove Group"></div>
+                <div class="logo-item"><img src="https://storage.googleapis.com/realtyplusmag-news-photo/news-photo/108984.Ambuja-Neotia-Group-Highest-Bidder-for-10-Acre-Plot-Near-EM-Bypass.jpg" alt="Ambuja Neotia"></div>
+                <div class="logo-item"><img src="https://media.licdn.com/dms/image/v2/C4E0BAQFy6xxz4znmYw/company-logo_200_200/company-logo_200_200/0/1631311610007?e=2147483647&v=beta&t=x-0apHNH4ILSgr3m6s7mG_ytFXayLAL1nQI1A-4QeLs" alt="Unimark Group"></div>
+                <div class="logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Loharuka-Group-Logo.png" alt="Loharuka Group"></div>
+                <div class="logo-item"><img src="https://www.glsrealty.in/assets/images/logo1.png" alt="GLS Realty"></div>
+                <div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWbBRF2ATOplScZe_Qgj-iQvO9x1YajxRXEQ&s" alt="Siddha Group"></div>
+                <div class="logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Merlin-Logo.png" alt="Merlin Group"></div>
+                <div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe9Rbp333XtGQCKyGyZ-3Bkj1VXl61AvFVcQ&s" alt="Srijan Group"></div>
+                <div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLE2gjqwcc9jWYr9DY1oey6UmQrOtEBxPsPw&s" alt="PS Group"></div>
+                <div class="logo-item"><img src="https://www.alcoverealty.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnlogo1.ee3e1d65.png&w=1920&q=75" alt="Alcove Group"></div>
+                <div class="logo-item"><img src="https://storage.googleapis.com/realtyplusmag-news-photo/news-photo/108984.Ambuja-Neotia-Group-Highest-Bidder-for-10-Acre-Plot-Near-EM-Bypass.jpg" alt="Ambuja Neotia"></div>
+                <div class="logo-item"><img src="https://media.licdn.com/dms/image/v2/C4E0BAQFy6xxz4znmYw/company-logo_200_200/company-logo_200_200/0/1631311610007?e=2147483647&v=beta&t=x-0apHNH4ILSgr3m6s7mG_ytFXayLAL1nQI1A-4QeLs" alt="Unimark Group"></div>
+                <div class="logo-item"><img src="https://pioneerproperty.in/wp-content/uploads/2025/09/Loharuka-Group-Logo.png" alt="Loharuka Group"></div>
+                <div class="logo-item"><img src="https://www.glsrealty.in/assets/images/logo1.png" alt="GLS Realty"></div>
+                <div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWbBRF2ATOplScZe_Qgj-iQvO9x1YajxRXEQ&s" alt="Siddha Group"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-   <!-- Our Partners Carousel -->
-<section class="partners-carousel" style="background: white;">
+<!-- ═══ SERVICES ═══════════════════════════════════════════ -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">What We Do</span>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-desc">We specialize in real estate development and construction, delivering thoughtfully designed residential and commercial spaces.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=700');"></div>
+                <h3 class="service-title">Residential Apartments</h3>
+                <p class="service-desc">Premium flats and gated communities with smart layouts, modern amenities, and green surroundings.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image:url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=700');"></div>
+                <h3 class="service-title">Land Development</h3>
+                <p class="service-desc">Fully developed residential plots with infrastructure that supports modern living and future growth.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image:url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=700');"></div>
+                <h3 class="service-title">Commercial Projects</h3>
+                <p class="service-desc">Smart commercial spaces designed for the evolving needs of businesses and entrepreneurs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image:url('https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&w=700');"></div>
+                <h3 class="service-title">Joint Ventures &amp; Collaborations</h3>
+                <p class="service-desc">Partnering with landowners and investors for mutual growth and value creation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TRUSTED PARTNERS ══════════════════════════════════ -->
+<section class="partners-carousel" style="background:#f9fafb;">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Trusted Brands</span>
             <h2 class="section-title">Our Trusted Partners</h2>
-            <p class="section-desc">
-                We collaborate with industry-leading brands who share our commitment to quality and excellence.
-            </p>
+            <p class="section-desc">We collaborate with industry-leading brands who share our commitment to quality and excellence.</p>
         </div>
-
         <div class="carousel-container">
             <div class="carousel-track">
-
-                <div class="carousel-item logo-item">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.B3bwZ225hKYC8Js0340g7gAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="SRMB">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://www.powergroups.in/assets/img/brand/09.png" alt="TATA TISCON">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://companieslogo.com/img/orig/ULTRACEMCO.NS-d26e8933.png?t=1720244494" alt="UltraTech">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://e7.pngegg.com/pngimages/680/167/png-clipart-havells-logo-havell-s-electrical-shop-havells-logo-company-krrish-text-carnivoran.png" alt="HAVELLS">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://images.yourstory.com/cs/images/companies/RRKabel-1636986507946.png?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" alt="RR Kabel">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://www.freelogovectors.net/wp-content/uploads/2023/01/asian-paints-logo-freelogovectors.net_-768x432.png" alt="Asian Paints">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://companieslogo.com/img/orig/KAJARIACER.NS_BIG-300b5e39.png?t=1720244492" alt="Kajaria">
-                </div>
-
-                <!-- Duplicate for smooth infinite scroll -->
-
-                <div class="carousel-item logo-item">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.B3bwZ225hKYC8Js0340g7gAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="SRMB">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://www.powergroups.in/assets/img/brand/09.png" alt="TATA TISCON">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://companieslogo.com/img/orig/ULTRACEMCO.NS-d26e8933.png?t=1720244494" alt="UltraTech">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://e7.pngegg.com/pngimages/680/167/png-clipart-havells-logo-havell-s-electrical-shop-havells-logo-company-krrish-text-carnivoran.png" alt="HAVELLS">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://images.yourstory.com/cs/images/companies/RRKabel-1636986507946.png?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" alt="RR Kabel">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://www.freelogovectors.net/wp-content/uploads/2023/01/asian-paints-logo-freelogovectors.net_-768x432.png" alt="Asian Paints">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="" alt="Kajaria">
-                </div>
+                <div class="logo-item"><img src="https://tse4.mm.bing.net/th/id/OIP.B3bwZ225hKYC8Js0340g7gAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="SRMB"></div>
+                <div class="logo-item"><img src="https://www.powergroups.in/assets/img/brand/09.png" alt="TATA TISCON"></div>
+                <div class="logo-item"><img src="https://companieslogo.com/img/orig/ULTRACEMCO.NS-d26e8933.png?t=1720244494" alt="UltraTech Cement"></div>
+                <div class="logo-item"><img src="https://e7.pngegg.com/pngimages/680/167/png-clipart-havells-logo-havell-s-electrical-shop-havells-logo-company-krrish-text-carnivoran.png" alt="Havells"></div>
+                <div class="logo-item"><img src="https://images.yourstory.com/cs/images/companies/RRKabel-1636986507946.png?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" alt="RR Kabel"></div>
+                <div class="logo-item"><img src="https://www.freelogovectors.net/wp-content/uploads/2023/01/asian-paints-logo-freelogovectors.net_-768x432.png" alt="Asian Paints"></div>
+                <div class="logo-item"><img src="https://companieslogo.com/img/orig/KAJARIACER.NS_BIG-300b5e39.png?t=1720244492" alt="Kajaria"></div>
+                <div class="logo-item"><img src="https://tse4.mm.bing.net/th/id/OIP.B3bwZ225hKYC8Js0340g7gAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="SRMB"></div>
+                <div class="logo-item"><img src="https://www.powergroups.in/assets/img/brand/09.png" alt="TATA TISCON"></div>
+                <div class="logo-item"><img src="https://companieslogo.com/img/orig/ULTRACEMCO.NS-d26e8933.png?t=1720244494" alt="UltraTech Cement"></div>
+                <div class="logo-item"><img src="https://e7.pngegg.com/pngimages/680/167/png-clipart-havells-logo-havell-s-electrical-shop-havells-logo-company-krrish-text-carnivoran.png" alt="Havells"></div>
+                <div class="logo-item"><img src="https://images.yourstory.com/cs/images/companies/RRKabel-1636986507946.png?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" alt="RR Kabel"></div>
+                <div class="logo-item"><img src="https://www.freelogovectors.net/wp-content/uploads/2023/01/asian-paints-logo-freelogovectors.net_-768x432.png" alt="Asian Paints"></div>
+                <div class="logo-item"><img src="https://companieslogo.com/img/orig/KAJARIACER.NS_BIG-300b5e39.png?t=1720244492" alt="Kajaria"></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Banking Partners Carousel -->
-<section class="partners-carousel" style="background: linear-gradient(to right, #f0fdf4, #fff7ed);">
+<!-- ═══ BANKING PARTNERS ══════════════════════════════════ -->
+<section class="partners-carousel" style="background:linear-gradient(to right,#f0fdf4,#fff7ed);">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Finance Partners</span>
             <h2 class="section-title">Banking Partners</h2>
-            <p class="section-desc">
-                Trusted Growth Ally — partnering with India's leading banks and housing finance institutions
-            </p>
+            <p class="section-desc">Trusted growth allies — partnering with India's leading banks and housing finance institutions.</p>
         </div>
-
         <div class="carousel-container">
             <div class="carousel-track">
-
-                <!-- SBI -->
-                <div class="carousel-item logo-item">
-                    <img src="https://1000logos.net/wp-content/uploads/2018/03/SBI-Logo.jpg" alt="SBI">
-                </div>
-                <!-- AXIS -->
-                <div class="carousel-item logo-item">
-                    <img src="https://www.samco.in/knowledge-center/wp-content/uploads/2025/04/Axis-Bank-Q4FY25-Results-What-to-Expect-Before-April-24.jpg" alt="Axis Bank">
-                </div>
-                <!-- PNB -->
-                <div class="carousel-item logo-item">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/XI/IK/TK/18660198/pnb-housing-finance.jpg" alt="PNB Housing Finance">
-                </div>
-                <!-- LIC -->
-                <div class="carousel-item logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/LIC_Housing_Finance_logo.png" alt="LIC Housing Finance">
-                </div>
-                <!-- CANARA -->
-                <div class="carousel-item logo-item">
-                    <img src="https://crystalpng.com/wp-content/uploads/2025/11/Canara-Bank-Logo.png" alt="Canara Bank">
-                </div>
-                <!-- HDFC -->
-                <div class="carousel-item logo-item">
-                    <img src="https://cdn.zeebiz.com/sites/default/files/2020/01/04/108430-hdfc1.jpg" alt="HDFC Housing Finance">
-                </div>
-                <!-- Indian Bank -->
-                <div class="carousel-item logo-item">
-                    <img src="https://static.toiimg.com/thumb/msid-59385226,width-1280,height-720,resizemode-4/59385226.jpg" alt="HDFC Housing Finance">
-                </div>
-                 <!-- ICICI Bank -->
-                <div class="carousel-item logo-item">
-                    <img src="https://www.boardinfinity.com/blog/content/images/2025/02/Company-Blog-Creatives----2025-02-25T175113.886.png" alt="HDFC Housing Finance">
-                </div>
-                
-                <!-- Duplicate for infinite scroll -->
-
-                <div class="carousel-item logo-item">
-                    <img src="https://1000logos.net/wp-content/uploads/2018/03/SBI-Logo.jpg" alt="SBI">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/XI/IK/TK/18660198/pnb-housing-finance.jpg" alt="PNB Housing Finance">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://www.samco.in/knowledge-center/wp-content/uploads/2025/04/Axis-Bank-Q4FY25-Results-What-to-Expect-Before-April-24.jpg" alt="Axis Bank">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/LIC_Housing_Finance_logo.png" alt="LIC Housing Finance">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://crystalpng.com/wp-content/uploads/2025/11/Canara-Bank-Logo.png" alt="Canara Bank">
-                </div>
-
-                <div class="carousel-item logo-item">
-                    <img src="https://cdn.zeebiz.com/sites/default/files/2020/01/04/108430-hdfc1.jpg" alt="HDFC Housing Finance">
-                </div>
-                <!-- Indian Bank -->
-                <div class="carousel-item logo-item">
-                    <img src="https://static.toiimg.com/thumb/msid-59385226,width-1280,height-720,resizemode-4/59385226.jpg" alt="HDFC Housing Finance">
-                </div>
-                 <!-- ICICI Bank -->
-                <div class="carousel-item logo-item">
-                    <img src="https://www.boardinfinity.com/blog/content/images/2025/02/Company-Blog-Creatives----2025-02-25T175113.886.png" alt="HDFC Housing Finance">
-                </div>
+                <div class="logo-item"><img src="https://1000logos.net/wp-content/uploads/2018/03/SBI-Logo.jpg" alt="SBI"></div>
+                <div class="logo-item"><img src="https://www.samco.in/knowledge-center/wp-content/uploads/2025/04/Axis-Bank-Q4FY25-Results-What-to-Expect-Before-April-24.jpg" alt="Axis Bank"></div>
+                <div class="logo-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/12/XI/IK/TK/18660198/pnb-housing-finance.jpg" alt="PNB Housing Finance"></div>
+                <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/en/7/7a/LIC_Housing_Finance_logo.png" alt="LIC Housing Finance"></div>
+                <div class="logo-item"><img src="https://crystalpng.com/wp-content/uploads/2025/11/Canara-Bank-Logo.png" alt="Canara Bank"></div>
+                <div class="logo-item"><img src="https://cdn.zeebiz.com/sites/default/files/2020/01/04/108430-hdfc1.jpg" alt="HDFC Housing Finance"></div>
+                <div class="logo-item"><img src="https://www.boardinfinity.com/blog/content/images/2025/02/Company-Blog-Creatives----2025-02-25T175113.886.png" alt="ICICI Bank"></div>
+                <div class="logo-item"><img src="https://1000logos.net/wp-content/uploads/2018/03/SBI-Logo.jpg" alt="SBI"></div>
+                <div class="logo-item"><img src="https://www.samco.in/knowledge-center/wp-content/uploads/2025/04/Axis-Bank-Q4FY25-Results-What-to-Expect-Before-April-24.jpg" alt="Axis Bank"></div>
+                <div class="logo-item"><img src="https://5.imimg.com/data5/SELLER/Default/2022/12/XI/IK/TK/18660198/pnb-housing-finance.jpg" alt="PNB Housing Finance"></div>
+                <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/en/7/7a/LIC_Housing_Finance_logo.png" alt="LIC Housing Finance"></div>
+                <div class="logo-item"><img src="https://crystalpng.com/wp-content/uploads/2025/11/Canara-Bank-Logo.png" alt="Canara Bank"></div>
+                <div class="logo-item"><img src="https://cdn.zeebiz.com/sites/default/files/2020/01/04/108430-hdfc1.jpg" alt="HDFC Housing Finance"></div>
+                <div class="logo-item"><img src="https://www.boardinfinity.com/blog/content/images/2025/02/Company-Blog-Creatives----2025-02-25T175113.886.png" alt="ICICI Bank"></div>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- About Us Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <span class="section-label">About Us</span>
-                    <h2 class="section-title">NI Group – <span class="text-green">Building Tomorrow, Today</span></h2>
-                    <p class="about-desc">NI Group is a forward-thinking real estate development company committed to crafting quality living spaces that inspire lifestyles and transform communities. With a legacy built on trust, innovation, and excellence, we specialize in residential, commercial, and plotted developments across Kolkata and beyond.</p>
-
-                    <h3 class="about-subtitle">Why Choose NI Group</h3>
-                    <ul class="about-list">
-                        <li>Timely Delivery</li>
-                        <li>Quality Construction</li>
-                        <li>Transparent Dealings</li>
-                        <li>Customer-Centric Approach</li>
-                        <li>Innovative Design & Planning</li>
-                    </ul>
-                </div>
-
-                <div class="about-image">
-                    <img src="Project Photo/why-1.png" alt="NI Group Building">
-                </div>
-            </div>
-
-            <div class="vision-mission">
-                <div class="vision-card">
-                    <h3 class="vm-title">Vision</h3>
-                    <p class="vm-text">To become a leading and trusted real estate developer in India by redefining urban living with innovative, sustainable, and value-driven spaces.</p>
-                </div>
-
-               <div class="mission-card">
-                    <h3 class="vm-title">Mission</h3>
-                    <ul class="vm-list">
-                        <li>Deliver superior real estate solutions with uncompromising quality.</li>
-                        <li>Ensure timely project completion and customer satisfaction.</li>
-                        <li>Contribute to urban growth with sustainable and aesthetic developments.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Directors Section -->
-<section class="directors" id="directors">
-    <div class="container">
-
-        <div class="section-header">
-            <span class="section-label">Leadership Team</span>
-            <h2 class="section-title">Meet Our Directors</h2>
-            <p class="section-desc">
-                Visionary leaders shaping premium lifestyles and transforming modern communities with trust, innovation, and excellence.
-            </p>
-        </div>
-
-        <div class="directors-grid">
-
-            <!-- Director 1 -->
-            <div class="director-card modern-card">
-                <div class="director-image-wrap">
-                    <div class="director-image"
-                        style="background-image: url('Project Photo/Ataur Rahaman.jpg');">
-                    </div>
-
-                    <div class="director-badge">Director</div>
-                </div>
-
-                <div class="director-info">
-                    <h3 class="director-name">Saikh Ataur Rahaman</h3>
-                    <p class="director-role">Director, NI Group of Companies</p>
-
-                    <p class="director-bio">
-                        Visionary real estate entrepreneur with expertise in premium housing,
-                        strategic growth, and customer-centric development solutions across Kolkata.
-                    </p>
-
-                    <div class="director-socials">
-                        <a href="https://www.linkedin.com/in/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://www.instagram.com/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://www.facebook.com/ataur.rahaman.792" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Director 2 -->
-            <div class="director-card modern-card">
-                <div class="director-image-wrap">
-                    <div class="director-image"
-                        style="background-image: url('Project Photo/Mokim Sardar.jpeg');">
-                    </div>
-
-                    <div class="director-badge">Director</div>
-                </div>
-
-                <div class="director-info">
-                    <h3 class="director-name">MD Mokim Sardar</h3>
-                    <p class="director-role">Director, NI Group of Companies</p>
-
-                    <p class="director-bio">
-                        Experienced leader in project execution, community development, and
-                        delivering thoughtfully designed residential experiences with quality assurance.
-                    </p>
-
-                    <div class="director-socials">
-                        <a href="https://www.linkedin.com/in/md-mokim-sardar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://www.instagram.com/mdmokim.sardar" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://www.facebook.com/md.mokim.sardar" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Section -->
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════ -->
 <section class="testimonials" id="testimonials">
     <div class="container">
         <div class="section-header">
@@ -943,169 +665,174 @@ function closePopup(){
         </div>
 
         <div class="testimonial-wrapper">
-            <button class="testimonial-btn prev" type="button" aria-label="Previous testimonial" onclick="moveTestimonials(-1)">&#10094;</button>
+            <button class="testimonial-btn prev" type="button" aria-label="Previous" onclick="moveTestimonials(-1)">&#10094;</button>
 
             <div class="testimonials-carousel" id="testimonialCarousel">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-top">
-                        <img src="Project Photo/Mukto DA.jpeg" alt="Sk Matual Rahaman" class="testimonial-dp">
+                        <img src="Project Photo/Mukto DA.jpeg" alt="Sk Matual Rahaman" class="testimonial-dp" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
                         <div>
                             <h4 class="testimonial-author">Sk Matual Rahaman</h4>
                             <p class="testimonial-role">Homeowner, INVICTA</p>
                         </div>
                     </div>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "NI Group delivered our dream home on time, exceeding every expectation. The quality and finishing are truly outstanding."
-                    </p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"NI Group delivered our dream home on time, exceeding every expectation. The quality and finishing are truly outstanding."</p>
                 </div>
 
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-top">
-                        <img src="Project Photo/Injamamul Haque.jpeg" alt="Injamamul Haque" class="testimonial-dp">
+                        <img src="Project Photo/Injamamul Haque.jpeg" alt="Injamamul Haque" class="testimonial-dp" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
                         <div>
                             <h4 class="testimonial-author">Injamamul Haque</h4>
                             <p class="testimonial-role">Investor, INARA – METRO</p>
                         </div>
                     </div>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "NI Group impressed me with their transparency and commitment. A reliable investment experience."
-                    </p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"NI Group impressed me with their transparency and commitment. A reliable investment experience from start to finish."</p>
                 </div>
 
-                <!-- Testimonial 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-top">
-                        <img src="Project Photo/Sk Rajim Ali.jpg" alt="Sk Rajim Ali" class="testimonial-dp">
+                        <img src="Project Photo/Sk Rajim Ali.jpg" alt="Sk Rajim Ali" class="testimonial-dp" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
                         <div>
                             <h4 class="testimonial-author">Sk Rajim Ali</h4>
                             <p class="testimonial-role">Investor, BLUE WATER BAY</p>
                         </div>
                     </div>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Professional service and trusted guidance throughout the journey. Glad to be part of NI Group."
-                    </p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Professional service and trusted guidance throughout the journey. Glad to be part of the NI Group family."</p>
                 </div>
 
-                <!-- Testimonial 4 -->
                 <div class="testimonial-card">
                     <div class="testimonial-top">
-                        <img src="images/client4.jpg" alt="Sneha Roy" class="testimonial-dp">
+                        <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Sneha Roy" class="testimonial-dp">
                         <div>
                             <h4 class="testimonial-author">Sneha Roy</h4>
                             <p class="testimonial-role">Resident, IRA Heights</p>
                         </div>
                     </div>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Beautiful architecture, premium quality construction and amazing support from the NI Group team throughout the journey."
-                    </p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Beautiful architecture, premium quality construction and amazing support from the NI Group team throughout the journey."</p>
                 </div>
 
-                <!-- Testimonial 5 -->
                 <div class="testimonial-card">
                     <div class="testimonial-top">
-                        <img src="images/client5.jpg" alt="Rahul Agarwal" class="testimonial-dp">
+                        <img src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Rahul Agarwal" class="testimonial-dp">
                         <div>
                             <h4 class="testimonial-author">Rahul Agarwal</h4>
                             <p class="testimonial-role">Investor, INVICTA</p>
                         </div>
                     </div>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Excellent location selection and modern amenities. NI Group maintains professionalism at every stage."
-                    </p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Excellent location selection and modern amenities. NI Group maintains professionalism at every stage of the project."</p>
                 </div>
 
-                <!-- Testimonial 6 -->
                 <div class="testimonial-card">
                     <div class="testimonial-top">
-                        <img src="images/client6.jpg" alt="Sabiha Khan" class="testimonial-dp">
+                        <img src="https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Sabiha Khan" class="testimonial-dp">
                         <div>
                             <h4 class="testimonial-author">Sabiha Khan</h4>
                             <p class="testimonial-role">Homeowner, IQRA</p>
                         </div>
                     </div>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Very satisfied with the finishing quality and customer support. The entire process was smooth and trustworthy."
-                    </p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Very satisfied with the finishing quality and customer support. The entire process was smooth and trustworthy."</p>
                 </div>
             </div>
 
-            <button class="testimonial-btn next" type="button" aria-label="Next testimonial" onclick="moveTestimonials(1)">&#10095;</button>
+            <button class="testimonial-btn next" type="button" aria-label="Next" onclick="moveTestimonials(1)">&#10095;</button>
         </div>
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col footer-brand">
-                    <img id="footerLogo" src="data:image/png;base64,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" alt="NI Group" class="footer-logo">
-                    <p class="footer-desc">
-                        NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.
-                    </p>
-
-                    <div class="footer-socials" aria-label="Social links">
-                        <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="careers.html">Career</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Our Projects</h4>
-                    <ul class="footer-links">
-                        <li><a href="invicta.html">INVICTA</a></li>
-                        <li><a href="iris.html">IRIS</a></li>
-                        <li><a href="iqra.html">IQRA</a></li>
-                        <li><a href="paradizia.html">PARADISE</a></li>
-                        <li><a href="inaya-residency.html">INAYA – RESIDENCY</a></li>
-                        <li><a href="inara-metro.html">INARA – METRO</a></li>
-                        <li><a href="ira-residency.html">IRA – RESIDENCY</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Contact Us</h4>
-                    <div class="footer-contact">
-                        <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Rd, Hatiara, Newtown, Kolkata, West Bengal - 700157</p>
-                        <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
-                        <p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a> 
-                        <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
-                        <p><strong>Business Email:</strong> <a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a></p>
-                        <p><strong>Hours:</strong> Mon - Sat: 10:00 AM - 7:30 PM</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 NI Group of Companies - All Rights Reserved</p>
-                <p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
-            </div>
+<!-- ═══ CONTACT CTA BANNER ════════════════════════════════ -->
+<section class="contact-cta-banner">
+    <div class="container">
+        <h2>Ready to Buy Your Dream Home?</h2>
+        <p>Join 500+ happy families across Kolkata. Our experts are ready to guide you from selection to settlement.</p>
+        <div class="cta-banner-btns">
+            <a href="tel:9330118686" class="btn-banner-white"><i class="fa-solid fa-phone"></i> Call 9330118686</a>
+            <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="btn-banner-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+            <a href="#projects" class="btn-banner-outline"><i class="fa-solid fa-building"></i> View Projects</a>
         </div>
-    </footer>
+    </div>
+</section>
 
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
 
-    <script src="standalone.js"></script>
+            <div class="footer-col footer-brand">
+                <img src="Project Photo/NI GROUP COLOR LOGO.png"
+                     alt="NI Group – nigrouprealty.com"
+                     class="footer-logo">
+                <div class="footer-brand-divider"></div>
+                <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
+                <div class="footer-socials" aria-label="Social links">
+                    <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/NiGroup/"           target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/"                   target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://x.com/"                              target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/"                    target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Our Projects</h4>
+                <ul class="footer-links">
+                    <li><a href="invicta.html">INVICTA</a></li>
+                    <li><a href="iris.html">IRIS</a></li>
+                    <li><a href="iqra.html">IQRA</a></li>
+                    <li><a href="paradizia.html">Paradizia</a></li>
+                    <li><a href="inaya.html">INAYA – RESIDENCY</a></li>
+                    <li><a href="inara.html">INARA – METRO</a></li>
+                    <li><a href="ira.html">IRA – RESIDENCY</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contact Us</h4>
+                <div class="footer-contact">
+                    <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Newtown, Kolkata – 700157</p>
+                    <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
+                    <p><strong>Mobile:</strong> <a href="tel:6296376653">6296376653</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
+                    <p><strong>Web:</strong> <a href="https://www.nigrouprealty.com" target="_blank" rel="noopener noreferrer">www.nigrouprealty.com</a></p>
+                    <p><strong>Hours:</strong> Mon – Sat: 10:00 AM – 7:30 PM</p>
+                </div>
+            </div>
+
+        </div>
+<div class="footer-legal">
+    <div class="footer-legal-inner">
+        <a href="#disclaimer">Disclaimer</a>
+        <span class="legal-divider">|</span>
+        <a href="#privacy">Privacy Policy</a>
+        <span class="legal-divider">|</span>
+        <a href="#terms">Terms of Use</a>
+    </div>
+</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 NI Group of Companies — All Rights Reserved</p>
+            <p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="standalone.js"></script>
 </body>
 </html>

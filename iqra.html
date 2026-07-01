@@ -1,177 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>IQRA - NI Group Realty</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="standalone.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
-<!-- Favicon -->
-<link href="./NIRealty-1-png.png" rel="icon" type="image/png"/>
-<!-- Apple iPhone icon -->
-<link href="./NIRealty-1-png.png" rel="apple-touch-icon" sizes="180x180"/>
-<!-- Android / PWA -->
-<link href="./NIRealty-1-png.png" rel="icon" sizes="192x192"/>
-<meta content="#166534" name="theme-color"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<!-- Website Tab Logo / Favicon -->
-<link href="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" rel="icon" sizes="32x32" type="image/png"/>
-<!-- Apple / iPhone -->
-<link href="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" rel="apple-touch-icon" sizes="180x180"/>
-
-<style>
-.project-page{background:#fff;color:#0f172a;overflow-x:hidden}.project-hero{position:relative;min-height:82vh;padding:140px 20px 90px;display:flex;align-items:center;background:#020617;color:#fff;isolation:isolate}.project-hero:before{content:"";position:absolute;inset:0;background:var(--hero-image) center/cover no-repeat;z-index:-3;transform:scale(1.05);filter:saturate(1.08) contrast(1.05)}.project-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(2,6,23,.92),rgba(5,46,22,.78),rgba(2,6,23,.35));z-index:-2}.project-hero-inner{width:min(1180px,92%);margin:auto}.project-badge{display:inline-flex;gap:8px;align-items:center;padding:10px 18px;border:1px solid rgba(251,191,36,.42);border-radius:999px;background:rgba(255,255,255,.1);color:#fbbf24;font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;backdrop-filter:blur(12px)}.project-title{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,9vw,7.5rem);line-height:.95;margin:24px 0 12px;text-shadow:0 16px 48px rgba(0,0,0,.45)}.project-subtitle{font-size:clamp(1.25rem,3vw,2rem);font-weight:800;color:#fed7aa;margin-bottom:20px}.project-desc{max-width:760px;color:#e5e7eb;font-size:1.1rem;line-height:1.85;margin-bottom:30px}.project-actions{display:flex;gap:14px;flex-wrap:wrap}.project-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-weight:800;text-decoration:none;transition:.25s}.project-btn.primary{background:linear-gradient(135deg,#f97316,#fbbf24);color:#fff;box-shadow:0 16px 36px rgba(249,115,22,.32)}.project-btn.secondary{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff}.project-btn:hover{transform:translateY(-3px)}.project-section{padding:86px 0}.project-container{width:min(1180px,92%);margin:auto}.project-section-head{text-align:center;max-width:760px;margin:0 auto 42px}.project-kicker{color:#f97316;font-weight:900;text-transform:uppercase;letter-spacing:.16em;font-size:.82rem}.project-heading{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.8rem);margin:10px 0;color:#08111f}.project-text{color:#64748b;font-size:1.06rem;line-height:1.8}.overview-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.overview-card{border:1px solid #e5e7eb;border-radius:26px;padding:34px;background:#fff;box-shadow:0 18px 45px rgba(15,23,42,.08)}.overview-card h3{font-size:1.8rem;margin:0 0 14px}.highlight-list{display:grid;gap:14px;margin-top:24px}.highlight-item{display:flex;gap:12px;align-items:flex-start;background:#f8fafc;border-radius:16px;padding:14px}.highlight-icon{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#ecfdf5;color:#15803d;font-weight:900;flex:0 0 28px}.project-image-card{border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(2,6,23,.16);min-height:460px;background:var(--hero-image) center/cover no-repeat}.quick-stats{background:linear-gradient(135deg,#06111f,#0f2238);color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.stat-card{text-align:center;padding:24px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.06)}.stat-card strong{display:block;font-family:'Playfair Display',serif;color:#fbbf24;font-size:2.2rem}.stat-card span{color:#cbd5e1;font-weight:700}.amenities{background:#f8fafc}.amenity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.amenity-card{background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:24px;text-align:center;box-shadow:0 12px 30px rgba(15,23,42,.06)}.amenity-card i{font-size:2rem;color:#f97316;margin-bottom:12px}.location-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.location-card{background:#fff;border-left:4px solid #f97316;border-radius:18px;padding:20px;box-shadow:0 12px 30px rgba(15,23,42,.07)}.location-card b{display:block;font-size:1.15rem;color:#0f172a}.location-card span{color:#64748b;font-weight:700}.project-cta{background:linear-gradient(135deg,rgba(249,115,22,.94),rgba(22,101,52,.92)),var(--hero-image) center/cover no-repeat;color:#fff;text-align:center}.project-cta h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,4rem);margin:0 0 14px}.project-cta p{max-width:760px;margin:0 auto 24px;line-height:1.8;color:#fff7ed}@media(max-width:900px){.overview-grid,.stats-grid,.amenity-grid,.location-grid{grid-template-columns:repeat(2,1fr)}.project-image-card{min-height:360px}}@media(max-width:640px){.project-hero{min-height:auto;padding:128px 18px 70px}.project-actions .project-btn{width:100%}.overview-grid,.stats-grid,.amenity-grid,.location-grid{grid-template-columns:1fr}.overview-card{padding:24px}.project-section{padding:62px 0}.project-image-card{min-height:280px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IQRA – NI Group | Residential Apartments in Hatiara, Kolkata</title>
+  <meta name="description" content="IQRA – Read. Rise. Reside. Premium 2 & 3 BHK apartments at Hatiara, Newtown. Coming 2026 by NI Group.">
+  <link rel="icon" type="image/png" href="/NI_Group_Logo_final_COL.png">
+  <meta name="theme-color" content="#1b3a7a">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/standalone.css">
+  <link rel="stylesheet" href="/src/pages/project.css">
 </head>
-
-<body class="project-page" style="--hero-image:url('Project Photo/iqra.jpg')">
-<header class="header" id="header">
-<div class="header-container">
-<a class="logo" href="index.html#home">
-<img alt="NI Group logo" class="logo-img" data-colored-src="https://ni-group-realty-webs-pkpt.bolt.host/assets/NI_GROUP_LOGO_WEBSITE-D3Ldxvaq.png" data-default-src="data:image/png;base64,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" id="headerLogo" src="data:image/png;base64,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" title="NI Group"/>
-</a>
-<nav aria-label="Main navigation" class="nav-desktop">
-<a class="nav-link" href="index.html#home">Home</a>
-<a class="nav-link" href="index.html#projects">Projects</a>
-<a class="nav-link" href="index.html#services">Services</a>
-<a class="nav-link" href="index.html#about">About Us</a>
-<a class="nav-link" href="blog.html">Blog</a>
-<a class="nav-link" href="index.html#contact">Contact</a>
-</nav>
-<a class="phone-btn" href="tel:8100118686">
-<span class="phone-icon">☎</span>
-<span>8100118686</span>
-</a>
-<button aria-controls="navMobile" aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menuToggle" type="button">
-<span class="menu-icon">☰</span>
-</button>
-</div>
-<nav aria-label="Mobile navigation" class="nav-mobile" id="navMobile">
-<a class="nav-link" href="index.html#home">Home</a>
-<a class="nav-link" href="index.html#projects">Projects</a>
-<a class="nav-link" href="index.html#services">Services</a>
-<a class="nav-link" href="index.html#about">About Us</a>
-<a class="nav-link" href="blog.html">Blog</a>
-<a class="nav-link" href="index.html#contact">Contact</a>
-</nav>
-</header>
-<main>
-<section class="project-hero" id="home">
-  <div class="project-hero-inner">
-    <div class="project-badge"><i class="fa-solid fa-building"></i> RESIDENTIAL PROJECT</div>
-    <h1 class="project-title">IQRA</h1>
-    <div class="project-subtitle">A Smart Address for Family Living</div>
-    <p class="project-desc">IQRA is planned for peaceful residential living with essential conveniences, thoughtful spaces, and NI Group reliability.</p>
-    <div class="project-actions">
-      <a class="project-btn primary" href="tel:8100118686"><i class="fa-solid fa-phone"></i> Call Now</a>
-      <a class="project-btn secondary" href="index.html#contact"><i class="fa-solid fa-envelope"></i> Enquire Now</a>
+<body>
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="NI Group Home">
+        <div class="logo-wrapper">
+          <img class="logo-img" src="/NI_Group_Logo_final_COL.png" alt="NI Group" width="260" height="96">
+        </div>
+      </a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="index.html#projects" class="nav-link active">Projects <span class="chevron">&#9660;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="invicta.html"  class="dropdown-item"><span class="di-dot" style="background:#16a34a;"></span>INVICTA<span class="di-status completed">Done</span></a>
+            <a href="iris.html"    class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRIS<span class="di-status upcoming">Soon</span></a>
+            <a href="iqra.html"    class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IQRA<span class="di-status upcoming">Soon</span></a>
+            <a href="paradizia.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>Paradizia<span class="di-status upcoming">Soon</span></a>
+            <a href="inaya.html"   class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INAYA Residency<span class="di-status upcoming">Soon</span></a>
+            <a href="inara.html"   class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INARA Metro<span class="di-status upcoming">Soon</span></a>
+            <a href="ira.html"     class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRA Residency<span class="di-status upcoming">Soon</span></a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="leadership.html" class="nav-link">Leadership</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
     </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-link-wrap">
+        <span class="nav-link mobile-dropdown-toggle">Projects <span class="m-chevron" style="transition:transform .3s;">&#9660;</span></span>
+        <div class="mobile-sub-menu open">
+          <a href="invicta.html" class="nav-link">INVICTA</a>
+          <a href="iris.html" class="nav-link">IRIS</a>
+          <a href="iqra.html" class="nav-link">IQRA</a>
+          <a href="paradizia.html" class="nav-link">Paradizia</a>
+          <a href="inaya.html" class="nav-link">INAYA Residency</a>
+          <a href="inara.html" class="nav-link">INARA Metro</a>
+          <a href="ira.html" class="nav-link">IRA Residency</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="leadership.html" class="nav-link">Leadership</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <div class="premium-contact" aria-label="Quick contact">
+    <a href="tel:9330118686" class="premium-btn call-btn" aria-label="Call us">
+      <span class="ripple-ring"></span>
+      <span class="icon"><i class="fa-solid fa-phone"></i></span>
+      <span class="text">Call Us <small>Instant Support</small></span>
+    </a>
+    <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="premium-btn whatsapp-btn" aria-label="WhatsApp">
+      <span class="ripple-ring"></span>
+      <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+      <span class="text">WhatsApp <small>Chat Now</small></span>
+      <span class="badge">24/7</span>
+    </a>
   </div>
-</section>
-<section class="project-section" id="overview">
-  <div class="project-container overview-grid">
-    <div class="project-image-card" aria-label="IQRA project image"></div>
-    <div class="overview-card">
-      <span class="project-kicker">Project Overview</span>
-      <h3>IQRA by NI Group</h3>
-      <p class="project-text">IQRA is planned for peaceful residential living with essential conveniences, thoughtful spaces, and NI Group reliability. This page follows the same NI Group website structure, with a consistent header, footer, responsive layout, and premium project presentation.</p>
-      <div class="highlight-list">
-        <div class="highlight-item"><span class="highlight-icon">✓</span><div><b>Location</b><br><span>Rajarhat, Kolkata</span></div></div>
-        <div class="highlight-item"><span class="highlight-icon">✓</span><div><b>Configuration</b><br><span>2 & 3 BHK</span></div></div>
-        <div class="highlight-item"><span class="highlight-icon">✓</span><div><b>Project Type</b><br><span>Family Apartments</span></div></div>
-        <div class="highlight-item"><span class="highlight-icon">✓</span><div><b>Possession</b><br><span>On Request</span></div></div>
+
+  <div class="ni-ai-agent">
+    <div class="ai-panel" id="aiPanel">
+      <div class="ai-top">
+        <div class="ai-top-info">
+          <div class="ai-avatar">AI</div>
+          <div><h3>NI Group AI Concierge</h3><p><span class="ai-online-dot"></span>Online</p></div>
+        </div>
+        <button onclick="toggleAI()" aria-label="Close">&#215;</button>
+      </div>
+      <div class="ai-body" id="aiBody">
+        <div class="ai-msg bot">Assalamu Alaikum! I can help with pricing, site visits, or any queries about IQRA.</div>
+      </div>
+      <div class="ai-options">
+        <button onclick="askAI('Price Details')">&#8377; Price</button>
+        <button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button>
+        <button onclick="askAI('Floor Plans')">&#128195; Floor Plan</button>
+        <button onclick="askAI('Office Location')">&#128205; Location</button>
+      </div>
+      <div class="ai-actions">
+        <a href="tel:9330118686">&#128222; Call</a>
+        <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a>
+      </div>
+      <div class="ai-input">
+        <input id="aiInput" placeholder="Ask about IQRA…" onkeypress="if(event.key==='Enter')sendAI()">
+        <button onclick="sendAI()" aria-label="Send">&#10148;</button>
+      </div>
+    </div>
+    <button class="ai-launch" onclick="toggleAI()" aria-label="Open AI Concierge">
+      <span class="pulse"></span><b>AI</b><span class="ai-label">CHAT</span>
+    </button>
+  </div>
+
+  <section class="project-hero" id="top">
+    <div class="project-hero-bg" style="background-image:url('https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+    <div class="project-hero-content">
+      <div class="container">
+        <nav class="project-breadcrumb">
+          <a href="index.html">Home</a><span>›</span>
+          <a href="index.html#projects">Projects</a><span>›</span>
+          <span>IQRA</span>
+        </nav>
+        <div class="project-hero-badges">
+          <span class="ph-badge status-upcoming">Upcoming</span>
+          <span class="ph-badge type-badge"><i class="fa-solid fa-building"></i> Residential Apartments</span>
+          <span class="ph-badge type-badge"><i class="fa-solid fa-location-dot"></i> Newtown</span>
+        </div>
+        <h1 class="project-hero-name">IQRA</h1>
+        <p class="project-hero-tagline">"Read. Rise. Reside."</p>
+        <div class="project-hero-meta">
+          <span class="phm-item"><i class="fa-solid fa-location-dot"></i> Hatiara, Newtown, Kolkata</span>
+          <span class="phm-item"><i class="fa-solid fa-home"></i> 2 & 3 BHK Apartments</span>
+          <span class="phm-item"><i class="fa-solid fa-calendar"></i> 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-info-bar">
+    <div class="container">
+      <div class="project-info-items">
+        <div class="pii-item"><span class="pii-label">Project Type</span><span class="pii-value">Residential Apartments</span></div>
+        <div class="pii-item"><span class="pii-label">Location</span><span class="pii-value">Newtown</span></div>
+        <div class="pii-item"><span class="pii-label">Units</span><span class="pii-value">2 & 3 BHK</span></div>
+        <div class="pii-item"><span class="pii-label">Status</span><span class="pii-value">Upcoming</span></div>
+        <div class="pii-item"><span class="pii-label">Possession</span><span class="pii-value">2026</span></div>
       </div>
     </div>
   </div>
-</section>
-<section class="project-section quick-stats">
-  <div class="project-container stats-grid">
-    <div class="stat-card"><strong>2 & 3 BHK</strong><span>Configuration</span></div>
-    <div class="stat-card"><strong>Prime</strong><span>Location</span></div>
-    <div class="stat-card"><strong>NI</strong><span>Trusted Brand</span></div>
-    <div class="stat-card"><strong>24x7</strong><span>Assistance</span></div>
-  </div>
-</section>
-<section class="project-section amenities" id="amenities">
-  <div class="project-container">
-    <div class="project-section-head"><span class="project-kicker">Amenities</span><h2 class="project-heading">Comforts Designed for Daily Living</h2><p class="project-text">Essential features and lifestyle conveniences planned for a better home experience.</p></div>
-    <div class="amenity-grid"><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Security</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Lift Access</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Power Backup</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Quality Construction</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Car Parking</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Water Supply</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Green Space</h3></div><div class="amenity-card"><i class="fa-solid fa-circle-check"></i><h3>Modern Lobby</h3></div></div>
-  </div>
-</section>
-<section class="project-section" id="location">
-  <div class="project-container">
-    <div class="project-section-head"><span class="project-kicker">Connectivity</span><h2 class="project-heading">Nearby Advantages</h2><p class="project-text">Well connected to important city destinations, business hubs, healthcare, education, and daily convenience points.</p></div>
-    <div class="location-grid"><div class="location-card"><b>Airport & VIP Road</b><span>Easy access from Rajarhat, Kolkata</span></div><div class="location-card"><b>New Town IT Hub</b><span>Easy access from Rajarhat, Kolkata</span></div><div class="location-card"><b>Schools & Colleges</b><span>Easy access from Rajarhat, Kolkata</span></div><div class="location-card"><b>Hospitals Nearby</b><span>Easy access from Rajarhat, Kolkata</span></div><div class="location-card"><b>Shopping & Lifestyle</b><span>Easy access from Rajarhat, Kolkata</span></div><div class="location-card"><b>Public Transport</b><span>Easy access from Rajarhat, Kolkata</span></div></div>
-  </div>
-</section>
-<section class="project-section project-cta">
-  <div class="project-container">
-    <h2>Book Your Site Visit for IQRA</h2>
-    <p>Connect with NI Group for updated availability, pricing, floor plans, and site visit assistance.</p>
-    <a class="project-btn primary" href="tel:8100118686"><i class="fa-solid fa-phone-volume"></i> Contact Sales Team</a>
-  </div>
-</section>
-</main>
-<footer class="footer" id="contact">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col footer-brand">
-<img alt="NI Group" class="footer-logo" id="footerLogo" src="data:image/png;base64,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"/>
-<p class="footer-desc">
-                        NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.
-                    </p>
-<div aria-label="Social links" class="footer-socials">
-<a aria-label="Instagram" href="https://www.instagram.com/nigroup_official/" rel="noopener noreferrer" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-<a aria-label="Facebook" href="https://www.facebook.com/NiGroup/" rel="noopener noreferrer" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-<a aria-label="X" href="https://x.com/" rel="noopener noreferrer" target="_blank" title="X"><i class="fa-brands fa-x-twitter"></i></a>
-</div>
-</div>
-<div class="footer-col">
-<h4 class="footer-title">Quick Links</h4>
-<ul class="footer-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#about">About Us</a></li>
-<li><a href="">Blog</a></li>
-<li><a href="">Career</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 class="footer-title">Our Projects</h4>
-<ul class="footer-links">
-<li><a href="">INVICTA</a></li>
-<li><a "="" href="&gt;IRIS&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=">IQRA</a></li>
-<li><a href="">BLUE WATER BAY</a></li>
-<li><a href="">INAYA – RESIDENCY</a></li>
-<li><a href="">INARA – METRO</a></li>
-<li><a href="">IRA – RESIDENCY</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4 class="footer-title">Contact Us</h4>
-<div class="footer-contact">
-<p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Rd, Hatiara, Newtown, Kolkata, West Bengal - 700157</p>
-<p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
-<p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a>
-<p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
-<p><strong>Business Email:</strong> <a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a></p>
-<p><strong>Hours:</strong> Mon - Sat: 10:00 AM - 7:30 PM</p>
-</p></div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 NI Group of Companies - All Rights Reserved</p>
-<p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" rel="noopener noreferrer" target="_blank">Sk Jahid Ali</a></p>
-</div>
-</div>
-</footer>
-<script src="standalone.js"></script>
+
+  <section class="project-overview">
+    <div class="container">
+      <div class="project-overview-grid">
+        <div>
+          <span class="section-label">Project Overview</span>
+          <h2 class="section-title" style="text-align:left;">IQRA</h2>
+          <p class="po-desc">IQRA at Hatiara, Newtown is a thoughtfully planned residential community designed to nurture growth, learning, and community. Inspired by the spirit of reading and rising, IQRA offers modern 2 & 3 BHK apartments that blend functionality with aesthetics in the rapidly developing Hatiara-Newtown corridor.</p>
+          <div class="po-highlights">
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Metro Proximity</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Hatiara Growth Zone</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 2 & 3 BHK Options</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Modern Architecture</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Green Spaces</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Gated Community</div>
+          </div>
+        </div>
+        <div class="po-gallery">
+          <div class="po-img" style="background-image:url('https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=900');min-height:260px;"></div>
+          <div class="po-img" style="background-image:url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=700');min-height:200px;"></div>
+          <div class="po-img" style="background-image:url('https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&w=700');min-height:200px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Project Features</span>
+        <h2 class="section-title">World-Class Amenities</h2>
+        <p class="section-desc">Experience premium living with thoughtfully designed amenities.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card"><span class="amenity-icon">💪</span><p class="amenity-name">Gym</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🎠</span><p class="amenity-name">Children's Play Area</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🏛️</span><p class="amenity-name">Club House</p></div>
+        <div class="amenity-card"><span class="amenity-icon">⚡</span><p class="amenity-name">Power Backup</p></div>
+        <div class="amenity-card"><span class="amenity-icon">📹</span><p class="amenity-name">CCTV Security</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🌿</span><p class="amenity-name">Landscaped Garden</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🚗</span><p class="amenity-name">Visitor Parking</p></div>
+        <div class="amenity-card"><span class="amenity-icon">📚</span><p class="amenity-name">Library Room</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🧘</span><p class="amenity-name">Meditation Zone</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🏊</span><p class="amenity-name">Swimming Pool</p></div>
+        <div class="amenity-card"><span class="amenity-icon">🛗</span><p class="amenity-name">Lift</p></div>
+        <div class="amenity-card"><span class="amenity-icon">📞</span><p class="amenity-name">Intercom</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title">Location & Connectivity</h2>
+      </div>
+      <div class="location-grid">
+        <div class="location-map">
+          <div class="location-map-placeholder">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Hatiara, Newtown</p>
+          </div>
+        </div>
+        <div class="location-details">
+          <div class="location-address">
+            <p><strong>IQRA</strong><br>Hatiara, Newtown, Kolkata – 700157. Near New Sunrise Apartment.</p>
+          </div>
+          <div class="location-nearby">
+            <div class="ln-item"><i class="fa-solid fa-shop"></i> <span><strong>Hatiara Market</strong> 0.5 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-train"></i> <span><strong>Newtown Metro</strong> 2 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-tree"></i> <span><strong>Eco Park</strong> 4 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-plane"></i> <span><strong>Airport</strong> 10 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-road"></i> <span><strong>VIP Road</strong> 3 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-building"></i> <span><strong>NI Group Office</strong> 0.2 km</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enquiry-section">
+    <div class="container">
+      <div class="enquiry-grid">
+        <div class="enquiry-text">
+          <h2>Interested in IQRA?</h2>
+          <p>Get pricing, floor plans, and exclusive offers. Our experts will guide you through the entire journey.</p>
+          <div class="enquiry-contacts">
+            <a href="tel:9330118686" class="ec-link"><i class="fa-solid fa-phone"></i> 9330118686</a>
+            <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="ec-link"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+            <a href="mailto:sales@nigrouprealty.com" class="ec-link"><i class="fa-solid fa-envelope"></i> sales@nigrouprealty.com</a>
+          </div>
+        </div>
+        <div class="enquiry-form">
+          <h3>Book Free Consultation</h3>
+          <form onsubmit="handleEnquiry(event)">
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" required></div>
+            <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="Your mobile number" required></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="Your email address"></div>
+            <div class="form-group"><label>BHK Type</label>
+              <select><option value="">Select BHK type</option><option>2 BHK</option><option>3 BHK</option><option>Other</option></select>
+            </div>
+            <div class="form-group"><label>Message</label><textarea placeholder="Any specific requirements?"></textarea></div>
+            <button type="submit" class="form-submit">Book Free Site Visit &#8594;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Explore More</span>
+        <h2 class="section-title">Related Projects</h2>
+      </div>
+      <div class="related-grid">
+        <div class="project-card">
+          <div class="project-image" style="background-image:url('https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+          <div class="project-info">
+            <span class="project-badge completed">Done</span>
+            <h3 class="project-name">INVICTA</h3>
+            <p class="project-desc">Residential Apartments</p>
+            <a href="invicta.html" class="project-link">Learn More &#8594;</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image" style="background-image:url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+          <div class="project-info">
+            <span class="project-badge upcoming">Upcoming</span>
+            <h3 class="project-name">INAYA Residency</h3>
+            <p class="project-desc">Gated Residential Community</p>
+            <a href="inaya.html" class="project-link">Learn More &#8594;</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image" style="background-image:url('https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+          <div class="project-info">
+            <span class="project-badge upcoming">Upcoming</span>
+            <h3 class="project-name">INARA Metro</h3>
+            <p class="project-desc">Metro-Adjacent Residency</p>
+            <a href="inara.html" class="project-link">Learn More &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <img src="/NI_Group_Logo_final_COL.png" alt="NI Group" class="footer-logo">
+          <div class="footer-brand-divider"></div>
+          <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Our Projects</h4>
+          <ul class="footer-links">
+            <li><a href="invicta.html">INVICTA</a></li>
+            <li><a href="iris.html">IRIS</a></li>
+            <li><a href="iqra.html">IQRA</a></li>
+            <li><a href="paradizia.html">Paradizia</a></li>
+            <li><a href="inaya.html">INAYA – RESIDENCY</a></li>
+            <li><a href="inara.html">INARA – METRO</a></li>
+            <li><a href="ira.html">IRA – RESIDENCY</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Contact Us</h4>
+          <div class="footer-contact">
+            <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Newtown, Kolkata – 700157</p>
+            <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
+            <p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
+            <p><strong>Hours:</strong> Mon – Sat: 10:00 AM – 7:30 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NI Group of Companies — All Rights Reserved</p>
+        <p>nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/src/standalone.js" type="module"></script>
+  <script>
+  function handleEnquiry(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    setTimeout(() => {
+      alert('Thank you! Our team will contact you shortly to schedule your site visit.');
+      e.target.reset();
+      btn.textContent = 'Book Free Site Visit →';
+      btn.disabled = false;
+    }, 900);
+  }
+  </script>
 </body>
 </html>
