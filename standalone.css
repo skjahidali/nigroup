@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── LOGO IMAGE — BIG & CLEAR ────────────────────── */
 .logo-img {
-    height: 96px;      /* was 72px — notably bigger */
+    height: 200px;      /* was 72px — notably bigger */
     width: auto;
     transition: all .45s cubic-bezier(.4,0,.2,1);
     object-fit: contain;
@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
     image-rendering: crisp-edges;
 }
 
-.header.scrolled .logo-img { height: 78px; }
+.header.scrolled .logo-img { height: 88px; }
 
 
 .project-image {

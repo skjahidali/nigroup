@@ -96,6 +96,17 @@
     box-shadow: 0 16px 46px rgba(227,30,36,.38);
     transition: .38s;
 }
+ ─── LOGO IMAGE — BIG & CLEAR ────────────────────── */
+.logo-img {
+    height: 200px;      /* was 72px — notably bigger */
+    width: auto;
+    transition: all .45s cubic-bezier(.4,0,.2,1);
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.header.scrolled .logo-img { height: 88px; }
 
 .about-hero-cta:hover { transform: translateY(-5px); box-shadow: 0 26px 60px rgba(227,30,36,.5); }
 

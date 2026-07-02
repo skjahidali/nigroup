@@ -22,47 +22,102 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     HEADER
-══════════════════════════════════════════════ -->
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
 <header class="header" id="header">
     <div class="header-container">
 
         <a href="index.html" class="logo" aria-label="NI Group Home">
             <div class="logo">
-                <img id="headerLogo"
-                     class="logo-img"
+                <img class="logo-img"
                      src="Project Photo/NI GROUP COLOR LOGO.png"
                      alt="NI Group – Buy Property Now Ask Me How!"
-                     width="260"
-                     height="96">
+                     width="260" height="96">
             </div>
         </a>
-
         <nav class="nav-desktop" aria-label="Main navigation">
-            <a href="index.html"          class="nav-link">Home</a>
-            <a href="index.html#projects" class="nav-link">Projects</a>
-            <a href="index.html#services" class="nav-link">Services</a>
-            <a href="about.html"          class="nav-link active">About Us</a>
-            <a href="index.html#contact"  class="nav-link">Contact</a>
+            <a href="index.html" class="nav-link active">Home</a>
+
+            <div class="nav-dropdown">
+                <a href="#projects" class="nav-link">Projects <span class="chevron">&#9660;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="invicta.html"  class="dropdown-item">
+                        <span class="di-dot" style="background:#16a34a;"></span>
+                        INVICTA
+                        <span class="di-status completed">Done</span>
+                    </a>
+                    <a href="iris.html"    class="dropdown-item">
+                        <span class="di-dot" style="background:#ec8106;"></span>
+                        IRIS
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="iqra.html"    class="dropdown-item">
+                        <span class="di-dot" style="background:#ec8106;"></span>
+                        IQRA
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="paradizia.html" class="dropdown-item">
+                        <span class="di-dot" style="background:#ec8106;"></span>
+                        Paradizia
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="inaya.html"   class="dropdown-item">
+                        <span class="di-dot" style="background:#ec8106;"></span>
+                        INAYA Residency
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="inara.html"   class="dropdown-item">
+                        <span class="di-dot" style="background:#ec8106;"></span>
+                        INARA Metro
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                    <a href="ira.html"     class="dropdown-item">
+                        <span class="di-dot" style="background:#ec8106;"></span>
+                        IRA Residency
+                        <span class="di-status upcoming">Soon</span>
+                    </a>
+                </div>
+            </div>
+            <a href="about.html"  class="nav-link">About Us</a>
+            <a href="blog.html"   class="nav-link">Blog</a>
+            <a href="careers.html" class="nav-link">Careers</a>
+            <a href="#contact"    class="nav-link">Contact</a>
         </nav>
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="navMobile">&#9776;</button>
+        <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
     </div>
 
     <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
-        <a href="index.html"          class="nav-link">Home</a>
-        <a href="index.html#projects" class="nav-link">Projects</a>
-        <a href="index.html#services" class="nav-link">Services</a>
-        <a href="about.html"          class="nav-link active">About Us</a>
-        <a href="index.html#directors" class="nav-link">Leadership</a>
-        <a href="index.html#contact"  class="nav-link">Contact</a>
+        <a href="index.html"  class="nav-link">Home</a>
+
+        <div class="nav-link-wrap">
+            <span class="nav-link mobile-dropdown-toggle">
+                Projects <span class="m-chevron" style="transition:transform .3s;">&#9660;</span>
+            </span>
+            <div class="mobile-sub-menu">
+                <a href="invicta.html"   class="nav-link">INVICTA</a>
+                <a href="iris.html"      class="nav-link">IRIS</a>
+                <a href="iqra.html"      class="nav-link">IQRA</a>
+                <a href="paradizia.html" class="nav-link">Paradizia</a>
+                <a href="inaya.html"     class="nav-link">INAYA Residency</a>
+                <a href="inara.html"     class="nav-link">INARA Metro</a>
+                <a href="ira.html"       class="nav-link">IRA Residency</a>
+            </div>
+        </div>
+
+        <a href="about.html"      class="nav-link">About Us</a>
+        <a href="blog"       class="nav-link">Blog</a>
+        <a href="careers"    class="nav-link">Careers</a>
+        <a href="#contact"        class="nav-link">Contact</a>
     </nav>
+    
+<div class="premium-contact" aria-label="Quick contact">
+    <a href="tel:9330118686" class="premium-btn call-btn" aria-label="Call us">
+        <span class="ripple-ring"></span>
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="text">Call Us <small>Instant Support</small></span>
+    </a>
+    </div>
 </header>
 
 <!-- ═══════════════════════════════════════════
@@ -332,71 +387,6 @@
     </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     MILESTONES TIMELINE
-══════════════════════════════════════════════ -->
-<section class="timeline-section" id="milestones">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Our Journey</span>
-            <h2 class="section-title">Key Milestones</h2>
-            <p class="section-desc">A decade of growth, trust, and transforming dreams into addresses across Kolkata.</p>
-        </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item left">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2013 – Foundation</span>
-                <h3 class="timeline-title">NI Group Is Born</h3>
-                <p class="timeline-text">NI Group was founded by Saikh Ataur Rahaman &amp; MD Mokim Sardar with a shared dream — to bring quality, affordable homes to families across Kolkata.</p>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2016 – First Project</span>
-                <h3 class="timeline-title">First Residential Project Launched</h3>
-                <p class="timeline-text">NI Group delivered its first residential apartments, setting the standard for quality construction and timely handover that defines us today.</p>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2019 – INVICTA</span>
-                <h3 class="timeline-title">Flagship Project: INVICTA</h3>
-                <p class="timeline-text">Launched INVICTA at Kalikapur, Newtown — a landmark project that marked NI Group's position as a premium developer in the Newtown corridor.</p>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2021 – 500 Families</span>
-                <h3 class="timeline-title">500+ Happy Families Milestone</h3>
-                <p class="timeline-text">Crossed 500 happy homeowners — a proud testament to the trust families place in NI Group for the most important purchase of their lives.</p>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2023 – Expansion</span>
-                <h3 class="timeline-title">Multi-Project Portfolio Launch</h3>
-                <p class="timeline-text">Announced 6 upcoming projects — IRIS, IQRA, INAYA Residency, INARA Metro, IRA Residency, and Paradizia — across the Newtown–Hatiara growth belt.</p>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2024 – Digital</span>
-                <h3 class="timeline-title">AI-Powered Customer Experience</h3>
-                <p class="timeline-text">Launched AI concierge and digital-first customer journey tools, making property discovery seamless and transparent for every buyer.</p>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-dot"></div>
-                <span class="timeline-year">2025+ – Future</span>
-                <h3 class="timeline-title">NI Group 2.0 — Building at Scale</h3>
-                <p class="timeline-text">Expanding across West Bengal with 20+ partner developers, new commercial ventures, and a vision to house 5,000+ families by 2028.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 <!-- ═══════════════════════════════════════════
      LEADERSHIP TEAM
@@ -413,16 +403,16 @@
             <div class="director-card">
                 <div class="director-image-wrap">
                     <div class="director-image" style="background-image: url('Project Photo/saikh-ataur-rahaman.jpg');"></div>
-                    <div class="director-badge">Founder &amp; Director</div>
+                    <div class="director-badge">Director</div>
                 </div>
                 <div class="director-info">
                     <h3 class="director-name">Saikh Ataur Rahaman</h3>
                     <p class="director-role">Director, NI Group of Companies</p>
                     <p class="director-bio">Visionary real estate entrepreneur with expertise in premium housing, strategic growth, and customer-centric development solutions across Kolkata. With over a decade of experience in the property sector, Saikh Ataur Rahaman has been instrumental in establishing NI Group as one of Kolkata's most trusted real estate brands.</p>
                     <div class="director-socials">
-                        <a href="https://www.linkedin.com/in/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://www.instagram.com/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                        <a href="https://www.facebook.com/ataur.rahaman.792" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="https://www.linkedin.com/in/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> </a>
+                        <a href="https://www.facebook.com/ataur.rahaman.792" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -430,19 +420,37 @@
             <div class="director-card">
                 <div class="director-image-wrap">
                     <div class="director-image" style="background-image:url('Project Photo/Mokim.jpeg');"></div>
-                    <div class="director-badge">Founder &amp; Director</div>
+                    <div class="director-badge">Director</div>
                 </div>
                 <div class="director-info">
                     <h3 class="director-name">MD Mokim Sardar</h3>
                     <p class="director-role">Director, NI Group of Companies</p>
                     <p class="director-bio">Experienced leader in project execution, community development, and delivering thoughtfully designed residential experiences with quality assurance. MD Mokim Sardar's hands-on approach to construction management and his deep commitment to customer satisfaction have been pillars of NI Group's growth.</p>
                     <div class="director-socials">
-                        <a href="https://www.linkedin.com/in/md-mokim-sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://www.instagram.com/mdmokim.sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                        <a href="https://www.facebook.com/md.mokim.sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="https://www.linkedin.com/in/md-mokim-sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/mdmokim.sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/md.mokim.sardar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
+              <div class="directors-grid">
+            <div class="director-card">
+                <div class="director-image-wrap">
+                    <div class="director-image" style="background-image: url('Project Photo/Yusuf.jpg');"></div>
+                    <div class="director-badge">Director</div>
+                </div>
+                <div class="director-info">
+                    <h3 class="director-name">MD Yusuf Ali</h3>
+                    <p class="director-role">Director, NI Group of Companies</p>
+                    <p class="director-bio">Visionary real estate entrepreneur with expertise in premium housing, strategic growth, and customer-centric development solutions across Kolkata. With over a decade of experience in the property sector, Saikh Ataur Rahaman has been instrumental in establishing NI Group as one of Kolkata's most trusted real estate brands.</p>
+                    <div class="director-socials">
+                        <a href="https://www.linkedin.com/in/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ataurrahamanofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ataur.rahaman.792" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
