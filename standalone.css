@@ -2318,6 +2318,7 @@ opacity:0;
 .js-enabled .director-card:not(.active),
 .js-enabled .step-card:not(.active),
 .js-enabled .section-header:not(.active) {
+
     opacity: 0;
     transform: translateY(44px);
 }
