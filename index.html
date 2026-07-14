@@ -156,29 +156,21 @@
     </nav>
 </header>
 
-<!-- ═══ FLOATING CONTACT ═════════════════════════════════ -->
-<div class="premium-contact" aria-label="Quick contact">
-    <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="premium-btn whatsapp-btn" aria-label="WhatsApp">
-        <span class="ripple-ring"></span>
-        <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
-        <span class="text">WhatsApp <small>Chat Now</small></span>
-        <span class="badge">24/7</span>
-    </a>
-</div>
+<!-- WhatsApp floating button removed site-wide (kept inside AI panel) -->
 
 <!-- ═══ AI CONCIERGE ═════════════════════════════════════ -->
 <div class="ni-ai-agent">
     <div class="ai-panel" id="aiPanel">
         <div class="ai-top">
-            <div class="ai-top-info">
-                <div class="ai-avatar">AI</div>
-                <div>
-                    <h3>NI Group AI</h3>
-                    <p><span class="ai-online-dot"></span>Online — ready to help</p>
+                <div class="ai-top-info">
+                    <div class="ai-avatar">NI</div>
+                    <div>
+                        <h3>NI Chat</h3>
+                        <p><span class="ai-online-dot"></span>Online — ready to help</p>
+                    </div>
                 </div>
+                <button onclick="toggleAI()" aria-label="Close">&#215;</button>
             </div>
-            <button onclick="toggleAI()" aria-label="Close">&#215;</button>
-        </div>
         <div class="ai-body" id="aiBody">
             <div class="ai-msg bot">Assalamu Alaikum &#128075; Welcome to <b>NI Group</b>. Looking for a flat, site visit, price details or location?</div>
         </div>
@@ -197,10 +189,10 @@
             <button onclick="sendAI()" aria-label="Send">&#10148;</button>
         </div>
     </div>
-    <button class="ai-launch" onclick="toggleAI()" aria-label="Open AI Concierge">
+    <button class="ai-launch" onclick="toggleAI()" aria-label="Open NI Chat">
         <span class="pulse"></span>
-        <b>AI</b>
-        <span class="ai-label">CHAT</span>
+        <b>NI</b>
+        <span class="ai-label">NI Chat</span>
     </button>
 </div>
 
@@ -497,11 +489,11 @@
 
             <div class="ai-demo-panel">
                 <div class="ai-demo-header">
-                    <div class="ai-demo-avatar">AI</div>
-                    <div class="ai-demo-header-text">
-                        <h4>NI Group AI Concierge</h4>
-                        <p><span class="ai-online-dot"></span>Online — ready to help</p>
-                    </div>
+                    <div class="ai-demo-avatar">NI</div>
+                        <div class="ai-demo-header-text">
+                            <h4>NI Chat</h4>
+                            <p><span class="ai-online-dot"></span>Online — ready to help</p>
+                        </div>
                 </div>
                 <div class="ai-demo-body">
                     <div class="demo-msg bot">

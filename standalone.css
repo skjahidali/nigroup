@@ -2563,3 +2563,8 @@ input, select, textarea { font-size: 16px; }
         font-size: 0.6rem;
     }
 }
+
+/* Small-screen hero safety: avoid 100svh causing hidden content on some mobile browsers */
+@media (max-width: 768px) {
+    .hero { min-height: auto !important; }
+}
