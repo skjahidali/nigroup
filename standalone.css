@@ -2571,23 +2571,49 @@ input, select, textarea { font-size: 16px; }
 
 /* NI Chat: mobile-friendly overrides */
 @media (max-width: 900px) {
-    .ni-ai-agent { right: 14px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
-    .ai-launch { width: 56px; height: 56px; border-radius: 16px; font-size: 15px; }
+    .ni-ai-agent {
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        width: auto;
+        max-width: none;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 10px;
+        padding: 0;
+    }
+    .ai-launch {
+        position: relative;
+        z-index: 1000001;
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        font-size: 15px;
+    }
     .ai-launch .ai-label { display: none; }
 
     .ai-panel {
-        width: calc(100vw - 28px) !important;
-        max-width: 600px;
-        margin-bottom: 12px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 70px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
         border-radius: 14px;
         box-shadow: 0 18px 48px rgba(0,0,0,.28);
         animation: none !important;
+        max-height: calc(74vh);
+        overflow: hidden;
     }
 
     .ai-top { padding: 14px; }
     .ai-avatar { width: 40px; height: 40px; font-size: 18px; }
     .ai-top h3 { font-size: 14px; }
-    .ai-body { height: 34vh; max-height: 44vh; padding: 12px; }
+    .ai-body { height: auto; max-height: calc(42vh); padding: 12px; overflow-y: auto; }
     .ai-options { gap: 6px; padding: 8px; }
     .ai-actions { padding: 0 10px 10px; gap: 8px; }
     .ai-input { padding: 8px; }
