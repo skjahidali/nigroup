@@ -141,9 +141,24 @@ function moveTestimonials(direction) {
 function toggleAI() {
     const panel = document.getElementById('aiPanel');
     if (!panel) return;
-    const isOpen = panel.style.display === 'block';
-    panel.style.display = isOpen ? 'none' : 'block';
-    if (!isOpen) {
+    const wrapper = panel.closest('.ni-ai-agent');
+    const isOpen = panel.style.display === 'block' || panel.classList.contains('open');
+    if (isOpen) {
+        panel.style.display = 'none';
+        panel.classList.remove('open');
+        wrapper?.classList.remove('open');
+        document.body.classList.remove('ai-open');
+        // restore page scroll
+        document.documentElement.style.overflow = '';
+    } else {
+        panel.style.display = 'block';
+        panel.classList.add('open');
+        wrapper?.classList.add('open');
+        // on small screens lock background scroll for focused chat
+        if (window.innerWidth <= 900) {
+            document.body.classList.add('ai-open');
+            document.documentElement.style.overflow = 'hidden';
+        }
         const input = document.getElementById('aiInput');
         setTimeout(() => input?.focus(), 200);
     }
