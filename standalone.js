@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             header?.classList.toggle('nav-open', isOpen);
         });
 
-        navMobile.querySelectorAll('.nav-link').forEach(link => {
+        navMobile.querySelectorAll('.nav-link:not(.mobile-dropdown-toggle)').forEach(link => {
             link.addEventListener('click', () => {
                 navMobile.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');

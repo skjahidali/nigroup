@@ -182,7 +182,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── LOGO IMAGE — BIG & CLEAR ────────────────────── */
 .logo-img {
-    height: 200px;      /* was 72px — notably bigger */
+    height: 92px;
+    max-width: 220px;
     width: auto;
     transition: all .45s cubic-bezier(.4,0,.2,1);
     object-fit: contain;
@@ -190,7 +191,9 @@ h1, h2, h3, h4, h5, h6 {
     image-rendering: crisp-edges;
 }
 
-.header.scrolled .logo-img { height: 88px; }
+.header.scrolled .logo-img {
+    height: 64px;
+}
 
 
 .project-image {
@@ -471,6 +474,7 @@ opacity:0;
     .nav-mobile {
         position: absolute !important;
         top: 100%; left: 0; right: 0;
+        display: none !important;
         background: #fff !important;
         padding: 14px 20px 22px !important;
         box-shadow: 0 20px 50px rgba(0,0,0,.16) !important;
@@ -1562,12 +1566,6 @@ opacity:0;
 .premium-btn .text small { font-size: 10px; opacity: .88; font-weight: 500; margin-top: 2px; }
 .premium-btn:hover .text { opacity: 1; }
 
-.call-btn {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    animation-delay: 0s;
-}
-.call-btn:hover { box-shadow: 0 18px 50px rgba(37,99,235,.44); }
-
 .whatsapp-btn {
     background: linear-gradient(135deg, #075e54, #25d366, #128c7e);
     animation-delay: .85s;
@@ -2380,6 +2378,37 @@ opacity:0;
     .ni-ai-agent { bottom: 106px; right: 16px; }
     .footer-logo { max-width: 220px; width: 220px; margin: 0 auto 14px; }
     .footer-brand-divider { margin: 16px auto; }
+
+    .hero::before {
+        animation: none !important;
+        transform: scale(1) !important;
+        background-position: center center !important;
+    }
+
+    .hero { background-attachment: scroll; }
+    .hero-content,
+    .hero-badge,
+    .hero-title,
+    .hero-tagline,
+    .hero-desc,
+    .hero-ctas {
+        animation-duration: .9s !important;
+        animation-delay: 0 !important;
+    }
+
+    .btn,
+    .btn-banner-white,
+    .btn-banner-outline,
+    .menu-toggle,
+    .nav-mobile .nav-link,
+    .premium-btn,
+    .ai-launch {
+        transition: transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+    }
+
+    .ai-launch {
+        animation: none !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -2485,8 +2514,6 @@ input, select, textarea { font-size: 16px; }
 
 /* Guard against any element forcing horizontal scroll on narrow iPhones */
 .hero-content, .container, .footer-grid, .ai-auto-grid, .about-content { max-width: 100%; }
-<!-- Then add this CSS to your stylesheet -->
-<style>
 /* ─── FOOTER LEGAL LINKS ──────────────────────────────── */
 .footer-legal {
     margin-top: 32px;
@@ -2536,4 +2563,3 @@ input, select, textarea { font-size: 16px; }
         font-size: 0.6rem;
     }
 }
-</style>

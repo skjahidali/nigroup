@@ -96,7 +96,7 @@
     box-shadow: 0 16px 46px rgba(227,30,36,.38);
     transition: .38s;
 }
- ─── LOGO IMAGE — BIG & CLEAR ────────────────────── */
+/* ─── LOGO IMAGE — BIG & CLEAR ────────────────────── */
 .logo-img {
     height: 200px;      /* was 72px — notably bigger */
     width: auto;
