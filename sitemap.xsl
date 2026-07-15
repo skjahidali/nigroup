@@ -11,7 +11,7 @@ xmlns:s="http://www.sitemaps.org/schemas/sitemap/0.9">
 <html>
 <head>
 
-<title>NI Group Realty XML Sitemap</title>
+<title>NI Grouphttps://nigrouprealty.com/sitemap.xml Sitemap</title>
 
 <style>
 body{
