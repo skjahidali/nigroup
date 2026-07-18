@@ -36,10 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (!href || href === '#') return;
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } catch (err) {
+                console.warn(`Invalid selector: ${href}`, err);
             }
         });
     });
@@ -120,6 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.getElementById('leadPopup')?.classList.add('show');
     }, 3000);
+
+    /* ── Dynamic Copyright Year ── */
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+    }
 });
 
 /* ── Popup close ── */
@@ -298,6 +308,39 @@ function replyAI(text) {
     return '🤖 I can help with <b>projects, pricing, site visits, home loans, location &amp; booking</b>. Please ask your question or call <b>9330118686</b>.';
 }
 
+/* ── Custom Toast Notification ── */
+function showToast(message) {
+    let container = document.getElementById('toastContainer');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toastContainer';
+        container.style.cssText = 'position: fixed; bottom: 24px; right: 24px; z-index: 10000; display: flex; flex-direction: column; gap: 10px; pointer-events: none;';
+        document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = 'custom-toast';
+    toast.style.cssText = 'background: #1e293b; color: #fff; padding: 14px 24px; border-radius: 10px; font-family: "Inter", sans-serif; font-size: 14px; font-weight: 500; box-shadow: 0 10px 25px rgba(0,0,0,0.2); opacity: 0; transform: translateY(20px); transition: all 0.3s ease; pointer-events: auto; border-left: 4px solid #16a34a;';
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    // Trigger reflow to enable transition
+    toast.offsetHeight;
+
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            toast.remove();
+            if (container.children.length === 0) {
+                container.remove();
+            }
+        }, 300);
+    }, 4000);
+}
+
 /* ── Lead form submit ── */
 function submitLead(e) {
     e.preventDefault();
@@ -310,7 +353,7 @@ function submitLead(e) {
         form.reset();
         btn.textContent = 'Get Free Consultation →';
         btn.disabled = false;
-        alert('Thank you! Our team will contact you shortly.');
+        showToast('Thank you! Our team will contact you shortly.');
     }, 900);
 }
 
@@ -321,3 +364,4 @@ window.toggleAI         = toggleAI;
 window.askAI            = askAI;
 window.sendAI           = sendAI;
 window.submitLead       = submitLead;
+window.showToast        = showToast;

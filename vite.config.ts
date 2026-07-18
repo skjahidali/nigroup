@@ -1,10 +1,22 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about.html'),
+        careers: resolve(__dirname, 'careers.html'),
+        blog: resolve(__dirname, 'blog.html'),
+        invicta: resolve(__dirname, 'invicta.html'),
+        iris: resolve(__dirname, 'iris.html'),
+        iqra: resolve(__dirname, 'iqra.html'),
+        paradizia: resolve(__dirname, 'paradizia.html'),
+        inayaResidency: resolve(__dirname, 'inaya-residency.html'),
+        inaraMetro: resolve(__dirname, 'inara-metro.html'),
+        iraResidency: resolve(__dirname, 'ira-residency.html'),
+      },
+    },
   },
 });

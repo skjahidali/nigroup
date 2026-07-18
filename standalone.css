@@ -42,9 +42,9 @@ html { scroll-behavior: smooth; }
 html, body {
     width: 100%;
     max-width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-label {
     display: inline-block;
-    color: var(--accent) !important;
+    color: var(--accent);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 4px;
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: #0f172a !important;
+    color: #0f172a;
     text-align: center;
     margin-bottom: 16px;
     line-height: 1.18;
@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-desc {
-    color: #64748b !important;
+    color: #64748b;
     font-size: 1.05rem;
     line-height: 1.85;
     max-width: 700px;
@@ -133,8 +133,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Dark-bg overrides */
 .testimonials .section-title,
-.testimonials .section-desc { color: #fff !important; }
-.testimonials .section-label { color: #fbbf24 !important; }
+.testimonials .section-desc { color: #fff; }
+.testimonials .section-label { color: #fbbf24; }
 
 /* ─── HEADER ──────────────────────────────────────── */
 .header{
