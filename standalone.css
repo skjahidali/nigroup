@@ -480,12 +480,19 @@ opacity:0;
         box-shadow: 0 20px 50px rgba(0,0,0,.16) !important;
         border-top: 1px solid var(--gray-200) !important;
         z-index: 10000 !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition: opacity .28s ease, transform .28s ease, visibility .28s ease;
     }
 
     .nav-mobile.active {
         display: flex !important;
         flex-direction: column !important;
         gap: 4px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
     }
 
     .nav-mobile .nav-link {
@@ -501,6 +508,55 @@ opacity:0;
     .nav-mobile .nav-link:hover {
         background: #fff7ed !important;
         color: var(--accent) !important;
+    }
+
+    .mobile-dropdown-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100%;
+        padding: 13px 14px !important;
+        border-radius: 10px !important;
+        background: rgba(248,250,252,.12) !important;
+        color: #111 !important;
+        font-weight: 700 !important;
+        cursor: pointer;
+        border: 1px solid rgba(15,23,42,.08) !important;
+        transition: background .25s ease, transform .25s ease;
+    }
+
+    .mobile-dropdown-toggle:hover {
+        background: rgba(248,250,252,.24) !important;
+    }
+
+    .mobile-sub-menu {
+        display: none;
+        padding-left: 16px;
+        border-left: 2px solid rgba(27,58,122,.15);
+        margin: 4px 0 4px 12px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height .28s ease, opacity .28s ease;
+    }
+
+    .mobile-sub-menu.open {
+        display: block;
+        max-height: 600px;
+        opacity: 1;
+    }
+
+    .mobile-sub-menu .nav-link {
+        font-size: 13.5px !important;
+        font-weight: 600 !important;
+        padding: 10px 12px !important;
+    }
+
+    .m-chevron {
+        transition: transform .3s ease !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .logo-img { height: 76px !important; }
@@ -557,13 +613,12 @@ opacity:0;
 
 @keyframes heroSlider {
     0%,16%   { background-image: url('Project Photo/INARA.jpeg'); transform: scale(1.04); }
-    18%,34%  { background-image: url('Project Photo/CHAPNA_DRAFT.jpg.jpeg'); transform: scale(1.10); }
+    18%,34%  { background-image: url('Project Photo/Paradizia.jpeg'); transform: scale(1.10); }
     36%,52%  { background-image: url('Project Photo/Invicta1.jpg'); transform: scale(1.06); }
     54%,70%  { background-image: url('Project Photo/IRIS SS.jpeg'); transform: scale(1.10); }
     72%,88%  { background-image: url('Project Photo/IRA.jpeg'); transform: scale(1.06); }
     90%,100% { background-image: url('Project Photo/iqra.jpg'); transform: scale(1.10); }
 }
-
 .hero-content {
     position: relative;
     z-index: 3;
@@ -598,7 +653,6 @@ opacity:0;
     box-shadow: 0 12px 38px rgba(0,0,0,.28);
     animation: heroFade 1.4s .15s both;
 }
-
 .hero-badge::before { content: '◆'; font-size: 8px; color: var(--accent); }
 
 .hero-title {
@@ -1031,15 +1085,27 @@ opacity:0;
 
 .logo-item:hover img { filter: grayscale(0%) opacity(1); }
 /* ─── mobile ─────────────────────────────── */
-@media (max-width:768px){
-
-.hero::before{
-
-    background-size:1200px auto !important;
-    background-position:center top !important;
-
-}
-
+@media (max-width:768px) {
+    .hero::before {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+    }
+    .hero {
+        min-height: 100vh;
+        padding: 120px 16px 60px;
+    }
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+    .hero-title {
+        font-size: clamp(2.4rem, 8vw, 3.4rem);
+    }
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 10px 18px;
+    }
 }
 /* ─── SERVICES ────────────────────────────────── */
 .services {

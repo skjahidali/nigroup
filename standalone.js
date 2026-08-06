@@ -64,10 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── Mobile dropdown ── */
     document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
         toggle.addEventListener('click', () => {
             const sub = toggle.closest('.nav-link-wrap')?.querySelector('.mobile-sub-menu');
             if (sub) {
                 const isOpen = sub.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', String(isOpen));
                 toggle.querySelector('.m-chevron')?.style.setProperty('transform', isOpen ? 'rotate(180deg)' : 'rotate(0)');
             }
         });
