@@ -1693,12 +1693,16 @@ opacity:0;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
-    transition: transform .3s, box-shadow .3s;
+    transition: transform .3s ease, box-shadow .3s ease;
     display: flex; align-items: center; justify-content: center; flex-direction: column;
     gap: 2px;
+    animation: slideInUp .5s ease-out;
 }
 
-.ai-launch:hover { transform: scale(1.08); box-shadow: 0 28px 64px rgba(27,58,122,.48); }
+.ai-launch:hover { 
+    transform: scale(1.08) translateY(-2px); 
+    box-shadow: 0 28px 64px rgba(27,58,122,.48); 
+}
 .ai-launch .ai-label { font-size: 9px; opacity: .88; letter-spacing: 1.5px; }
 
 .pulse {
@@ -1712,6 +1716,11 @@ opacity:0;
 @keyframes pulseAI {
     0%   { transform: scale(.9); opacity: 1; }
     100% { transform: scale(1.38); opacity: 0; }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .ai-panel {
