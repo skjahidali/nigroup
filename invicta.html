@@ -207,34 +207,6 @@
     </div>
   </section>
 
-  <section class="enquiry-section">
-    <div class="container">
-      <div class="enquiry-grid">
-        <div class="enquiry-text">
-          <h2>Interested in INVICTA?</h2>
-          <p>Get pricing, floor plans, and exclusive offers. Our experts will guide you through the entire journey.</p>
-          <div class="enquiry-contacts">
-            <a href="tel:9330118686" class="ec-link"><i class="fa-solid fa-phone"></i> 9330118686</a>
-            <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="ec-link"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
-            <a href="mailto:sales@nigrouprealty.com" class="ec-link"><i class="fa-solid fa-envelope"></i> sales@nigrouprealty.com</a>
-          </div>
-        </div>
-        <div class="enquiry-form">
-          <h3>Book Free Consultation</h3>
-          <form onsubmit="handleEnquiry(event)">
-            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" required></div>
-            <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="Your mobile number" required></div>
-            <div class="form-group"><label>Email</label><input type="email" placeholder="Your email address"></div>
-            <div class="form-group"><label>BHK Type</label>
-              <select><option value="">Select BHK type</option><option>2 BHK</option><option>3 BHK</option><option>Other</option></select>
-            </div>
-            <div class="form-group"><label>Message</label><textarea placeholder="Any specific requirements?"></textarea></div>
-            <button type="submit" class="form-submit">Book Free Site Visit &#8594;</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══ GALLERY & BROCHURE ════════════════════════════════════ -->
   <section class="gallery-section">
@@ -429,14 +401,22 @@
   // ═══ GALLERY CAROUSEL ═══
   let galleryIndex = 0;
   let galleryAutoplay;
-  const GALLERY_ITEMS = 27;
-  const ITEMS_PER_VIEW = 4;
+
+  function getCarouselMetrics(gridId) {
+    const grid = document.getElementById(gridId);
+    const carousel = grid?.parentElement;
+    if (!grid || !carousel) return { maxSlides: 1, maxOffset: 0 };
+
+    const maxOffset = Math.max(0, grid.scrollWidth - carousel.clientWidth);
+    const maxSlides = Math.max(1, Math.ceil(grid.scrollWidth / carousel.clientWidth));
+    return { maxSlides, maxOffset };
+  }
 
   function initGalleryDots() {
     const dotsContainer = document.getElementById('galleryDots');
-    const totalSlides = Math.ceil(GALLERY_ITEMS / ITEMS_PER_VIEW);
+    const { maxSlides } = getCarouselMetrics('galleryGrid');
     dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
+    for (let i = 0; i < maxSlides; i++) {
       const dot = document.createElement('div');
       dot.className = `gallery-dot ${i === 0 ? 'active' : ''}`;
       dot.onclick = () => goToGallerySlide(i);
@@ -446,24 +426,26 @@
 
   function updateGalleryPosition() {
     const grid = document.getElementById('galleryGrid');
-    const offset = galleryIndex * (100 / Math.ceil(GALLERY_ITEMS / ITEMS_PER_VIEW));
-    grid.style.transform = `translateX(-${offset}%)`;
+    const { maxSlides, maxOffset } = getCarouselMetrics('galleryGrid');
+    galleryIndex = Math.min(galleryIndex, maxSlides - 1);
+    const offset = Math.min(maxOffset, galleryIndex * grid.parentElement.clientWidth);
+    grid.style.transform = `translateX(-${offset}px)`;
     
     const dots = document.querySelectorAll('.gallery-dot');
     dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === Math.floor(galleryIndex / Math.ceil(GALLERY_ITEMS / ITEMS_PER_VIEW)));
+      dot.classList.toggle('active', i === galleryIndex);
     });
   }
 
   function nextGallery() {
-    const maxSlides = Math.ceil(GALLERY_ITEMS / ITEMS_PER_VIEW);
+    const { maxSlides } = getCarouselMetrics('galleryGrid');
     galleryIndex = (galleryIndex + 1) % maxSlides;
     updateGalleryPosition();
     resetGalleryAutoplay();
   }
 
   function prevGallery() {
-    const maxSlides = Math.ceil(GALLERY_ITEMS / ITEMS_PER_VIEW);
+    const { maxSlides } = getCarouselMetrics('galleryGrid');
     galleryIndex = (galleryIndex - 1 + maxSlides) % maxSlides;
     updateGalleryPosition();
     resetGalleryAutoplay();
@@ -504,24 +486,24 @@
   // ═══ AMENITIES CAROUSEL ═══
   let amenitiesIndex = 0;
   let amenitiesAutoplay;
-  const AMENITIES_ITEMS = 12;
 
   function updateAmenitiesPosition() {
     const grid = document.getElementById('amenitiesGrid');
-    const maxSlides = Math.ceil(AMENITIES_ITEMS / ITEMS_PER_VIEW);
-    const offset = amenitiesIndex * (100 / maxSlides);
-    grid.style.transform = `translateX(-${offset}%)`;
+    const { maxSlides, maxOffset } = getCarouselMetrics('amenitiesGrid');
+    amenitiesIndex = Math.min(amenitiesIndex, maxSlides - 1);
+    const offset = Math.min(maxOffset, amenitiesIndex * grid.parentElement.clientWidth);
+    grid.style.transform = `translateX(-${offset}px)`;
   }
 
   function nextAmenities() {
-    const maxSlides = Math.ceil(AMENITIES_ITEMS / ITEMS_PER_VIEW);
+    const { maxSlides } = getCarouselMetrics('amenitiesGrid');
     amenitiesIndex = (amenitiesIndex + 1) % maxSlides;
     updateAmenitiesPosition();
     resetAmenitiesAutoplay();
   }
 
   function prevAmenities() {
-    const maxSlides = Math.ceil(AMENITIES_ITEMS / ITEMS_PER_VIEW);
+    const { maxSlides } = getCarouselMetrics('amenitiesGrid');
     amenitiesIndex = (amenitiesIndex - 1 + maxSlides) % maxSlides;
     updateAmenitiesPosition();
     resetAmenitiesAutoplay();
@@ -560,6 +542,12 @@
     updateAmenitiesPosition();
     resetGalleryAutoplay();
     resetAmenitiesAutoplay();
+  });
+
+  window.addEventListener('resize', () => {
+    initGalleryDots();
+    updateGalleryPosition();
+    updateAmenitiesPosition();
   });
 
   // Pause autoplay when user hovers

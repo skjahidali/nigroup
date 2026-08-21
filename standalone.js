@@ -367,3 +367,270 @@ window.askAI            = askAI;
 window.sendAI           = sendAI;
 window.submitLead       = submitLead;
 window.showToast        = showToast;
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE PREMIUM CAROUSELS
+═══════════════════════════════════════════════════════ */
+
+function createCarousel({
+    gridId,
+    itemSelector,
+    next,
+    prev,
+    autoplayTime = 5000,
+    dotsId = null
+}) {
+    const grid = document.getElementById(gridId);
+
+    if (!grid) return null;
+
+    const items = [...grid.querySelectorAll(itemSelector)];
+
+    let index = 0;
+    let autoplay;
+    let startX = 0;
+    let isTouching = false;
+
+    function getVisibleItems() {
+        const width = window.innerWidth;
+
+        if (width <= 480) return 1;
+        if (width <= 768) return 1;
+        if (width <= 1080) return 2;
+
+        return 4;
+    }
+
+    function getItemWidth() {
+        if (!items.length) return 0;
+
+        const item = items[0];
+        const style = getComputedStyle(grid);
+
+        const gap = parseFloat(style.gap) || 0;
+
+        return item.getBoundingClientRect().width + gap;
+    }
+
+    function getMaxIndex() {
+        return Math.max(0, items.length - getVisibleItems());
+    }
+
+    function createDots() {
+        if (!dotsId) return;
+
+        const dots = document.getElementById(dotsId);
+        if (!dots) return;
+
+        const visible = getVisibleItems();
+        const total = Math.ceil(items.length / visible);
+
+        dots.innerHTML = "";
+
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement("button");
+
+            dot.type = "button";
+            dot.className = "gallery-dot";
+            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+
+            dot.addEventListener("click", () => {
+                index = Math.min(i * visible, getMaxIndex());
+                update();
+                resetAutoplay();
+            });
+
+            dots.appendChild(dot);
+        }
+    }
+
+    function updateDots() {
+        if (!dotsId) return;
+
+        const dots = document.querySelectorAll(`#${dotsId} .gallery-dot`);
+        const visible = getVisibleItems();
+        const activeIndex = Math.floor(index / visible);
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === activeIndex);
+        });
+    }
+
+    function update() {
+        const maxIndex = getMaxIndex();
+
+        index = Math.max(0, Math.min(index, maxIndex));
+
+        const offset = index * getItemWidth();
+
+        grid.style.transform = `translate3d(-${offset}px, 0, 0)`;
+
+        updateDots();
+    }
+
+    function goNext() {
+        const maxIndex = getMaxIndex();
+
+        if (index >= maxIndex) {
+            index = 0;
+        } else {
+            index += 1;
+        }
+
+        update();
+    }
+
+    function goPrev() {
+        const maxIndex = getMaxIndex();
+
+        if (index <= 0) {
+            index = maxIndex;
+        } else {
+            index -= 1;
+        }
+
+        update();
+    }
+
+    function startAutoplay() {
+        clearInterval(autoplay);
+
+        autoplay = setInterval(() => {
+            if (!isTouching) goNext();
+        }, autoplayTime);
+    }
+
+    function resetAutoplay() {
+        startAutoplay();
+    }
+
+    /* Buttons */
+
+    if (next) {
+        const nextButton = document.querySelector(next);
+
+        nextButton?.addEventListener("click", () => {
+            goNext();
+            resetAutoplay();
+        });
+    }
+
+    if (prev) {
+        const prevButton = document.querySelector(prev);
+
+        prevButton?.addEventListener("click", () => {
+            goPrev();
+            resetAutoplay();
+        });
+    }
+
+    /* Touch swipe */
+
+    grid.addEventListener(
+        "touchstart",
+        (e) => {
+            startX = e.touches[0].clientX;
+            isTouching = true;
+            clearInterval(autoplay);
+        },
+        { passive: true }
+    );
+
+    grid.addEventListener(
+        "touchend",
+        (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const difference = startX - endX;
+
+            if (difference > 45) goNext();
+            if (difference < -45) goPrev();
+
+            isTouching = false;
+            resetAutoplay();
+        },
+        { passive: true }
+    );
+
+    /* Desktop hover pause */
+
+    grid.addEventListener("mouseenter", () => {
+        clearInterval(autoplay);
+    });
+
+    grid.addEventListener("mouseleave", () => {
+        startAutoplay();
+    });
+
+    /* Responsive resize */
+
+    let resizeTimer;
+
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(() => {
+            createDots();
+            update();
+        }, 150);
+    });
+
+    /* Start */
+
+    window.addEventListener("load", () => {
+        createDots();
+        update();
+        startAutoplay();
+    });
+
+    return {
+        next: goNext,
+        prev: goPrev,
+        update
+    };
+}
+
+
+/* ═══════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════ */
+
+const galleryCarousel = createCarousel({
+    gridId: "galleryGrid",
+    itemSelector: ".gallery-item",
+    next: ".gallery-next",
+    prev: ".gallery-prev",
+    autoplayTime: 4500,
+    dotsId: "galleryDots"
+});
+
+
+/* ═══════════════════════════════════════
+   AMENITIES
+═══════════════════════════════════════ */
+
+const amenitiesCarousel = createCarousel({
+    gridId: "amenitiesGrid",
+    itemSelector: ".amenity-card",
+    next: ".amenities-next",
+    prev: ".amenities-prev",
+    autoplayTime: 5000
+});
+
+
+/* Keep your existing HTML onclick attributes working */
+
+function nextGallery() {
+    galleryCarousel?.next();
+}
+
+function prevGallery() {
+    galleryCarousel?.prev();
+}
+
+function nextAmenities() {
+    amenitiesCarousel?.next();
+}
+
+function prevAmenities() {
+    amenitiesCarousel?.prev();
+}
