@@ -563,6 +563,75 @@ opacity:0;
     .header.scrolled .logo-img { height: 62px !important; }
 }
 
+@media (max-width: 768px) {
+    .header-container {
+        min-height: 72px;
+        padding: 8px 14px;
+    }
+
+    .logo-wrapper {
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .logo-img,
+    .header.scrolled .logo-img {
+        height: 58px !important;
+        max-width: 154px;
+    }
+
+    .menu-toggle {
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
+        flex: 0 0 46px;
+    }
+
+    .nav-mobile {
+        max-height: calc(100svh - 72px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.ai-open {
+        touch-action: none;
+    }
+
+    .ni-ai-agent {
+        right: 12px;
+    }
+
+    .ai-launch {
+        min-width: 58px;
+        min-height: 58px;
+    }
+
+    .hero {
+        min-height: 88svh;
+        padding: 116px 16px 64px;
+    }
+
+    .section-header {
+        margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.85rem, 8vw, 2.55rem);
+    }
+
+    .section-desc {
+        font-size: .98rem;
+        line-height: 1.65;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* ─── HERO ─────────────────────────────────────── */
 .hero {
     position: relative;
@@ -614,8 +683,8 @@ opacity:0;
 @keyframes heroSlider {
     0%,16%   { background-image: url('Project Photo/INARA.jpeg'); transform: scale(1.04); }
     18%,34%  { background-image: url('Project Photo/Paradizia.jpeg'); transform: scale(1.10); }
-    36%,52%  { background-image: url('Project Photo/Invicta1.jpg'); transform: scale(1.06); }
-    54%,70%  { background-image: url('Project Photo/IRIS SS.jpeg'); transform: scale(1.10); }
+    36%,52%  { background-image: url('Project Photo/Invicta.jpg'); transform: scale(1.06); }
+    54%,70%  { background-image: url('Project Photo/IRIS.jpeg'); transform: scale(1.10); }
     72%,88%  { background-image: url('Project Photo/IRA.jpeg'); transform: scale(1.06); }
     90%,100% { background-image: url('Project Photo/iqra.jpg'); transform: scale(1.10); }
 }
@@ -2465,9 +2534,11 @@ opacity:0;
     .footer-brand-divider { margin: 16px auto; }
 
     .hero::before {
-        animation: none !important;
-        transform: scale(1) !important;
+        background-image: url('Project Photo/INARA.jpeg');
+        animation: heroSlider 30s infinite ease-in-out !important;
+        transform: scale(1.04) !important;
         background-position: center center !important;
+        will-change: transform, background-image;
     }
 
     .hero { background-attachment: scroll; }

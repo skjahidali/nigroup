@@ -13,42 +13,504 @@
   <link rel="stylesheet" href="projects.css">
 </head>
 <body>
-<header class="header" id="header">
-  <div class="header-container">
-    <a href="index.html" class="logo" aria-label="NI Group Home"><div class="logo-wrapper"><img class="logo-img" src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" width="260" height="96"></div></a>
-    <nav class="nav-desktop" aria-label="Main navigation">
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="NI Group Home">
+        <div class="logo-wrapper">
+          <img class="logo-img" src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" width="260" height="96">
+        </div>
+      </a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="index.html#projects" class="nav-link active">Projects <span class="chevron">&#9660;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="invicta.html"  class="dropdown-item"><span class="di-dot" style="background:#16a34a;"></span>INVICTA<span class="di-status completed">Done</span></a>
+            <a href="iris.html"    class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRIS<span class="di-status upcoming">Soon</span></a>
+            <a href="iqra.html"    class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IQRA<span class="di-status upcoming">Soon</span></a>
+            <a href="paradizia.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>PARADIZIA<span class="di-status upcoming">Soon</span></a>
+            <a href="inaya-residency.html"   class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INAYA Residency<span class="di-status upcoming">Soon</span></a>
+            <a href="inara-metro.html"   class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INARA Metro<span class="di-status upcoming">Soon</span></a>
+            <a href="ira-residency.html"     class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRA Residency<span class="di-status upcoming">Soon</span></a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
       <a href="index.html" class="nav-link">Home</a>
-      <div class="nav-dropdown"><a href="index.html#projects" class="nav-link active">Projects <span class="chevron">&#9660;</span></a><div class="nav-dropdown-menu">
-        <a href="invicta.html" class="dropdown-item">INVICTA</a><a href="iris.html" class="dropdown-item">IRIS</a><a href="iqra.html" class="dropdown-item">IQRA</a><a href="paradizia.html" class="dropdown-item">PARADIZIA</a><a href="inaya-residency.html" class="dropdown-item">INAYA Residency</a><a href="inara-metro.html" class="dropdown-item">INARA Metro</a><a href="ira-residency.html" class="dropdown-item">IRA Residency</a>
-      </div></div>
-      <a href="about.html" class="nav-link">About Us</a><a href="blog.html" class="nav-link">Blog</a><a href="careers.html" class="nav-link">Careers</a><a href="index.html#contact" class="nav-link">Contact</a>
+      <div class="nav-link-wrap">
+        <span class="nav-link mobile-dropdown-toggle" aria-expanded="false">Projects <span class="m-chevron">&#9660;</span></span>
+        <div class="mobile-sub-menu">
+          <a href="invicta.html" class="nav-link">INVICTA</a>
+          <a href="iris.html" class="nav-link">IRIS</a>
+          <a href="iqra.html" class="nav-link">IQRA</a>
+          <a href="paradizia.html" class="nav-link">PARADIZIA</a>
+          <a href="inaya-residency.html" class="nav-link">INAYA Residency</a>
+          <a href="inara-metro.html" class="nav-link">INARA Metro</a>
+          <a href="ira-residency.html" class="nav-link">IRA Residency</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
     </nav>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
+  </header>
+<
+  <!-- WhatsApp floating button removed site-wide (kept inside AI panel) -->
+
+  <div class="ni-ai-agent">
+    <div class="ai-panel" id="aiPanel">
+      <div class="ai-top">
+        <div class="ai-top-info">
+          <div class="ai-avatar">NI</div>
+          <div><h3>NI Chat</h3><p><span class="ai-online-dot"></span>Online</p></div>
+        </div>
+        <button onclick="toggleAI()" aria-label="Close">&#215;</button>
+      </div>
+      <div class="ai-body" id="aiBody">
+        <div class="ai-msg bot">Assalamu Alaikum! I can help with pricing, site visits, or any queries about INARA Metro.</div>
+      </div>
+      <div class="ai-options">
+        <button onclick="askAI('Price Details')">&#8377; Price</button>
+        <button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button>
+        <button onclick="askAI('Floor Plans')">&#128195; Floor Plan</button>
+        <button onclick="askAI('Office Location')">&#128205; Location</button>
+      </div>
+      <div class="ai-actions">
+        <a href="tel:9330118686">&#128222; Call</a>
+        <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a>
+      </div>
+      <div class="ai-input">
+        <input id="aiInput" placeholder="Ask about INARA Metro..." onkeypress="if(event.key==='Enter')sendAI()">
+        <button onclick="sendAI()" aria-label="Send">&#10148;</button>
+      </div>
+    </div>
+    <button class="ai-launch" onclick="toggleAI()" aria-label="Open NI Chat">
+      <span class="pulse"></span><b>NI</b><span class="ai-label">NI Chat</span>
+    </button>
   </div>
-  <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
-    <a href="index.html" class="nav-link">Home</a><div class="nav-link-wrap"><span class="nav-link mobile-dropdown-toggle" aria-expanded="false">Projects <span class="m-chevron">&#9660;</span></span><div class="mobile-sub-menu"><a href="invicta.html" class="nav-link">INVICTA</a><a href="iris.html" class="nav-link">IRIS</a><a href="iqra.html" class="nav-link">IQRA</a><a href="paradizia.html" class="nav-link">PARADIZIA</a><a href="inaya-residency.html" class="nav-link">INAYA Residency</a><a href="inara-metro.html" class="nav-link">INARA Metro</a><a href="ira-residency.html" class="nav-link">IRA Residency</a></div></div>
-    <a href="about.html" class="nav-link">About Us</a><a href="blog.html" class="nav-link">Blog</a><a href="careers.html" class="nav-link">Careers</a><a href="index.html#contact" class="nav-link">Contact</a>
-  </nav>
-</header>
 
-<div class="ni-ai-agent"><div class="ai-panel" id="aiPanel"><div class="ai-top"><div class="ai-top-info"><div class="ai-avatar">NI</div><div><h3>NI Chat</h3><p><span class="ai-online-dot"></span>Online</p></div></div><button onclick="toggleAI()" aria-label="Close">&#215;</button></div><div class="ai-body" id="aiBody"><div class="ai-msg bot">Assalamu Alaikum! I can help with pricing, site visits, or any queries about INARA Metro.</div></div><div class="ai-options"><button onclick="askAI('Price Details')">&#8377; Price</button><button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button><button onclick="askAI('Floor Plans')">&#128195; Floor Plan</button><button onclick="askAI('Office Location')">&#128205; Location</button></div><div class="ai-actions"><a href="tel:8100118686">&#128222; Call</a><a href="https://wa.me/918100118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a></div><div class="ai-input"><input id="aiInput" placeholder="Ask about INARA Metro..." onkeypress="if(event.key==='Enter')sendAI()"><button onclick="sendAI()" aria-label="Send">&#10148;</button></div></div><button class="ai-launch" onclick="toggleAI()" aria-label="Open NI Chat"><span class="pulse"></span><b>NI</b><span class="ai-label">NI Chat</span></button></div>
+  <section class="project-hero" id="top">
+    <div class="project-hero-bg" style="background-image:url('Project Photo/INARA.jpeg');"></div>
+    <div class="project-hero-content">
+      <div class="container">
+        <nav class="project-breadcrumb">
+          <a href="index.html">Home</a><span>›</span>
+          <a href="index.html#projects">Projects</a><span>›</span>
+          <span>INARA Metro</span>
+        </nav>
+        <div class="project-hero-badges">
+          <span class="ph-badge status-upcoming">Upcoming</span>
+          <span class="ph-badge type-badge"><i class="fa-solid fa-building"></i> Residential Apartments</span>
+          <span class="ph-badge type-badge"><i class="fa-solid fa-train-subway"></i> Metro Corridor</span>
+        </div>
+        <h1 class="project-hero-name">INARA Metro</h1>
+        <p class="project-hero-tagline">"Connected Living, Better Tomorrow"</p>
+        <div class="project-hero-meta">
+          <span class="phm-item"><i class="fa-solid fa-location-dot"></i> Metro Corridor, Kolkata</span>
+          <span class="phm-item"><i class="fa-solid fa-home"></i> 2 & 3 BHK Apartments</span>
+          <span class="phm-item"><i class="fa-solid fa-calendar"></i> Upcoming</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="project-hero" id="top"><div class="project-hero-bg" style="background-image:url('Project Photo/INARA.jpeg');"></div><div class="project-hero-content"><div class="container"><nav class="project-breadcrumb"><a href="index.html">Home</a><span>›</span><a href="index.html#projects">Projects</a><span>›</span><span>INARA Metro</span></nav><div class="project-hero-badges"><span class="ph-badge status-upcoming">Upcoming</span><span class="ph-badge type-badge"><i class="fa-solid fa-building"></i> Residential Apartments</span><span class="ph-badge type-badge"><i class="fa-solid fa-train-subway"></i> Metro Corridor</span></div><h1 class="project-hero-name">INARA Metro</h1><p class="project-hero-tagline">"Connected Living, Better Tomorrow"</p><div class="project-hero-meta"><span class="phm-item"><i class="fa-solid fa-location-dot"></i> Metro Corridor, Kolkata</span><span class="phm-item"><i class="fa-solid fa-home"></i> 2 & 3 BHK Apartments</span><span class="phm-item"><i class="fa-solid fa-calendar"></i> Upcoming</span></div></div></div></section>
-<div class="project-info-bar"><div class="container"><div class="project-info-items"><div class="pii-item"><span class="pii-label">Project Type</span><span class="pii-value">Residential Apartments</span></div><div class="pii-item"><span class="pii-label">Location</span><span class="pii-value">Metro Corridor</span></div><div class="pii-item"><span class="pii-label">Units</span><span class="pii-value">2 & 3 BHK</span></div><div class="pii-item"><span class="pii-label">Status</span><span class="pii-value">Upcoming</span></div><div class="pii-item"><span class="pii-label">Possession</span><span class="pii-value">On Request</span></div></div></div></div>
-<section class="project-overview"><div class="container"><span class="section-label">Project Overview</span><h2 class="section-title" style="text-align:left;">INARA Metro by NI Group</h2><p class="po-desc">INARA Metro is designed for buyers who value connectivity, future growth, and practical residential living. Located near Kolkata's metro growth corridor, the project brings comfortable 2 and 3 BHK homes with essential amenities and dependable support from NI Group.</p><div class="po-highlights"><div class="po-hl"><i class="fa-solid fa-check-circle"></i> Metro Connectivity</div><div class="po-hl"><i class="fa-solid fa-check-circle"></i> 2 & 3 BHK Options</div><div class="po-hl"><i class="fa-solid fa-check-circle"></i> Gated Community</div><div class="po-hl"><i class="fa-solid fa-check-circle"></i> 24/7 Security</div><div class="po-hl"><i class="fa-solid fa-check-circle"></i> Covered Parking</div><div class="po-hl"><i class="fa-solid fa-check-circle"></i> Quality Construction</div></div></div></section>
-<section class="amenities-section"><div class="container"><div class="section-header"><span class="section-label">Project Features</span><h2 class="section-title">Everyday Comforts</h2><p class="section-desc">Essential features planned for a safe, convenient, and comfortable home.</p></div><div class="amenities-carousel"><div class="amenities-grid" id="amenitiesGrid"><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-train-subway"></i></span><p class="amenity-name">Metro Connectivity</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-shield-halved"></i></span><p class="amenity-name">Security</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-elevator"></i></span><p class="amenity-name">Lift Access</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-bolt"></i></span><p class="amenity-name">Power Backup</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-car"></i></span><p class="amenity-name">Car Parking</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-leaf"></i></span><p class="amenity-name">Green Space</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-droplet"></i></span><p class="amenity-name">Water Supply</p></div><div class="amenity-card"><span class="amenity-icon"><i class="fa-solid fa-building"></i></span><p class="amenity-name">Modern Lobby</p></div></div><button class="carousel-nav amenities-prev" onclick="prevAmenities()" aria-label="Previous amenity">&#10094;</button><button class="carousel-nav amenities-next" onclick="nextAmenities()" aria-label="Next amenity">&#10095;</button></div></div></section>
-<section class="location-section"><div class="container"><div class="section-header"><span class="section-label">Find Us</span><h2 class="section-title">Location & Connectivity</h2></div><div class="location-grid"><div class="location-map"><iframe src="https://www.google.com/maps?q=Kolkata%20Metro&output=embed" width="100%" height="400" style="border:0; border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="location-details"><div class="location-address"><p><strong>INARA Metro</strong><br>Metro Corridor, Kolkata. Contact NI Group for the exact project location and directions.</p><a href="index.html#contact" class="location-map-btn"><i class="fa-solid fa-directions"></i> Enquire for Directions</a></div><div class="location-nearby"><div class="ln-item"><i class="fa-solid fa-train-subway"></i> <span><strong>Metro Connectivity</strong> Nearby</span></div><div class="ln-item"><i class="fa-solid fa-road"></i> <span><strong>Major Roads</strong> Easy access</span></div><div class="ln-item"><i class="fa-solid fa-building"></i> <span><strong>Business Hubs</strong> Well connected</span></div><div class="ln-item"><i class="fa-solid fa-hospital"></i> <span><strong>Healthcare</strong> Nearby</span></div></div></div></div></div></section>
-<section class="gallery-section"><div class="container"><div class="section-header"><span class="section-label">Visual Tour</span><h2 class="section-title">Photo Gallery</h2><p class="section-desc">Explore INARA Metro through our project photo collection.</p></div><div class="gallery-carousel"><div class="gallery-grid" id="galleryGrid"><div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div><div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div><div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div><div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div></div></div></div></section>
-<section class="brochure-section"><div class="container"><div class="brochure-content"><div class="brochure-text"><span class="section-label">Project Information</span><h2 class="section-title">Know More About INARA Metro</h2><p>Request detailed floor plans, specifications, pricing, and site visit information from the NI Group team.</p><div class="brochure-features"><div class="bf-item"><i class="fa-solid fa-file-lines"></i> Floor Plans & Layouts</div><div class="bf-item"><i class="fa-solid fa-building"></i> Specifications</div><div class="bf-item"><i class="fa-solid fa-tag"></i> Pricing Details</div><div class="bf-item"><i class="fa-solid fa-map"></i> Location Map</div></div><a href="index.html#contact" class="brochure-btn"><i class="fa-solid fa-envelope"></i> Request Information</a></div><div class="brochure-image"><div class="brochure-preview"><i class="fa-solid fa-building"></i><p>INARA Metro project information</p></div></div></div></div></section>
-<footer class="footer" id="contact"><div class="container"><div class="footer-grid"><div class="footer-col footer-brand"><img src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" class="footer-logo"><div class="footer-brand-divider"></div><p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p></div><div class="footer-col"><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="#contact">Contact</a></li></ul></div><div class="footer-col"><h4 class="footer-title">Our Projects</h4><ul class="footer-links"><li><a href="invicta.html">INVICTA</a></li><li><a href="iris.html">IRIS</a></li><li><a href="iqra.html">IQRA</a></li><li><a href="paradizia.html">PARADIZIA</a></li><li><a href="inaya-residency.html">INAYA Residency</a></li><li><a href="inara-metro.html">INARA Metro</a></li><li><a href="ira-residency.html">IRA Residency</a></li></ul></div><div class="footer-col"><h4 class="footer-title">Contact Us</h4><div class="footer-contact"><p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p><p><strong>Mobile:</strong> <a href="tel:6296376653">6296376653</a></p><p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p></div></div></div><div class="footer-bottom"><p>&copy; 2026 NI Group of Companies — All Rights Reserved</p><p>www.nigrouprealty.com</p></div></div></footer>
-<script src="standalone.js" type="module"></script>
-<script>
+  <div class="project-info-bar">
+    <div class="container">
+      <div class="project-info-items">
+        <div class="pii-item"><span class="pii-label">Project Type</span><span class="pii-value">Residential Apartments</span></div>
+        <div class="pii-item"><span class="pii-label">Location</span><span class="pii-value">Metro Corridor</span></div>
+        <div class="pii-item"><span class="pii-label">Units</span><span class="pii-value">2 & 3 BHK</span></div>
+        <div class="pii-item"><span class="pii-label">Status</span><span class="pii-value">Upcoming</span></div>
+        <div class="pii-item"><span class="pii-label">Possession</span><span class="pii-value">On Request</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="project-overview">
+    <div class="container">
+      <span class="section-label">Project Overview</span>
+      <h2 class="section-title" style="text-align:left;">INARA Metro by NI Group</h2>
+      <p class="po-desc">INARA Metro is designed for buyers who value connectivity, future growth, and practical residential living. Located near Kolkata's metro growth corridor, the project brings comfortable 2 and 3 BHK homes with essential amenities and dependable support from NI Group.</p>
+      <div class="po-highlights">
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Metro Connectivity</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 2 & 3 BHK Options</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Gated Community</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 24/7 Security</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Covered Parking</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Quality Finishes</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Project Features</span>
+        <h2 class="section-title">World-Class Amenities</h2>
+        <p class="section-desc">Experience premium living with thoughtfully designed amenities.</p>
+      </div>
+      <div class="amenities-carousel">
+        <div class="amenities-grid" id="amenitiesGrid">
+          <div class="amenity-card"><span class="amenity-icon">🏊</span><p class="amenity-name">Swimming Pool</p></div>
+          <div class="amenity-card"><span class="amenity-icon">💪</span><p class="amenity-name">Gym</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🎠</span><p class="amenity-name">Children's Play Area</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🏛️</span><p class="amenity-name">Clubhouse</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🌿</span><p class="amenity-name">Landscaped Garden</p></div>
+          <div class="amenity-card"><span class="amenity-icon">⚡</span><p class="amenity-name">Power Backup</p></div>
+          <div class="amenity-card"><span class="amenity-icon">📹</span><p class="amenity-name">CCTV Security</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🚗</span><p class="amenity-name">Visitor Parking</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🧘</span><p class="amenity-name">Meditation Zone</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🏃</span><p class="amenity-name">Jogging Track</p></div>
+          <div class="amenity-card"><span class="amenity-icon">👥</span><p class="amenity-name">Community Hall</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🛗</span><p class="amenity-name">Lift</p></div>
+        </div>
+        <button class="carousel-nav amenities-prev" onclick="prevAmenities()" aria-label="Previous amenity">&#10094;</button>
+        <button class="carousel-nav amenities-next" onclick="nextAmenities()" aria-label="Next amenity">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="location-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title">Location & Connectivity</h2>
+      </div>
+      <div class="location-grid">
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.738662471491!2d88.49066842346932!3d22.574052479361727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277e5b5b5b5b5%3A0x1234567890abcdef!2sKalikapur%2C%20Newtown%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1690000000000" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="location-details">
+          <div class="location-address">
+            <p><strong>INARA Metro</strong><br>Metro Corridor, Kolkata. Contact NI Group for the exact project location and directions.</p>
+            <a href="https://maps.app.goo.gl/xfuLmzunjZTeyNkN7" target="_blank" rel="noopener noreferrer" class="location-map-btn">
+              <i class="fa-solid fa-directions"></i> Open in Google Maps
+            </a>
+          </div>
+          <div class="location-nearby">
+            <div class="ln-item"><i class="fa-solid fa-building"></i> <span><strong>New Town Business Hub</strong> 2 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-tree"></i> <span><strong>Eco Park</strong> 3 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-road"></i> <span><strong>VIP Road</strong> 4 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-plane"></i> <span><strong>Airport</strong> 12 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-landmark"></i> <span><strong>Salt Lake</strong> 5 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-city"></i> <span><strong>Rajarhat</strong> 3 km</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ GALLERY & BROCHURE ════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Visual Tour</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-desc">Explore INARA Metro through our project photo collection</p>
+      </div>
+      <div class="gallery-carousel">
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INARA.jpeg');"></div>
+        </div>
+        <button class="gallery-nav gallery-prev" onclick="prevGallery()" aria-label="Previous image">&#10094;</button>
+        <button class="gallery-nav gallery-next" onclick="nextGallery()" aria-label="Next image">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BROCHURE SECTION ════════════════════════════════════ -->
+  <section class="brochure-section">
+    <div class="container">
+      <div class="brochure-content">
+        <div class="brochure-text">
+          <span class="section-label">Download Brochure</span>
+          <h2 class="section-title">Complete Project Information</h2>
+          <p>Request detailed floor plans, specifications, pricing, and amenities information for INARA Metro.</p>
+          <div class="brochure-features">
+            <div class="bf-item"><i class="fa-solid fa-file-pdf"></i> Floor Plans & Layouts</div>
+            <div class="bf-item"><i class="fa-solid fa-building"></i> Specifications</div>
+            <div class="bf-item"><i class="fa-solid fa-tag"></i> Pricing Details</div>
+            <div class="bf-item"><i class="fa-solid fa-star"></i> Amenities List</div>
+            <div class="bf-item"><i class="fa-solid fa-map"></i> Location Map</div>
+            <div class="bf-item"><i class="fa-solid fa-handshake"></i> Payment Plans</div>
+          </div>
+          <a href="index.html#contact" class="brochure-btn">
+            <i class="fa-solid fa-envelope"></i> Request Brochure
+          </a>
+        </div>
+        <div class="brochure-image">
+          <div class="brochure-preview">
+            <i class="fa-solid fa-file-pdf"></i>
+            <p>INARA Metro project information</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col footer-brand">
+                <img src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" class="footer-logo">
+                <div class="footer-brand-divider"></div>
+                <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
+                <div class="footer-socials">
+            <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/nigroupofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/nigroupofficial" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@nigroup_realestateofficial" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Our Projects</h4>
+                <ul class="footer-links">
+                    <li><a href="invicta.html">INVICTA</a></li>
+                    <li><a href="iris.html">IRIS</a></li>
+                    <li><a href="iqra.html">IQRA</a></li>
+                    <li><a href="paradizia.html">PARADIZIA</a></li>
+                    <li><a href="inaya-residency.html">INAYA – RESIDENCY</a></li>
+                    <li><a href="inara-metro.html">INARA – METRO</a></li>
+                    <li><a href="ira-residency.html">IRA – RESIDENCY</a></li>
+                </ul>
+            </div>
+
+          
+            <div class="footer-col">
+                <h4 class="footer-title">Contact Us</h4>
+                <div class="footer-contact">
+                 <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Newtown, Kolkata – 700157</p>
+                    <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
+                    <p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
+                    <p><strong>Web:</strong> <a href="https://www.nigrouprealty.com" target="_blank" rel="noopener noreferrer">www.nigrouprealty.com</a></p>
+                    <p><strong>Hours:</strong> Mon – Sat: 10:00 AM – 6:30 PM</p>
+                </div>
+            </div>
+
+        </div>
+<div class="footer-legal">
+    <div class="footer-legal-inner">
+        <a href="#disclaimer">Disclaimer</a>
+        <span class="legal-divider">|</span>
+        <a href="#privacy">Privacy Policy</a>
+        <span class="legal-divider">|</span>
+        <a href="#terms">Terms of Use</a>
+        <span class="legal-divider">|</span>  
+        <a href="sitemap.xml">Sitemap</a>
+    </div>
+</div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NI Group of Companies — All Rights Reserved</p>
+            <p>www.nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
+        </div>
+    </div>
+</footer>
+
+  <script src="standalone.js" type="module"></script>
+  <script>
+  // ═══ GALLERY CAROUSEL ═══
+  let galleryIndex = 0;
+  let galleryAutoplay;
+
+  function getCarouselMetrics(gridId) {
+    const grid = document.getElementById(gridId);
+    const carousel = grid?.parentElement;
+    if (!grid || !carousel) return { maxSlides: 1, maxOffset: 0 };
+
+    const maxOffset = Math.max(0, grid.scrollWidth - carousel.clientWidth);
+    const maxSlides = Math.max(1, Math.ceil(grid.scrollWidth / carousel.clientWidth));
+    return { maxSlides, maxOffset };
+  }
+
+  function initGalleryDots() {
+    const dotsContainer = document.getElementById('galleryDots');
+    const { maxSlides } = getCarouselMetrics('galleryGrid');
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < maxSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = `gallery-dot ${i === 0 ? 'active' : ''}`;
+      dot.onclick = () => goToGallerySlide(i);
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateGalleryPosition() {
+    const grid = document.getElementById('galleryGrid');
+    const { maxSlides, maxOffset } = getCarouselMetrics('galleryGrid');
+    galleryIndex = Math.min(galleryIndex, maxSlides - 1);
+    const offset = Math.min(maxOffset, galleryIndex * grid.parentElement.clientWidth);
+    grid.style.transform = `translateX(-${offset}px)`;
+    
+    const dots = document.querySelectorAll('.gallery-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === galleryIndex);
+    });
+  }
+
+  function nextGallery() {
+    const { maxSlides } = getCarouselMetrics('galleryGrid');
+    galleryIndex = (galleryIndex + 1) % maxSlides;
+    updateGalleryPosition();
+    resetGalleryAutoplay();
+  }
+
+  function prevGallery() {
+    const { maxSlides } = getCarouselMetrics('galleryGrid');
+    galleryIndex = (galleryIndex - 1 + maxSlides) % maxSlides;
+    updateGalleryPosition();
+    resetGalleryAutoplay();
+  }
+
+  function goToGallerySlide(index) {
+    galleryIndex = index;
+    updateGalleryPosition();
+    resetGalleryAutoplay();
+  }
+
+  function autoplayGallery() {
+    nextGallery();
+  }
+
+  function resetGalleryAutoplay() {
+    clearInterval(galleryAutoplay);
+    galleryAutoplay = setInterval(autoplayGallery, 5000);
+  }
+
+  // Touch support for gallery
+  let galleryStartX = 0;
+  const galleryGrid = document.getElementById('galleryGrid');
+  if (galleryGrid) {
+    galleryGrid.addEventListener('touchstart', (e) => {
+      galleryStartX = e.touches[0].clientX;
+      clearInterval(galleryAutoplay);
+    });
+    
+    galleryGrid.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      if (galleryStartX - touchEndX > 50) nextGallery();
+      if (touchEndX - galleryStartX > 50) prevGallery();
+      resetGalleryAutoplay();
+    });
+  }
+
+  // ═══ AMENITIES CAROUSEL ═══
   let amenitiesIndex = 0;
-  function getCarouselMetrics(id) { const grid = document.getElementById(id); const carousel = grid?.parentElement; if (!grid || !carousel) return { maxSlides: 1, maxOffset: 0 }; return { maxSlides: Math.max(1, Math.ceil(grid.scrollWidth / carousel.clientWidth)), maxOffset: Math.max(0, grid.scrollWidth - carousel.clientWidth) }; }
-  function updateAmenitiesPosition() { const grid = document.getElementById('amenitiesGrid'); if (!grid) return; const metrics = getCarouselMetrics('amenitiesGrid'); amenitiesIndex = Math.min(amenitiesIndex, metrics.maxSlides - 1); grid.style.transform = `translateX(-${Math.min(metrics.maxOffset, amenitiesIndex * grid.parentElement.clientWidth)}px)`; }
-  function nextAmenities() { amenitiesIndex = (amenitiesIndex + 1) % getCarouselMetrics('amenitiesGrid').maxSlides; updateAmenitiesPosition(); }
-  function prevAmenities() { const maxSlides = getCarouselMetrics('amenitiesGrid').maxSlides; amenitiesIndex = (amenitiesIndex - 1 + maxSlides) % maxSlides; updateAmenitiesPosition(); }
-  window.addEventListener('load', updateAmenitiesPosition); window.addEventListener('resize', updateAmenitiesPosition);
-</script>
+  let amenitiesAutoplay;
+
+  function updateAmenitiesPosition() {
+    const grid = document.getElementById('amenitiesGrid');
+    const { maxSlides, maxOffset } = getCarouselMetrics('amenitiesGrid');
+    amenitiesIndex = Math.min(amenitiesIndex, maxSlides - 1);
+    const offset = Math.min(maxOffset, amenitiesIndex * grid.parentElement.clientWidth);
+    grid.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function nextAmenities() {
+    const { maxSlides } = getCarouselMetrics('amenitiesGrid');
+    amenitiesIndex = (amenitiesIndex + 1) % maxSlides;
+    updateAmenitiesPosition();
+    resetAmenitiesAutoplay();
+  }
+
+  function prevAmenities() {
+    const { maxSlides } = getCarouselMetrics('amenitiesGrid');
+    amenitiesIndex = (amenitiesIndex - 1 + maxSlides) % maxSlides;
+    updateAmenitiesPosition();
+    resetAmenitiesAutoplay();
+  }
+
+  function autoplayAmenities() {
+    nextAmenities();
+  }
+
+  function resetAmenitiesAutoplay() {
+    clearInterval(amenitiesAutoplay);
+    amenitiesAutoplay = setInterval(autoplayAmenities, 6000);
+  }
+
+  // Touch support for amenities
+  let amenitiesStartX = 0;
+  const amenitiesGrid = document.getElementById('amenitiesGrid');
+  if (amenitiesGrid) {
+    amenitiesGrid.addEventListener('touchstart', (e) => {
+      amenitiesStartX = e.touches[0].clientX;
+      clearInterval(amenitiesAutoplay);
+    });
+    
+    amenitiesGrid.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      if (amenitiesStartX - touchEndX > 50) nextAmenities();
+      if (touchEndX - amenitiesStartX > 50) prevAmenities();
+      resetAmenitiesAutoplay();
+    });
+  }
+
+  // Initialize on page load
+  window.addEventListener('load', () => {
+    initGalleryDots();
+    updateGalleryPosition();
+    updateAmenitiesPosition();
+    resetGalleryAutoplay();
+    resetAmenitiesAutoplay();
+  });
+
+  window.addEventListener('resize', () => {
+    initGalleryDots();
+    updateGalleryPosition();
+    updateAmenitiesPosition();
+  });
+
+  // Pause autoplay when user hovers
+  if (galleryGrid) {
+    galleryGrid.addEventListener('mouseenter', () => clearInterval(galleryAutoplay));
+    galleryGrid.addEventListener('mouseleave', () => resetGalleryAutoplay());
+  }
+
+  if (amenitiesGrid) {
+    amenitiesGrid.addEventListener('mouseenter', () => clearInterval(amenitiesAutoplay));
+    amenitiesGrid.addEventListener('mouseleave', () => resetAmenitiesAutoplay());
+  }
+
+  function handleEnquiry(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    setTimeout(() => {
+      alert('Thank you! Our team will contact you shortly to schedule your site visit.');
+      e.target.reset();
+      btn.textContent = 'Book Free Site Visit →';
+      btn.disabled = false;
+    }, 900);
+  }
+  </script>
 </body>
 </html>
