@@ -2536,8 +2536,9 @@ opacity:0;
     .hero::before {
         background-image: url('Project Photo/INARA.jpeg');
         animation: heroSlider 30s infinite ease-in-out !important;
-        transform: scale(1.04) !important;
-        background-position: center center !important;
+        transform: scale(1.01) !important;
+        background-position: center 32% !important;
+        background-size: cover;
         will-change: transform, background-image;
     }
 
@@ -2645,6 +2646,11 @@ input, select, textarea { font-size: 16px; }
     .ai-body { height: 260px; }
     .premium-btn, .premium-btn .icon { width: 56px !important; height: 56px !important; min-width: 56px !important; }
     .ai-launch { width: 60px; height: 60px; border-radius: 18px; }
+
+    .hero::before {
+        background-position: center 28% !important;
+        transform: scale(1) !important;
+    }
 }
 
 /* Landscape phones: shrink the hero so content isn't cut off */
