@@ -133,51 +133,31 @@
     </div>
   </div>
 
-  <section class="project-overview">
-    <div class="container">
-      <div class="project-overview-grid">
-        <div>
-          <span class="section-label">Project Overview</span>
-          <h2 class="section-title" style="text-align:left;">IQRA</h2>
-          <p class="po-desc">IQRA at Hatiara, Newtown is a thoughtfully planned residential community designed to nurture growth, learning, and community. Inspired by the spirit of reading and rising, IQRA offers modern 2 & 3 BHK apartments that blend functionality with aesthetics in the rapidly developing Hatiara-Newtown corridor.</p>
-          <div class="po-highlights">
-            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Metro Proximity</div>
-            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Hatiara Growth Zone</div>
-            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 2 & 3 BHK Options</div>
-            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Modern Architecture</div>
-            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Green Spaces</div>
-            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Gated Community</div>
-          </div>
-        </div>
-        <div class="po-gallery">
-          <div class="po-img" style="background-image:url('Project Photo/iqra.jpg');min-height:260px;"></div>
-          <div class="po-img" style="background-image:url('Project Photo/iqra.jpg');min-height:200px;"></div>
-          <div class="po-img" style="background-image:url('Project Photo/iqra.jpg');min-height:200px;"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="amenities-section">
+ 
+   <section class="amenities-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Project Features</span>
         <h2 class="section-title">World-Class Amenities</h2>
         <p class="section-desc">Experience premium living with thoughtfully designed amenities.</p>
       </div>
-      <div class="amenities-grid">
-        <div class="amenity-card"><span class="amenity-icon">💪</span><p class="amenity-name">Gym</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🎠</span><p class="amenity-name">Children's Play Area</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🏛️</span><p class="amenity-name">Club House</p></div>
-        <div class="amenity-card"><span class="amenity-icon">⚡</span><p class="amenity-name">Power Backup</p></div>
-        <div class="amenity-card"><span class="amenity-icon">📹</span><p class="amenity-name">CCTV Security</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🌿</span><p class="amenity-name">Landscaped Garden</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🚗</span><p class="amenity-name">Visitor Parking</p></div>
-        <div class="amenity-card"><span class="amenity-icon">📚</span><p class="amenity-name">Library Room</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🧘</span><p class="amenity-name">Meditation Zone</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🏊</span><p class="amenity-name">Swimming Pool</p></div>
-        <div class="amenity-card"><span class="amenity-icon">🛗</span><p class="amenity-name">Lift</p></div>
-        <div class="amenity-card"><span class="amenity-icon">📞</span><p class="amenity-name">Intercom</p></div>
+      <div class="amenities-carousel">
+        <div class="amenities-grid" id="amenitiesGrid">
+          <div class="amenity-card"><span class="amenity-icon">🏊</span><p class="amenity-name">Swimming Pool</p></div>
+          <div class="amenity-card"><span class="amenity-icon">💪</span><p class="amenity-name">Gym</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🎠</span><p class="amenity-name">Children's Play Area</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🏛️</span><p class="amenity-name">Clubhouse</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🌿</span><p class="amenity-name">Landscaped Garden</p></div>
+          <div class="amenity-card"><span class="amenity-icon">⚡</span><p class="amenity-name">Power Backup</p></div>
+          <div class="amenity-card"><span class="amenity-icon">📹</span><p class="amenity-name">CCTV Security</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🚗</span><p class="amenity-name">Visitor Parking</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🧘</span><p class="amenity-name">Meditation Zone</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🏃</span><p class="amenity-name">Jogging Track</p></div>
+          <div class="amenity-card"><span class="amenity-icon">👥</span><p class="amenity-name">Community Hall</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🛗</span><p class="amenity-name">Lift</p></div>
+        </div>
+        <button class="carousel-nav amenities-prev" onclick="prevAmenities()" aria-label="Previous amenity">&#10094;</button>
+        <button class="carousel-nav amenities-next" onclick="nextAmenities()" aria-label="Next amenity">&#10095;</button>
       </div>
     </div>
   </section>
@@ -190,94 +170,87 @@
       </div>
       <div class="location-grid">
         <div class="location-map">
-          <div class="location-map-placeholder">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Hatiara, Newtown</p>
-          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.738662471491!2d88.49066842346932!3d22.574052479361727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277e5b5b5b5b5%3A0x1234567890abcdef!2sKalikapur%2C%20Newtown%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1690000000000" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="location-details">
           <div class="location-address">
-            <p><strong>IQRA</strong><br>Hatiara, Newtown, Kolkata – 700157. Near New Sunrise Apartment.</p>
+            <p><strong>IQRA</strong><br>Hatiara, Newtown, Kolkata. Contact NI Group for exact directions.</p>
+            <a href="https://maps.app.goo.gl/xfuLmzunjZTeyNkN7" target="_blank" rel="noopener noreferrer" class="location-map-btn">
+              <i class="fa-solid fa-directions"></i> Open in Google Maps
+            </a>
           </div>
           <div class="location-nearby">
-            <div class="ln-item"><i class="fa-solid fa-shop"></i> <span><strong>Hatiara Market</strong> 0.5 km</span></div>
-            <div class="ln-item"><i class="fa-solid fa-train"></i> <span><strong>Newtown Metro</strong> 2 km</span></div>
-            <div class="ln-item"><i class="fa-solid fa-tree"></i> <span><strong>Eco Park</strong> 4 km</span></div>
-            <div class="ln-item"><i class="fa-solid fa-plane"></i> <span><strong>Airport</strong> 10 km</span></div>
-            <div class="ln-item"><i class="fa-solid fa-road"></i> <span><strong>VIP Road</strong> 3 km</span></div>
-            <div class="ln-item"><i class="fa-solid fa-building"></i> <span><strong>NI Group Office</strong> 0.2 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-building"></i> <span><strong>New Town Business Hub</strong> 2 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-tree"></i> <span><strong>Eco Park</strong> 3 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-road"></i> <span><strong>VIP Road</strong> 4 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-plane"></i> <span><strong>Airport</strong> 12 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-landmark"></i> <span><strong>Salt Lake</strong> 5 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-city"></i> <span><strong>Rajarhat</strong> 3 km</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="enquiry-section">
-    <div class="container">
-      <div class="enquiry-grid">
-        <div class="enquiry-text">
-          <h2>Interested in IQRA?</h2>
-          <p>Get pricing, floor plans, and exclusive offers. Our experts will guide you through the entire journey.</p>
-          <div class="enquiry-contacts">
-            <a href="tel:9330118686" class="ec-link"><i class="fa-solid fa-phone"></i> 9330118686</a>
-            <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer" class="ec-link"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
-            <a href="mailto:sales@nigrouprealty.com" class="ec-link"><i class="fa-solid fa-envelope"></i> sales@nigrouprealty.com</a>
-          </div>
-        </div>
-        <div class="enquiry-form">
-          <h3>Book Free Consultation</h3>
-          <form onsubmit="handleEnquiry(event)">
-            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" required></div>
-            <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="Your mobile number" required></div>
-            <div class="form-group"><label>Email</label><input type="email" placeholder="Your email address"></div>
-            <div class="form-group"><label>BHK Type</label>
-              <select><option value="">Select BHK type</option><option>2 BHK</option><option>3 BHK</option><option>Other</option></select>
-            </div>
-            <div class="form-group"><label>Message</label><textarea placeholder="Any specific requirements?"></textarea></div>
-            <button type="submit" class="form-submit">Book Free Site Visit &#8594;</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="related-section">
+  <!-- ═══ GALLERY & BROCHURE ════════════════════════════════════ -->
+  <section class="gallery-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Explore More</span>
-        <h2 class="section-title">Related Projects</h2>
+        <span class="section-label">Visual Tour</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-desc">Explore the beauty of INVICTA through our curated photo collection</p>
       </div>
-      <div class="related-grid">
-        <div class="project-card">
-          <div class="project-image" style="background-image:url('Project Photo/Invicta1.jpg');"></div>
-          <div class="project-info">
-            <span class="project-badge completed">Done</span>
-            <h3 class="project-name">INVICTA</h3>
-            <p class="project-desc">Residential Apartments</p>
-            <a href="invicta.html" class="project-link">Learn More &#8594;</a>
-          </div>
+      <div class="gallery-carousel">
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.19 PM.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.20 PM (1).jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.20 PM (2).jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.20 PM.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.21 PM.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.22 PM.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.23 PM (1).jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.23 PM (2).jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.23 PM.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/INVICTA - Kalikapur/WhatsApp Image 2025-07-27 at 1.08.24 PM.jpeg');"></div>
         </div>
-        <div class="project-card">
-          <div class="project-image" style="background-image:url('Project Photo/3d-building-Inaya.jpg');"></div>
-          <div class="project-info">
-            <span class="project-badge upcoming">Upcoming</span>
-            <h3 class="project-name">INAYA Residency</h3>
-            <p class="project-desc">Gated Residential Community</p>
-            <a href="inaya-residency.html" class="project-link">Learn More &#8594;</a>
+        <button class="gallery-nav gallery-prev" onclick="prevGallery()" aria-label="Previous image">&#10094;</button>
+        <button class="gallery-nav gallery-next" onclick="nextGallery()" aria-label="Next image">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BROCHURE SECTION ════════════════════════════════════ -->
+  <section class="brochure-section">
+    <div class="container">
+      <div class="brochure-content">
+        <div class="brochure-text">
+          <span class="section-label">Download Brochure</span>
+          <h2 class="section-title">Complete Project Information</h2>
+          <p>Get detailed floor plans, specifications, pricing, and amenities information. Download our comprehensive INVICTA brochure.</p>
+          <div class="brochure-features">
+            <div class="bf-item"><i class="fa-solid fa-file-pdf"></i> Floor Plans & Layouts</div>
+            <div class="bf-item"><i class="fa-solid fa-building"></i> Specifications</div>
+            <div class="bf-item"><i class="fa-solid fa-tag"></i> Pricing Details</div>
+            <div class="bf-item"><i class="fa-solid fa-star"></i> Amenities List</div>
+            <div class="bf-item"><i class="fa-solid fa-map"></i> Location Map</div>
+            <div class="bf-item"><i class="fa-solid fa-handshake"></i> Payment Plans</div>
           </div>
+          <a href="Project Photo/INVICTA - Kalikapur/Invicta-Brochure.pdf" download class="brochure-btn">
+            <i class="fa-solid fa-download"></i> Download Brochure (PDF)
+          </a>
         </div>
-        <div class="project-card">
-          <div class="project-image" style="background-image:url('Project Photo/INARA.jpeg');"></div>
-          <div class="project-info">
-            <span class="project-badge upcoming">Upcoming</span>
-            <h3 class="project-name">INARA Metro</h3>
-            <p class="project-desc">Metro-Adjacent Residency</p>
-            <a href="inara-metro.html" class="project-link">Learn More &#8594;</a>
+        <div class="brochure-image">
+          <div class="brochure-preview">
+            <i class="fa-solid fa-file-pdf"></i>
+            <p>Invicta-Brochure.pdf</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- ═══ FOOTER ════════════════════════════════════════════ -->
 <footer class="footer" id="contact">
