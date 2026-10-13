@@ -107,7 +107,7 @@
                     <a href="inaya-residency.html"   class="dropdown-item">
                         <span class="di-dot" style="background:#ec8106;"></span>
                         INAYA Residency
-                        <span class="di-status upcoming">Soon</span>
+                        <span class="di-status upcoming">Under Construction</span>
                     </a>
                     <a href="inara-metro.html"   class="dropdown-item">
                         <span class="di-dot" style="background:#ec8106;"></span>
@@ -238,14 +238,21 @@
 <div id="leadPopup" class="lead-popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <div class="popup-content">
         <button class="close-popup" onclick="closePopup()" aria-label="Close">&times;</button>
+
         <div class="popup-header">
             <h2 id="popupTitle">&#127968; Book Your Dream Home</h2>
             <p>Get exclusive offers &amp; site visit assistance</p>
         </div>
+
         <form id="leadForm" onsubmit="submitLead(event)">
-            <input type="text"  name="name"    placeholder="Full Name"       required autocomplete="name">
-            <input type="tel"   name="mobile"  placeholder="Mobile Number"   required autocomplete="tel">
-            <input type="email" name="email"   placeholder="Email Address"          autocomplete="email">
+            <input type="text" name="name" placeholder="Full Name" required autocomplete="name">
+
+            <input type="tel" name="mobile" placeholder="Mobile Number"
+                   required autocomplete="tel">
+
+            <input type="email" name="email" placeholder="Email Address"
+                   autocomplete="email">
+
             <select name="project" required>
                 <option value="">Select Project</option>
                 <option>INVICTA</option>
@@ -256,8 +263,13 @@
                 <option>INARA Metro</option>
                 <option>IRA Residency</option>
             </select>
-            <button type="submit">Get Free Consultation &rarr;</button>
+
+            <button type="submit" id="leadSubmitBtn">
+           Get Free Consultation &rarr;
+            </button>
         </form>
+
+            <p id="leadMessage" class="lead-message" style="display:none;" role="status"></p>
     </div>
 </div>
 
@@ -339,7 +351,7 @@
                 <div class="project-image">
                     <img src="Project Photo/Inaya.jpg" alt="NI Group" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback')">
                 </div>
-                <span class="project-status upcoming">Upcoming</span>
+                <span class="project-status upcoming">Under Construction</span>
                 <div class="project-info">
                     <p class="project-meta">Hatiara, Newtown &bull; Gated Community</p>
                     <h3 class="project-name">

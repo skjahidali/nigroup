@@ -251,7 +251,7 @@ function replyAI(text) {
 
     /* ── Projects ── */
     if (t.includes('project') || t.includes('available flat') || t.includes('all project'))
-        return '🏢 Our projects:<br><b>INVICTA</b> (Kalikapur – Completed), <b>IRIS</b>, <b>IQRA</b>, <b>INAYA Residency</b>, <b>INARA Metro</b>, <b>IRA Residency</b>, <b>Paradizia</b> (all Upcoming). Share your budget &amp; area for a recommendation!';
+        return '🏢 Our projects:<br><b>INVICTA</b> (Kalikapur – Completed), <b>INAYA Residency</b> (Under Construction), <b>IRIS</b>, <b>IQRA</b>, <b>INARA Metro</b>, <b>IRA Residency</b>, <b>Paradizia</b> (Upcoming). Share your budget &amp; area for a recommendation!';
     if (t.includes('invicta'))
         return '🏗️ <b>INVICTA</b> — Completed project at Kalikapur, Newtown. Premium residential apartments. Call <b>9330118686</b> for resale/availability details.';
     if (t.includes('iris'))
@@ -261,7 +261,7 @@ function replyAI(text) {
     if (t.includes('inara'))
         return '🏗️ <b>INARA Metro</b> — Metro-adjacent residency at Hatiara, Newtown. Upcoming. Great connectivity to the city.';
     if (t.includes('inaya'))
-        return '🏗️ <b>INAYA Residency</b> — Upcoming gated community at Hatiara, Newtown. Peaceful, green surroundings.';
+        return '🏗️ <b>INAYA Residency</b> — A gated community under construction at Hatiara, Newtown. Peaceful, green surroundings.';
     if (t.includes('ira'))
         return '🏗️ <b>IRA Residency</b> — Upcoming luxury residency in Kolkata. Where serenity lives. Call us for details.';
     if (t.includes('paradizia'))
@@ -344,19 +344,62 @@ function showToast(message) {
 }
 
 /* ── Lead form submit ── */
-function submitLead(e) {
-    e.preventDefault();
-    const form  = e.target;
-    const btn   = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Submitting…';
-    btn.disabled = true;
-    setTimeout(() => {
-        closePopup();
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxeTegxEmlYBPzvR5Q9nBJgISswXZbs6lqNmy3plQpxkMpHYBmdeROpv4hmQvKW--waLQ/exec";
+
+async function submitLead(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const button = form?.querySelector('button[type="submit"]');
+    const message = document.getElementById('leadMessage');
+    const originalButtonHTML = button?.innerHTML || '';
+
+    try {
+        if (button) {
+            button.disabled = true;
+            button.textContent = 'Submitting...';
+        }
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: new FormData(form)
+        });
+
         form.reset();
-        btn.textContent = 'Get Free Consultation →';
-        btn.disabled = false;
-        showToast('Thank you! Our team will contact you shortly.');
-    }, 900);
+        if (message) {
+            message.style.display = 'block';
+            message.textContent =
+                "Thank you! Your enquiry has been submitted successfully.";
+            message.style.color = "green";
+        }
+
+        if (button) {
+            button.disabled = false;
+            button.innerHTML = originalButtonHTML;
+        }
+
+        setTimeout(() => {
+            if (form.id === 'leadForm') closePopup();
+            if (message) message.style.display = "none";
+        }, 2500);
+
+    } catch (error) {
+        console.error("Lead submission error:", error);
+
+        if (message) {
+            message.style.display = "block";
+            message.textContent =
+                "Something went wrong. Please try again.";
+            message.style.color = "red";
+        }
+
+        if (button) {
+            button.disabled = false;
+            button.innerHTML = originalButtonHTML;
+        }
+    }
 }
 
 /* ── Expose globals ── */
@@ -634,3 +677,8 @@ function nextAmenities() {
 function prevAmenities() {
     amenitiesCarousel?.prev();
 }
+
+window.nextGallery = nextGallery;
+window.prevGallery = prevGallery;
+window.nextAmenities = nextAmenities;
+window.prevAmenities = prevAmenities;
