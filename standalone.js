@@ -204,7 +204,11 @@ function addMsg(text, type) {
     if (!body) return;
     const div = document.createElement('div');
     div.className = 'ai-msg ' + type;
-    div.innerHTML = text;
+    if (type === 'bot') {
+        div.innerHTML = text;
+    } else {
+        div.textContent = text;
+    }
     body.appendChild(div);
     body.scrollTop = body.scrollHeight;
 }
@@ -435,13 +439,18 @@ function createCarousel({
     let isTouching = false;
 
     function getVisibleItems() {
-        const width = window.innerWidth;
+        if (!items.length) return 1;
 
-        if (width <= 480) return 1;
-        if (width <= 768) return 1;
-        if (width <= 1080) return 2;
+        const viewport = grid.parentElement;
+        if (!viewport) return 1;
 
-        return 4;
+        const style = getComputedStyle(viewport);
+        const width = viewport.clientWidth
+            - parseFloat(style.paddingLeft)
+            - parseFloat(style.paddingRight);
+        const itemWidth = getItemWidth();
+
+        return itemWidth > 0 ? Math.max(1, Math.floor(width / itemWidth)) : 1;
     }
 
     function getItemWidth() {
@@ -492,7 +501,7 @@ function createCarousel({
 
         const dots = document.querySelectorAll(`#${dotsId} .gallery-dot`);
         const visible = getVisibleItems();
-        const activeIndex = Math.floor(index / visible);
+        const activeIndex = Math.min(Math.ceil(index / visible), dots.length - 1);
 
         dots.forEach((dot, i) => {
             dot.classList.toggle("active", i === activeIndex);
