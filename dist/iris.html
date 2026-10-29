@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRIS – NI Group | Premium Residency in Kolkata</title>
+  <meta name="description" content="IRIS by NI Group offers 1, 2 & 3 BHK homes across three towers, with rooftop amenities, EV charging, and 24/7 services.">
+  <link rel="icon" type="image/png" href="/assets/NI%20GROUP%20COLOR%20LOGO-BXEIaYOY.png">
+  <meta name="theme-color" content="#1b3a7a">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/standalone-Ddplemv5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/standalone-B4_x3tft.css">
+  <link rel="stylesheet" crossorigin href="/assets/projects-oFbV2nHv.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="NI Group Home">
+        <div class="logo-wrapper">
+          <img class="logo-img" src="/assets/NI%20GROUP%20COLOR%20LOGO-BXEIaYOY.png" alt="NI Group" width="260" height="96">
+        </div>
+      </a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="index.html#projects" class="nav-link active">Projects <span class="chevron">&#9660;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="invicta.html"  class="dropdown-item"><span class="di-dot" style="background:#16a34a;"></span>INVICTA<span class="di-status completed">Done</span></a>
+            <a href="iris.html"    class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRIS<span class="di-status upcoming">Soon</span></a>
+            <a href="iqra.html"    class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IQRA<span class="di-status upcoming">Soon</span></a>
+            <a href="paradizia.html" class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>Paradizia<span class="di-status upcoming">Soon</span></a>
+            <a href="inaya-residency.html"   class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INAYA Residency<span class="di-status upcoming">Under Construction</span></a>
+            <a href="inara-metro.html"   class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>INARA Metro<span class="di-status upcoming">Soon</span></a>
+            <a href="ira-residency.html"     class="dropdown-item"><span class="di-dot" style="background:#d97706;"></span>IRA Residency<span class="di-status upcoming">Soon</span></a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">&#9776;</button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-link-wrap">
+        <span class="nav-link mobile-dropdown-toggle" aria-expanded="false">Projects <span class="m-chevron">&#9660;</span></span>
+        <div class="mobile-sub-menu">
+          <a href="invicta.html" class="nav-link">INVICTA</a>
+          <a href="iris.html" class="nav-link">IRIS</a>
+          <a href="iqra.html" class="nav-link">IQRA</a>
+          <a href="paradizia.html" class="nav-link">Paradizia</a>
+          <a href="inaya-residency.html" class="nav-link">INAYA Residency</a>
+          <a href="inara-metro.html" class="nav-link">INARA Metro</a>
+          <a href="ira-residency.html" class="nav-link">IRA Residency</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- WhatsApp floating button removed site-wide (kept inside AI panel) -->
+
+  <div class="ni-ai-agent">
+    <div class="ai-panel" id="aiPanel">
+      <div class="ai-top">
+        <div class="ai-top-info">
+          <div class="ai-avatar">AI</div>
+          <div><h3>NI Chat</h3><p><span class="ai-online-dot"></span>Online</p></div>
+        </div>
+        <button onclick="toggleAI()" aria-label="Close">&#215;</button>
+      </div>
+      <div class="ai-body" id="aiBody">
+        <div class="ai-msg bot">Assalamu Alaikum! I can help with pricing, site visits, or any queries about IRIS.</div>
+      </div>
+      <div class="ai-options">
+        <button onclick="askAI('Price Details')">&#8377; Price</button>
+        <button onclick="askAI('Book Site Visit')">&#128197; Site Visit</button>
+        <button onclick="askAI('Floor Plans')">&#128195; Floor Plan</button>
+        <button onclick="askAI('Office Location')">&#128205; Location</button>
+      </div>
+      <div class="ai-actions">
+        <a href="tel:9330118686">&#128222; Call</a>
+        <a href="https://wa.me/919330118686" target="_blank" rel="noopener noreferrer">&#128172; WhatsApp</a>
+      </div>
+      <div class="ai-input">
+        <input id="aiInput" placeholder="Ask about IRIS…" onkeypress="if(event.key==='Enter')sendAI()">
+        <button onclick="sendAI()" aria-label="Send">&#10148;</button>
+      </div>
+    </div>
+    <button class="ai-launch" onclick="toggleAI()" aria-label="Open NI Chat">
+      <span class="pulse"></span><b>NI</b><span class="ai-label">NI Chat</span>
+    </button>
+  </div>
+
+  <section class="project-hero" id="top">
+    <div class="project-hero-bg" style="background-image:url('/assets/IRIS-BPk95jDZ.jpeg');"></div>
+    <div class="project-hero-content">
+      <div class="container">
+        <nav class="project-breadcrumb">
+          <a href="index.html">Home</a><span>›</span>
+          <a href="index.html#projects">Projects</a><span>›</span>
+          <span>IRIS</span>
+        </nav>
+        <div class="project-hero-badges">
+          <span class="ph-badge status-upcoming">Upcoming</span>
+          <span class="ph-badge type-badge"><i class="fa-solid fa-building"></i> Premium Residency</span>
+          <span class="ph-badge type-badge"><i class="fa-solid fa-location-dot"></i> Hatiara, Newtown</span>
+        </div>
+        <h1 class="project-hero-name">IRIS</h1>
+        <p class="project-hero-tagline">"Elegance in Every Detail"</p>
+        <div class="project-hero-meta">
+          <span class="phm-item"><i class="fa-solid fa-location-dot"></i> Hatiara, Newtown, Kolkata</span>
+          <span class="phm-item"><i class="fa-solid fa-home"></i> 1, 2 & 3 BHK Apartments</span>
+          <span class="phm-item"><i class="fa-solid fa-calendar"></i> 2026-27</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-info-bar">
+    <div class="container">
+      <div class="project-info-items">
+        <div class="pii-item"><span class="pii-label">Project Type</span><span class="pii-value">Premium Residency</span></div>
+        <div class="pii-item"><span class="pii-label">Location</span><span class="pii-value">Hatiara, Newtown</span></div>
+        <div class="pii-item"><span class="pii-label">Units</span><span class="pii-value">1, 2 & 3 BHK</span></div>
+        <div class="pii-item"><span class="pii-label">Status</span><span class="pii-value">Upcoming</span></div>
+        <div class="pii-item"><span class="pii-label">Possession</span><span class="pii-value">2026-27</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="project-overview">
+    <div class="container">
+      <div class="project-overview-grid">
+        <div>
+          <span class="section-label">Project Overview</span>
+          <h2 class="section-title" style="text-align:left;">IRIS</h2>
+          <p class="po-desc">IRIS offers thoughtfully planned 1, 2 and 3 BHK homes across three towers. With rooftop recreation, community spaces, EV charging, and round-the-clock essential services, IRIS brings everyday convenience together with shared spaces for residents.</p>
+          <div class="po-highlights">
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 1, 2 & 3 BHK homes</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 88 residential units</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 3 towers</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Rooftop pool and garden</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> EV charging facilities</div>
+            <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Community library</div>
+          </div>
+        </div>
+        <div class="po-gallery">
+          <div class="po-img" style="background-image:url('/assets/IRIS-BPk95jDZ.jpeg');min-height:260px;"></div>
+          <div class="po-img" style="background-image:url('/assets/IRIS-BPk95jDZ.jpeg');min-height:200px;"></div>
+          <div class="po-img" style="background-image:url('/assets/IRIS-BPk95jDZ.jpeg');min-height:200px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-details-section">
+    <div class="container">
+      <span class="section-label">Project Details</span>
+      <h2 class="section-title" style="text-align:left;">Floor Plans & Project Facts</h2>
+      <dl class="project-details-grid">
+        <div class="project-detail-item"><dt>Floors</dt><dd>G+4</dd></div>
+        <div class="project-detail-item"><dt>Land Area</dt><dd>1 acre</dd></div>
+        <div class="project-detail-item"><dt>Towers</dt><dd>3 towers</dd></div>
+        <div class="project-detail-item"><dt>Total Units</dt><dd>88 units</dd></div>
+        <div class="project-detail-item"><dt>Apartment Sizes</dt><dd>1 BHK: 540 sq ft<br>2 BHK: 720–900 sq ft<br>3 BHK: 1,080–1,340 sq ft</dd></div>
+      </dl>
+    </div>
+  </section>
+
+ <section class="amenities-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Project Features</span>
+        <h2 class="section-title">Facilities & Amenities</h2>
+        <p class="section-desc">Thoughtful facilities and shared spaces for comfortable everyday living.</p>
+      </div>
+      <h3 class="feature-subtitle">Facilities</h3>
+      <div class="po-highlights">
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 24/7 power backup</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Parking with EV charging facilities</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 24/7 CCTV surveillance</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 24/7 security</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> 24/7 water supply</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Solar area lighting</div>
+        <div class="po-hl"><i class="fa-solid fa-check-circle"></i> Waste management</div>
+      </div>
+      <h3 class="feature-subtitle">Amenities</h3>
+      <div class="amenities-carousel">
+        <div class="amenities-grid" id="amenitiesGrid">
+          <div class="amenity-card"><span class="amenity-icon">🏊</span><p class="amenity-name">Rooftop pool</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🛋️</span><p class="amenity-name">Hangout zones</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🚶</span><p class="amenity-name">Walking trail</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🌿</span><p class="amenity-name">Rooftop garden</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🍢</span><p class="amenity-name">Barbecue corner</p></div>
+          <div class="amenity-card"><span class="amenity-icon">💪</span><p class="amenity-name">Gymnasium</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🧘</span><p class="amenity-name">Rooftop yoga space & badminton court</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🪑</span><p class="amenity-name">Visitors' waiting area</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🏛️</span><p class="amenity-name">Community hall</p></div>
+          <div class="amenity-card"><span class="amenity-icon">🩺</span><p class="amenity-name">OPD</p></div>
+          <div class="amenity-card"><span class="amenity-icon">👥</span><p class="amenity-name">Meeting room</p></div>
+          <div class="amenity-card"><span class="amenity-icon">📚</span><p class="amenity-name">Community library</p></div>
+        </div>
+        <button class="carousel-nav amenities-prev" onclick="prevAmenities()" aria-label="Previous amenity">&#10094;</button>
+        <button class="carousel-nav amenities-next" onclick="nextAmenities()" aria-label="Next amenity">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="location-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title">Location & Connectivity</h2>
+      </div>
+      <div class="location-grid">
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.738662471491!2d88.49066842346932!3d22.574052479361727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277e5b5b5b5b5%3A0x1234567890abcdef!2sKalikapur%2C%20Newtown%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1690000000000" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="location-details">
+          <div class="location-address">
+            <p><strong>IRIS</strong><br>Kolkata. Contact NI Group for the exact project location and directions.</p>
+            <a href="https://maps.app.goo.gl/xfuLmzunjZTeyNkN7" target="_blank" rel="noopener noreferrer" class="location-map-btn">
+              <i class="fa-solid fa-directions"></i> Open in Google Maps
+            </a>
+          </div>
+          <div class="location-nearby">
+            <div class="ln-item"><i class="fa-solid fa-building"></i> <span><strong>New Town Business Hub</strong> 2 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-tree"></i> <span><strong>Eco Park</strong> 3 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-road"></i> <span><strong>VIP Road</strong> 4 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-plane"></i> <span><strong>Airport</strong> 12 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-landmark"></i> <span><strong>Salt Lake</strong> 5 km</span></div>
+            <div class="ln-item"><i class="fa-solid fa-city"></i> <span><strong>Rajarhat</strong> 3 km</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ GALLERY & BROCHURE ════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Visual Tour</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-desc">Explore the beauty of IRIS through our curated photo collection</p>
+      </div>
+      <div class="gallery-carousel">
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.12%20PM-BF7pJJB0.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.13%20PM%20(1)-DCrGkbel.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.13%20PM-BxIj_Dct.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.14%20PM%20(1)-DkPX5Ky9.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.14%20PM%20(2)-By8E76C0.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.14%20PM-DAsIB7y5.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.15%20PM%20(1)-BjphgwM-.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.15%20PM%20(2)-DwXJs6-X.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.15%20PM-3ojlnNFA.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.16%20PM%20(1)-CD38qSp1.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.16%20PM-Bbfy2dXg.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.17%20PM%20(1)-C60XkHXe.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.17%20PM%20(2)-wHvtl7eF.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.17%20PM-CBknG7kS.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.18%20PM%20(1)-C8txAr8R.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.18%20PM%20(2)-Boo4Emts.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.18%20PM-DxaJibb_.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.19%20PM%20(1)-B8rHx1UY.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.19%20PM-BgtYzJiB.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.20%20PM%20(1)-r0DGNKEv.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.20%20PM%20(2)-BWVgkbKB.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.20%20PM-DLoMMnJz.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.21%20PM-CuTzeTSD.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.22%20PM-CIisAWgh.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.23%20PM%20(1)-Cl8YuFxO.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.23%20PM%20(2)-BpYZm69M.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.23%20PM-nwBFjpDL.jpeg');"></div>
+          <div class="gallery-item" style="background-image:url('/assets/WhatsApp%20Image%202025-07-27%20at%201.08.24%20PM-Dza7HpGj.jpeg');"></div>
+        </div>
+        <button class="gallery-nav gallery-prev" onclick="prevGallery()" aria-label="Previous image">&#10094;</button>
+        <button class="gallery-nav gallery-next" onclick="nextGallery()" aria-label="Next image">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BROCHURE SECTION ════════════════════════════════════ -->
+  <section class="brochure-section">
+    <div class="container">
+      <div class="brochure-content">
+        <div class="brochure-text">
+          <span class="section-label">Download Brochure</span>
+          <h2 class="section-title">Complete Project Information</h2>
+          <p>Get detailed floor plans, specifications, pricing, and amenities information. Request the comprehensive IRIS brochure.</p>
+          <div class="brochure-features">
+            <div class="bf-item"><i class="fa-solid fa-file-pdf"></i> Floor Plans & Layouts</div>
+            <div class="bf-item"><i class="fa-solid fa-building"></i> Specifications</div>
+            <div class="bf-item"><i class="fa-solid fa-tag"></i> Pricing Details</div>
+            <div class="bf-item"><i class="fa-solid fa-star"></i> Amenities List</div>
+            <div class="bf-item"><i class="fa-solid fa-map"></i> Location Map</div>
+            <div class="bf-item"><i class="fa-solid fa-handshake"></i> Payment Plans</div>
+          </div>
+          <a href="All Pdf/IRIS_Brochure_20241202_155121_0000.pdf" class="brochure-btn">
+            <i class="fa-solid fa-envelope"></i> Request Brochure
+          </a>
+        </div>
+        <div class="brochure-image">
+          <div class="brochure-preview">
+            <i class="fa-solid fa-file-pdf"></i>
+            <p>IRIS project brochure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col footer-brand">
+                <img src="/assets/NI%20GROUP%20COLOR%20LOGO-BXEIaYOY.png" alt="NI Group" class="footer-logo">
+                <div class="footer-brand-divider"></div>
+                <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
+                <div class="footer-socials">
+            <a href="https://www.instagram.com/nigroup_official/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/NiGroup/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/nigroupofficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/nigroupofficial" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@nigroup_realestateofficial" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Our Projects</h4>
+                <ul class="footer-links">
+                    <li><a href="invicta.html">INVICTA</a></li>
+                    <li><a href="iris.html">IRIS</a></li>
+                    <li><a href="iqra.html">IQRA</a></li>
+                    <li><a href="paradizia.html">Paradizia</a></li>
+                    <li><a href="inaya-residency.html">INAYA – RESIDENCY</a></li>
+                    <li><a href="inara-metro.html">INARA – METRO</a></li>
+                    <li><a href="ira-residency.html">IRA – RESIDENCY</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contact Us</h4>
+                <div class="footer-contact">
+                                   <p><strong>Address:</strong> Ground Floor, New Sunrise Apartment, Swami Vivekananda Road, Hatiara, Newtown, Kolkata – 700157</p>
+                    <p><strong>Phone:</strong> <a href="tel:03369028234">033 6902-8234</a></p>
+                    <p><strong>Mobile:</strong> <a href="tel:9330118686">9330118686</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a></p>
+                    <p><strong>Web:</strong> <a href="https://www.nigrouprealty.com" target="_blank" rel="noopener noreferrer">www.nigrouprealty.com</a></p>
+                    <p><strong>Hours:</strong> Mon – Sat: 10:00 AM – 6:30 PM</p>
+                </div>
+            </div>
+
+        </div>
+<div class="footer-legal">
+    <div class="footer-legal-inner">
+        <a href="#disclaimer">Disclaimer</a>
+        <span class="legal-divider">|</span>
+        <a href="#privacy">Privacy Policy</a>
+        <span class="legal-divider">|</span>
+        <a href="#terms">Terms of Use</a>
+        <span class="legal-divider">|</span>  
+        <a href="sitemap.xml">Sitemap</a>
+    </div>
+</div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NI Group of Companies — All Rights Reserved</p>
+            <p>www.nigrouprealty.com | Developed by <a href="https://www.linkedin.com/in/skjahidali/" target="_blank" rel="noopener noreferrer">Sk Jahid Ali</a></p>
+        </div>
+    </div>
+</footer>
+
+  <script>
+  function handleEnquiry(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    setTimeout(() => {
+      alert('Thank you! Our team will contact you shortly to schedule your site visit.');
+      e.target.reset();
+      btn.textContent = 'Book Free Site Visit →';
+      btn.disabled = false;
+    }, 900);
+  }
+  </script>
+</body>
+</html>
