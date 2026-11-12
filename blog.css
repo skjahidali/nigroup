@@ -211,6 +211,12 @@ body{
     color: #fff;
 }
 
+.newsletter-section a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .nl-form {
     margin-top: 32px;
     display: flex;

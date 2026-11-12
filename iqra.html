@@ -317,11 +317,11 @@
         </div>
 <div class="footer-legal">
     <div class="footer-legal-inner">
-        <a href="#disclaimer">Disclaimer</a>
+        <a href="legal.html#disclaimer">Disclaimer</a>
         <span class="legal-divider">|</span>
-        <a href="#privacy">Privacy Policy</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
         <span class="legal-divider">|</span>
-        <a href="#terms">Terms of Use</a>
+        <a href="legal.html#terms">Terms of Use</a>
         <span class="legal-divider">|</span>  
         <a href="sitemap.xml">Sitemap</a>
     </div>
@@ -334,19 +334,5 @@
 </footer>
 
   <script src="standalone.js" type="module"></script>
-  <script>
-  function handleEnquiry(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Submitting…';
-    btn.disabled = true;
-    setTimeout(() => {
-      alert('Thank you! Our team will contact you shortly to schedule your site visit.');
-      e.target.reset();
-      btn.textContent = 'Book Free Site Visit →';
-      btn.disabled = false;
-    }, 900);
-  }
-  </script>
 </body>
 </html>

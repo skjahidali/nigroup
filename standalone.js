@@ -1,3 +1,5 @@
+import { initializeFormSubmissions } from './form-submissions.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const header     = document.querySelector('.header');
     const menuToggle = document.getElementById('menuToggle');
@@ -122,10 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
         revealItems.forEach(item => item.classList.add('active'));
     }
 
-    /* ── Lead popup (delay 3s) ── */
-    setTimeout(() => {
-        document.getElementById('leadPopup')?.classList.add('show');
-    }, 3000);
+    const projectSelect = document.querySelector('#leadForm [name="project"]');
+    const requestedProject = new URLSearchParams(window.location.search).get('project');
+    if (projectSelect && requestedProject) {
+        const matchingOption = Array.from(projectSelect.options)
+            .find(option => option.value === requestedProject);
+        if (matchingOption) projectSelect.value = matchingOption.value;
+    }
+
+    /* ── Lead popup (delay 3s unless a project CTA opened it) ── */
+    const leadPopup = document.getElementById('leadPopup');
+    if (window.location.hash === '#leadPopup') {
+        leadPopup?.classList.add('show');
+    } else {
+        setTimeout(() => leadPopup?.classList.add('show'), 3000);
+    }
 
     /* ── Dynamic Copyright Year ── */
     const yearEl = document.getElementById('current-year');
@@ -291,7 +304,7 @@ function replyAI(text) {
     if (t.includes('email'))
         return '📧 <a href="mailto:info@nigrouprealty.com">info@nigrouprealty.com</a><br><a href="mailto:sales@nigrouprealty.com">sales@nigrouprealty.com</a>';
     if (t.includes('contact') || t.includes('phone') || t.includes('number'))
-        return '📞 <b>033 6902-8234</b> | <b>9330118686</b><br>Mon–Sat: 10:00 AM – 7:30 PM';
+        return '📞 <b>033 6902-8234</b> | <b>9330118686</b><br>Mon–Sat: 10:00 AM – 6:30 PM';
     if (t.includes('website') || t.includes('domain'))
         return '🌐 <a href="https://www.nigrouprealty.com" target="_blank">www.nigrouprealty.com</a>';
     if (t.includes('2 bhk'))
@@ -347,73 +360,15 @@ function showToast(message) {
     }, 4000);
 }
 
-/* ── Lead form submit ── */
-const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxeTegxEmlYBPzvR5Q9nBJgISswXZbs6lqNmy3plQpxkMpHYBmdeROpv4hmQvKW--waLQ/exec";
-
-async function submitLead(event) {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const button = form?.querySelector('button[type="submit"]');
-    const message = document.getElementById('leadMessage');
-    const originalButtonHTML = button?.innerHTML || '';
-
-    try {
-        if (button) {
-            button.disabled = true;
-            button.textContent = 'Submitting...';
-        }
-
-        await fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: new FormData(form)
-        });
-
-        form.reset();
-        if (message) {
-            message.style.display = 'block';
-            message.textContent =
-                "Thank you! Your enquiry has been submitted successfully.";
-            message.style.color = "green";
-        }
-
-        if (button) {
-            button.disabled = false;
-            button.innerHTML = originalButtonHTML;
-        }
-
-        setTimeout(() => {
-            if (form.id === 'leadForm') closePopup();
-            if (message) message.style.display = "none";
-        }, 2500);
-
-    } catch (error) {
-        console.error("Lead submission error:", error);
-
-        if (message) {
-            message.style.display = "block";
-            message.textContent =
-                "Something went wrong. Please try again.";
-            message.style.color = "red";
-        }
-
-        if (button) {
-            button.disabled = false;
-            button.innerHTML = originalButtonHTML;
-        }
-    }
-}
-
 /* ── Expose globals ── */
 window.closePopup       = closePopup;
 window.moveTestimonials = moveTestimonials;
 window.toggleAI         = toggleAI;
 window.askAI            = askAI;
 window.sendAI           = sendAI;
-window.submitLead       = submitLead;
 window.showToast        = showToast;
+
+initializeFormSubmissions();
 
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE PREMIUM CAROUSELS

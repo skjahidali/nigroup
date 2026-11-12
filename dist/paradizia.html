@@ -9,8 +9,8 @@
   <meta name="theme-color" content="#1b3a7a">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/standalone-Ddplemv5.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/standalone-B4_x3tft.css">
+  <script type="module" crossorigin src="/assets/standalone-b6wk8rbX.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/standalone--WViBnZS.css">
   <link rel="stylesheet" crossorigin href="/assets/projects-oFbV2nHv.css">
 </head>
 <body>
@@ -245,15 +245,16 @@
         </div>
         <div class="enquiry-form">
           <h3>Book Free Consultation</h3>
-          <form onsubmit="submitLead(event)">
+          <form id="paradiziaEnquiryForm" data-form-id="paradizia_consultation" data-form-name="Paradizia Consultation Form">
             <input type="hidden" name="project" value="PARADIZIA">
-            <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your full name" required></div>
-            <div class="form-group"><label>Mobile Number</label><input type="tel" name="mobile" placeholder="Your mobile number" required></div>
-            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Your email address"></div>
-            <div class="form-group"><label>BHK Type</label>
-              <select name="bhkType"><option value="">Select BHK type</option><option>Plot</option><option>Villa</option><option>Other</option></select>
+            <div class="form-group"><label for="paradiziaName">Full Name</label><input id="paradiziaName" type="text" name="name" placeholder="Your full name" autocomplete="name" maxlength="120" required></div>
+            <div class="form-group"><label for="paradiziaMobile">Mobile Number</label><input id="paradiziaMobile" type="tel" name="mobile" placeholder="Your mobile number" autocomplete="tel" inputmode="tel" maxlength="30" required></div>
+            <div class="form-group"><label for="paradiziaEmail">Email</label><input id="paradiziaEmail" type="email" name="email" placeholder="Your email address" autocomplete="email" maxlength="254"></div>
+            <div class="form-group"><label for="paradiziaType">BHK Type</label>
+              <select id="paradiziaType" name="bhkType"><option value="">Select BHK type</option><option>Plot</option><option>Villa</option><option>Other</option></select>
             </div>
-            <div class="form-group"><label>Message</label><textarea name="message" placeholder="Any specific requirements?"></textarea></div>
+            <div class="form-group"><label for="paradiziaMessage">Message</label><textarea id="paradiziaMessage" name="message" maxlength="2000" placeholder="Any specific requirements?"></textarea></div>
+            <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
             <button type="submit" class="form-submit">Book Free Site Visit &#8594;</button>
           </form>
         </div>
@@ -356,11 +357,11 @@
         </div>
 <div class="footer-legal">
     <div class="footer-legal-inner">
-        <a href="#disclaimer">Disclaimer</a>
+        <a href="legal.html#disclaimer">Disclaimer</a>
         <span class="legal-divider">|</span>
-        <a href="#privacy">Privacy Policy</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
         <span class="legal-divider">|</span>
-        <a href="#terms">Terms of Use</a>
+        <a href="legal.html#terms">Terms of Use</a>
         <span class="legal-divider">|</span>  
         <a href="sitemap.xml">Sitemap</a>
     </div>
@@ -372,19 +373,5 @@
     </div>
 </footer>
 
-  <script>
-  function handleEnquiry(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Submitting…';
-    btn.disabled = true;
-    setTimeout(() => {
-      alert('Thank you! Our team will contact you shortly to schedule your site visit.');
-      e.target.reset();
-      btn.textContent = 'Book Free Site Visit →';
-      btn.disabled = false;
-    }, 900);
-  }
-  </script>
 </body>
 </html>

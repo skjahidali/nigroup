@@ -16,6 +16,7 @@ export default defineConfig({
         inayaResidency: resolve(__dirname, 'inaya-residency.html'),
         inaraMetro: resolve(__dirname, 'inara-metro.html'),
         iraResidency: resolve(__dirname, 'ira-residency.html'),
+        legal: resolve(__dirname, 'legal.html'),
       },
     },
   },

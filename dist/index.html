@@ -66,8 +66,8 @@
 
     <!-- CSS -->
 
-  <script type="module" crossorigin src="/assets/standalone-Ddplemv5.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/standalone-B4_x3tft.css">
+  <script type="module" crossorigin src="/assets/standalone-b6wk8rbX.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/standalone--WViBnZS.css">
 </head>
 <body>
 <!-- ═══ HEADER ═══════════════════════════════════════════ -->
@@ -245,16 +245,16 @@
             <p>Get exclusive offers &amp; site visit assistance</p>
         </div>
 
-        <form id="leadForm" onsubmit="submitLead(event)">
-            <input type="text" name="name" placeholder="Full Name" required autocomplete="name">
+        <form id="leadForm" data-form-id="homepage_lead" data-form-name="Homepage Lead Form">
+            <input type="text" name="name" placeholder="Full Name" aria-label="Full name" autocomplete="name" maxlength="120" required>
 
             <input type="tel" name="mobile" placeholder="Mobile Number"
-                   required autocomplete="tel">
+                   aria-label="Mobile number" required autocomplete="tel" inputmode="tel" maxlength="30">
 
             <input type="email" name="email" placeholder="Email Address"
-                   autocomplete="email">
+                   aria-label="Email address" autocomplete="email" maxlength="254">
 
-            <select name="project" required>
+            <select name="project" aria-label="Project" required>
                 <option value="">Select Project</option>
                 <option>INVICTA</option>
                 <option>IRIS</option>
@@ -265,12 +265,11 @@
                 <option>IRA Residency</option>
             </select>
 
+            <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
             <button type="submit" id="leadSubmitBtn">
            Get Free Consultation &rarr;
             </button>
         </form>
-
-            <p id="leadMessage" class="lead-message" style="display:none;" role="status"></p>
     </div>
 </div>
 
@@ -818,11 +817,11 @@
         </div>
 <div class="footer-legal">
     <div class="footer-legal-inner">
-        <a href="#disclaimer">Disclaimer</a>
+        <a href="legal.html#disclaimer">Disclaimer</a>
         <span class="legal-divider">|</span>
-        <a href="#privacy">Privacy Policy</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
         <span class="legal-divider">|</span>
-        <a href="#terms">Terms of Use</a>
+        <a href="legal.html#terms">Terms of Use</a>
         <span class="legal-divider">|</span>  
         <a href="sitemap.xml">Sitemap</a>
     </div>

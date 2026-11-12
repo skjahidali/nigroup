@@ -176,6 +176,18 @@ body {
     gap: 18px;
 }
 
+.cv-storage-note {
+    margin-top: 14px;
+    color: #e5e7eb;
+    font-size: .9rem;
+}
+
+.cv-storage-note a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .cv-form input,
 .cv-form label,
 .cv-form button {
@@ -248,5 +260,8 @@ body {
     }
     .job-left {
         max-width: 100%;
+    }
+    .cv-form > div:first-child {
+        grid-template-columns: 1fr !important;
     }
 }

@@ -150,23 +150,25 @@
       <div style="max-width: 700px; margin: 0 auto; text-align: center;">
         <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Don't See Your Role?</h2>
         <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 40px;">Send us your CV and let us know how you can contribute to NI Group's mission. We're always interested in talented professionals.</p>
-        <form class="cv-form" onsubmit="event.preventDefault(); alert('Thank you for submitting your CV! We will review it and get back to you soon.');">
+        <form id="careerApplicationForm" class="cv-form" data-form-id="career_application" data-form-name="Careers Application Form">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-            <input type="text" placeholder="Your Full Name" required>
-            <input type="email" placeholder="Your Email" required>
+            <input type="text" name="name" placeholder="Your Full Name" aria-label="Your full name" autocomplete="name" maxlength="120" required>
+            <input type="email" name="email" placeholder="Your Email" aria-label="Your email" autocomplete="email" maxlength="254" required>
           </div>
           <div style="margin-bottom: 15px;">
-            <input type="tel" placeholder="Your Phone Number" required style="width: 100%;">
+            <input type="tel" name="mobile" placeholder="Your Phone Number" aria-label="Your phone number" autocomplete="tel" inputmode="tel" maxlength="30" required style="width: 100%;">
           </div>
           <div style="margin-bottom: 25px;">
-            <label style="display: block; color: white; margin-bottom: 10px; font-weight: 500;">Upload Your CV (PDF)</label>
+            <label for="careerCv" style="display: block; color: white; margin-bottom: 10px; font-weight: 500;">Upload Your CV (PDF, DOC, or DOCX; max 4 MB)</label>
             <div class="file-upload">
-              <input type="file" accept=".pdf,.doc,.docx" required>
-              <span><i class="fa-solid fa-cloud-arrow-up"></i> Choose file or drag and drop</span>
+              <input id="careerCv" type="file" name="cvFile" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+              <span><i class="fa-solid fa-cloud-arrow-up"></i> Choose file</span>
             </div>
           </div>
+          <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
           <button type="submit" class="btn btn-accent">Submit Your CV</button>
         </form>
+        <p class="cv-storage-note">Your CV will be stored privately for recruitment review. Contact <a href="mailto:info@nigrouprealty.com?subject=CV%20data%20request">info@nigrouprealty.com</a> to request an update or removal.</p>
       </div>
     </div>
   </section>
@@ -241,11 +243,11 @@
         </div>
 <div class="footer-legal">
     <div class="footer-legal-inner">
-        <a href="#disclaimer">Disclaimer</a>
+        <a href="legal.html#disclaimer">Disclaimer</a>
         <span class="legal-divider">|</span>
-        <a href="#privacy">Privacy Policy</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
         <span class="legal-divider">|</span>
-        <a href="#terms">Terms of Use</a>
+        <a href="legal.html#terms">Terms of Use</a>
         <span class="legal-divider">|</span>  
         <a href="sitemap.xml">Sitemap</a>
     </div>

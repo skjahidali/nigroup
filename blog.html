@@ -129,11 +129,12 @@
       <div style="max-width: 600px; margin: 0 auto; text-align: center;">
         <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Stay Updated</h2>
         <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 30px;">Subscribe to our newsletter and get the latest real estate insights, market trends, and exclusive project updates delivered to your inbox.</p>
-        <form class="nl-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-          <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 14px 20px; border: none; border-radius: 8px 0 0 8px; font-size: 1rem;">
+        <form id="newsletterSubscriptionForm" class="nl-form" data-form-id="blog_newsletter" data-form-name="Blog Newsletter Subscription">
+          <input type="email" name="email" placeholder="Enter your email address" autocomplete="email" aria-label="Email address for newsletter" maxlength="254" required style="flex: 1; padding: 14px 20px; border: none; border-radius: 8px 0 0 8px; font-size: 1rem;">
+          <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
           <button type="submit" class="btn btn-accent" style="border-radius: 0 8px 8px 0;">Subscribe</button>
         </form>
-        <p style="color: #d1d5db; font-size: 0.85rem; margin-top: 15px;">We respect your privacy. Unsubscribe anytime.</p>
+        <p style="color: #d1d5db; font-size: 0.85rem; margin-top: 15px;">To unsubscribe or request removal, email <a href="mailto:info@nigrouprealty.com?subject=Newsletter%20unsubscribe">info@nigrouprealty.com</a>.</p>
       </div>
     </div>
   </section>
@@ -210,11 +211,11 @@
         </div>
 <div class="footer-legal">
     <div class="footer-legal-inner">
-        <a href="#disclaimer">Disclaimer</a>
+        <a href="legal.html#disclaimer">Disclaimer</a>
         <span class="legal-divider">|</span>
-        <a href="#privacy">Privacy Policy</a>
+        <a href="legal.html#privacy">Privacy Policy</a>
         <span class="legal-divider">|</span>
-        <a href="#terms">Terms of Use</a>
+        <a href="legal.html#terms">Terms of Use</a>
         <span class="legal-divider">|</span>  
         <a href="sitemap.xml">Sitemap</a>
     </div>
