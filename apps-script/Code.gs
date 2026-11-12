@@ -64,7 +64,8 @@ function setup() {
   let cvFolderId = properties.getProperty(PROPERTY_KEYS.cvFolderId);
 
   if (!spreadsheetId) {
-    const spreadsheet = SpreadsheetApp.create('NI Group Website Enquiries');
+    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet() ||
+      SpreadsheetApp.create('NI Group Website Enquiries');
     spreadsheetId = spreadsheet.getId();
     properties.setProperty(PROPERTY_KEYS.spreadsheetId, spreadsheetId);
   }
@@ -369,7 +370,7 @@ function responsePage(result, targetOrigin) {
   }).replace(/</g, '\\u003c');
   const safeOrigin = JSON.stringify(targetOrigin || '*').replace(/</g, '\\u003c');
   const html = '<!doctype html><meta charset="utf-8"><script>' +
-    `window.parent.postMessage(${safeResult}, ${safeOrigin});` +
+    `window.top.postMessage(${safeResult}, ${safeOrigin});` +
     '</script>';
 
   return HtmlService.createHtmlOutput(html)

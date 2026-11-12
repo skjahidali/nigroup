@@ -31,7 +31,8 @@ function installResponseListener() {
         if (!result || result.type !== 'ni-form-result' || typeof result.requestId !== 'string') return;
 
         const pending = pendingSubmissions.get(result.requestId);
-        if (!pending || event.source !== pending.iframe.contentWindow) return;
+        const isAppsScriptOrigin = /^https:\/\/(?:script\.google\.com|[a-z0-9-]+-script\.googleusercontent\.com|(?:[a-z0-9-]+\.)*script\.googleusercontent\.com)$/.test(event.origin);
+        if (!pending || (event.source !== pending.iframe.contentWindow && !isAppsScriptOrigin)) return;
 
         clearTimeout(pending.timeout);
         pending.postForm.remove();
