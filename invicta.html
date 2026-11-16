@@ -294,9 +294,16 @@
             <div class="bf-item"><i class="fa-solid fa-map"></i> Location Map</div>
             <div class="bf-item"><i class="fa-solid fa-handshake"></i> Payment Plans</div>
           </div>
-          <a href="Project Photo/INVICTA - Kalikapur/Invicta-Brochure.pdf" download class="brochure-btn">
-            <i class="fa-solid fa-download"></i> Download Brochure (PDF)
-          </a>
+          <form class="brochure-request-form" data-form-id="project_brochure_request" data-form-name="Project Brochure Request" data-download-project="INVICTA" data-success-message="Thank you. Your details were submitted and your brochure download should begin.">
+            <input type="hidden" name="project" value="INVICTA">
+            <input type="hidden" name="message" value="INVICTA brochure request">
+            <h3>Get the INVICTA brochure</h3>
+            <div class="form-group"><label for="invictaBrochureName">Full Name</label><input id="invictaBrochureName" type="text" name="name" autocomplete="name" maxlength="120" required></div>
+            <div class="form-group"><label for="invictaBrochureMobile">Mobile Number</label><input id="invictaBrochureMobile" type="tel" name="mobile" autocomplete="tel" inputmode="tel" maxlength="30" required></div>
+            <div class="form-group"><label for="invictaBrochureEmail">Email Address</label><input id="invictaBrochureEmail" type="email" name="email" autocomplete="email" maxlength="254" required></div>
+            <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+            <button type="submit" class="form-submit"><i class="fa-solid fa-download"></i> Submit &amp; Download Brochure</button>
+          </form>
         </div>
         <div class="brochure-image">
           <div class="brochure-preview">

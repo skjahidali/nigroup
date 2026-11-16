@@ -1,10 +1,12 @@
 const PROPERTY_KEYS = {
   spreadsheetId: 'SPREADSHEET_ID',
   cvFolderId: 'CV_FOLDER_ID',
-  allowedOrigins: 'ALLOWED_ORIGINS'
+  allowedOrigins: 'ALLOWED_ORIGINS',
+  leadNotificationEmail: 'LEAD_NOTIFICATION_EMAIL'
 };
 
 const SHEET_NAME = 'Enquiries';
+const DEFAULT_LEAD_NOTIFICATION_EMAIL = 'sales@nigrouprealty.com';
 const HEADERS = [
   'Submission Date & Time',
   'Customer Name',
@@ -30,6 +32,13 @@ const FORM_DEFINITIONS = {
     requiresName: true,
     requiresPhone: true,
     requiresEmail: false,
+    status: 'New'
+  },
+  project_brochure_request: {
+    name: 'Project Brochure Request',
+    requiresName: true,
+    requiresPhone: true,
+    requiresEmail: true,
     status: 'New'
   },
   paradizia_consultation: {
@@ -75,6 +84,11 @@ function setup() {
     cvFolderId = folder.getId();
     properties.setProperty(PROPERTY_KEYS.cvFolderId, cvFolderId);
   }
+
+  if (!properties.getProperty(PROPERTY_KEYS.leadNotificationEmail)) {
+    properties.setProperty(PROPERTY_KEYS.leadNotificationEmail, DEFAULT_LEAD_NOTIFICATION_EMAIL);
+  }
+  MailApp.getRemainingDailyQuota();
 
   const defaultOrigins = [
     'https://nigrouprealty.com',
@@ -171,8 +185,23 @@ function doPost(event) {
       }
 
       cache.put(idempotencyKey, 'saved', 21600);
+      if (submission.formId === 'project_brochure_request') {
+        try {
+          sendBrochureConfirmation(submission);
+        } catch (error) {
+          console.error('Brochure email failed: %s', error && error.stack ? error.stack : error);
+          return responsePage({
+            success: true,
+            emailSent: false,
+            message: 'Your request was saved, but we could not send the confirmation email. NI Group has your details.',
+            requestId: requestId
+          }, pageOrigin);
+        }
+      }
+
       return responsePage({
         success: true,
+        emailSent: submission.formId === 'project_brochure_request',
         message: 'Thank you. Your submission has been received.',
         requestId: requestId
       }, pageOrigin);
@@ -189,6 +218,47 @@ function doPost(event) {
       requestId: requestId
     }, isAllowedOrigin(pageOrigin) ? pageOrigin : '*');
   }
+}
+
+function sendBrochureConfirmation(submission) {
+  const properties = PropertiesService.getScriptProperties();
+  const notificationEmail = cleanText(
+    properties.getProperty(PROPERTY_KEYS.leadNotificationEmail) || DEFAULT_LEAD_NOTIFICATION_EMAIL,
+    254
+  ).toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(notificationEmail)) {
+    throw new Error('The lead notification email address is invalid.');
+  }
+
+  const hasBrochure = ['INVICTA', 'IRIS', 'IQRA'].includes(submission.project);
+  const brochureNote = hasBrochure
+    ? 'You can download the brochure from the project page on our website.'
+    : 'Our team will follow up with you and share the brochure when it is available.';
+  const body = [
+    `Assalamu Alaikum ${submission.name},`,
+    '',
+    `Thank you for requesting information about ${submission.project}.`,
+    brochureNote,
+    '',
+    'Your enquiry details:',
+    `Project: ${submission.project}`,
+    `Name: ${submission.name}`,
+    `Phone: ${submission.phone}`,
+    `Email: ${submission.email}`,
+    `Message: ${submission.message}`,
+    `Page: ${submission.pageUrl}`,
+    '',
+    'NI Group Sales'
+  ].join('\n');
+
+  MailApp.sendEmail({
+    to: submission.email,
+    bcc: notificationEmail,
+    replyTo: notificationEmail,
+    name: 'NI Group',
+    subject: `${submission.project} brochure request received`,
+    body: body
+  });
 }
 
 function validateSubmission(parameters, pageOrigin) {
@@ -220,6 +290,11 @@ function validateSubmission(parameters, pageOrigin) {
     const projects = ['INVICTA', 'IRIS', 'IQRA', 'PARADIZIA', 'INAYA Residency', 'INARA Metro', 'IRA Residency'];
     if (!projects.includes(project)) throw userError('Please select a project.');
     service = project;
+  } else if (formId === 'project_brochure_request') {
+    const project = cleanText(parameters.project, 80);
+    const projects = ['INVICTA', 'IRIS', 'IQRA', 'PARADIZIA', 'INAYA Residency', 'INARA Metro', 'IRA Residency'];
+    if (!projects.includes(project)) throw userError('Please select a valid project.');
+    service = `${project} brochure request`;
   } else if (formId === 'paradizia_consultation') {
     const project = cleanText(parameters.project, 80);
     const preference = cleanText(parameters.bhkType, 40);
@@ -245,6 +320,7 @@ function validateSubmission(parameters, pageOrigin) {
     formId: formId,
     pageUrl: pageUrl,
     status: definition.status,
+    project: formId === 'project_brochure_request' ? cleanText(parameters.project, 80) : '',
     cv: definition.requiresCv ? validateCv(parameters) : null
   };
 }
@@ -362,12 +438,14 @@ function userError(message) {
 }
 
 function responsePage(result, targetOrigin) {
-  const safeResult = JSON.stringify({
+  const response = {
     type: 'ni-form-result',
     requestId: result.requestId || '',
     success: result.success === true,
     message: result.message
-  }).replace(/</g, '\\u003c');
+  };
+  if (typeof result.emailSent === 'boolean') response.emailSent = result.emailSent;
+  const safeResult = JSON.stringify(response).replace(/</g, '\\u003c');
   const safeOrigin = JSON.stringify(targetOrigin || '*').replace(/</g, '\\u003c');
   const html = '<!doctype html><meta charset="utf-8"><script>' +
     `window.top.postMessage(${safeResult}, ${safeOrigin});` +

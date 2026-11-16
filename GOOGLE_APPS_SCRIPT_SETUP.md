@@ -6,12 +6,13 @@ The website's homepage lead form, Paradizia consultation form, careers CV form, 
 
 1. Create a standalone project at [script.google.com](https://script.google.com/).
 2. Replace its `Code.gs` with [`apps-script/Code.gs`](./apps-script/Code.gs). In Project Settings, enable **Show "appsscript.json" manifest file**, then copy [`apps-script/appsscript.json`](./apps-script/appsscript.json) into the project manifest.
-3. Run `setup()` from the Apps Script editor and authorize the requested Google Sheets and Drive permissions. The function creates the `NI Group Website Enquiries` spreadsheet and a private `NI Group Website CV Applications` Drive folder, stores their IDs in Script Properties, and writes the column headers. Open the execution log to get the spreadsheet and folder links.
-4. Deploy as a **Web app**, executing as your account, with access set to **Anyone** so the public website can submit. Google may label this access option differently depending on the account. Do not share the spreadsheet or CV folder publicly.
-5. Copy the deployed URL ending in `/exec` into `GOOGLE_APPS_SCRIPT_URL` in [`forms-config.js`](./forms-config.js), preserving the quotes. Redeploy the website with `npm run build`.
-6. In Apps Script Project Settings, confirm `ALLOWED_ORIGINS` contains the exact production origins `https://nigrouprealty.com` and `https://www.nigrouprealty.com`. `setup()` adds the localhost origins for Vite (`5173`) and Live Server (`5501`) development; remove them if they are no longer needed. If the script was already set up, run `setup()` again to append these defaults while preserving any custom origins.
+3. Optionally, in Project Settings > Script Properties, set `LEAD_NOTIFICATION_EMAIL` to the address that should receive brochure leads. If unset, notifications go to `sales@nigrouprealty.com`.
+4. Run `setup()` from the Apps Script editor and authorize the requested Google Sheets, Drive, and email permissions. The function creates the `NI Group Website Enquiries` spreadsheet and a private `NI Group Website CV Applications` Drive folder, stores their IDs in Script Properties, and writes the column headers. Open the execution log to get the spreadsheet and folder links.
+5. Deploy as a **Web app**, executing as your account, with access set to **Anyone** so the public website can submit. Google may label this access option differently depending on the account. Do not share the spreadsheet or CV folder publicly.
+6. Copy the deployed URL ending in `/exec` into `GOOGLE_APPS_SCRIPT_URL` in [`forms-config.js`](./forms-config.js), preserving the quotes. Redeploy the website with `npm run build`.
+7. In Apps Script Project Settings, confirm `ALLOWED_ORIGINS` contains the exact production origins `https://nigrouprealty.com` and `https://www.nigrouprealty.com`. `setup()` adds the localhost origins for Vite (`5173`) and Live Server (`5501`) development; remove them if they are no longer needed. If the script was already set up, run `setup()` again to append these defaults while preserving any custom origins.
 
-After changing Apps Script code, deploy a new web app version. Keep the spreadsheet and CV folder private; the web app writes to them as the deploying account.
+After changing Apps Script code or its manifest, run `setup()` again if new permissions are requested, authorize them, and deploy a new web app version. Keep the spreadsheet and CV folder private; the web app writes to them as the deploying account.
 
 The `/dev` test URL is intended only for script editors and uses the latest saved code. Use the deployed `/exec` URL for visitors to the public website.
 
@@ -22,9 +23,12 @@ The sheet includes the requested columns: Submission Date & Time, Customer Name,
 | Form | Form ID | Service |
 | --- | --- | --- |
 | Homepage lead popup | `homepage_lead` | Selected project |
+| Project brochure forms | `project_brochure_request` | Selected project brochure request |
 | Paradizia consultation | `paradizia_consultation` | Paradizia and selected property type |
 | Careers application | `career_application` | Careers at NI Group |
 | Blog newsletter | `blog_newsletter` | Newsletter subscription |
+
+Project brochure requests require a name, phone number, and valid email address. Each request is saved to the sheet, sends a confirmation email to the customer, and BCCs the lead details to `LEAD_NOTIFICATION_EMAIL`. INVICTA, IRIS, and IQRA brochure PDFs download in the browser after the form is accepted; for projects without a website PDF, the email tells the customer the sales team will follow up.
 
 Career CV files are restricted to PDF, DOC, or DOCX and 4 MB; they are saved in the private Drive folder and linked from the sheet.
 

@@ -1,8 +1,16 @@
 import { GOOGLE_APPS_SCRIPT_URL } from './forms-config.js';
+import invictaBrochureUrl from './Project Photo/INVICTA - Kalikapur/Invicta-Brochure.pdf?url';
+import irisBrochureUrl from './All Pdf/IRIS_Brochure_20241202_155121_0000.pdf?url';
+import iqraBrochureUrl from './All Pdf/Iqra Enclave Brochure.pdf?url';
 
 const MAX_CV_FILE_SIZE = 4 * 1024 * 1024;
 const RESPONSE_TIMEOUT_MS = 30000;
 const pendingSubmissions = new Map();
+const brochureDownloads = new Map([
+    ['INVICTA', { url: invictaBrochureUrl, filename: 'Invicta-Brochure.pdf' }],
+    ['IRIS', { url: irisBrochureUrl, filename: 'IRIS-Brochure.pdf' }],
+    ['IQRA', { url: iqraBrochureUrl, filename: 'Iqra-Enclave-Brochure.pdf' }]
+]);
 let responseListenerInstalled = false;
 
 function showStatus(form, message, state) {
@@ -126,6 +134,31 @@ function getServiceInterestedIn(form, formData) {
     return form.dataset.serviceInterestedIn || form.dataset.formName || '';
 }
 
+function startBrochureDownload(form) {
+    const project = form.dataset.downloadProject;
+    const brochure = project ? brochureDownloads.get(project) : null;
+    if (!brochure) return true;
+
+    try {
+        const url = new URL(brochure.url, window.location.href);
+        if (url.origin !== window.location.origin || !url.pathname.toLowerCase().endsWith('.pdf')) {
+            throw new Error('The brochure download link is invalid.');
+        }
+
+        const link = document.createElement('a');
+        link.href = url.href;
+        link.download = brochure.filename;
+        link.hidden = true;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        return true;
+    } catch (error) {
+        console.error('Brochure download error:', error);
+        return false;
+    }
+}
+
 async function submitWebsiteForm(form) {
     if (form.dataset.submitting === 'true') return;
     if (!form.reportValidity()) return;
@@ -195,7 +228,13 @@ async function submitWebsiteForm(form) {
 
         form.reset();
         delete form.dataset.requestId;
-        showStatus(form, result.message || 'Thank you. Your submission has been received.', 'success');
+        const submissionMessage = result.emailSent === false
+            ? result.message
+            : form.dataset.successMessage || result.message || 'Thank you. Your submission has been received.';
+        showStatus(form, submissionMessage, result.emailSent === false ? 'error' : 'success');
+        if (!startBrochureDownload(form)) {
+            showStatus(form, 'Your information was received, but the brochure download could not start. Please contact NI Group.', 'error');
+        }
 
         if (form.id === 'leadForm') setTimeout(() => window.closePopup?.(), 2500);
     } catch (error) {
