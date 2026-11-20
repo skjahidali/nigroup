@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IRA Residency – NI Group | Luxury Apartments in Kolkata</title>
   <meta name="description" content="IRA Residency by NI Group offers 2 & 3 BHK homes across one tower, with a swimming pool, gym, community spaces, and 24/7 security.">
-  <link rel="icon" type="image/png" href="Project Photo/NI GROUP COLOR LOGO.png">
+  <link rel="icon" type="image/png" href="Project Photo/NI LOGO/NI GROUP COLOR LOGO.png">
   <meta name="theme-color" content="#1b3a7a">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <div class="header-container">
       <a href="index.html" class="logo" aria-label="NI Group Home">
         <div class="logo-wrapper">
-          <img class="logo-img" src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" width="260" height="96">
+          <img class="logo-img" src="Project Photo/NI LOGO/NI GROUP COLOR LOGO.png" alt="NI Group" width="260" height="96">
         </div>
       </a>
       <nav class="nav-desktop" aria-label="Main navigation">
@@ -97,7 +97,7 @@
   </div>
 
   <section class="project-hero" id="top">
-    <div class="project-hero-bg" style="background-image:url('Project Photo/IRA.jpeg');"></div>
+    <div class="project-hero-bg" style="background-image:url('Project Photo/Projects Front Photo/IRA.jpeg');"></div>
     <div class="project-hero-content">
       <div class="container">
         <nav class="project-breadcrumb">
@@ -236,9 +236,18 @@
         <p class="section-desc">Explore the beauty of IRA Residency through our curated photo collection</p>
       </div>
       <div class="gallery-carousel">
-        <div class="gallery-grid gallery-grid-single" id="galleryGrid">
-          <div class="gallery-item" style="background-image:url('Project Photo/IRA.jpeg');" role="img" aria-label="IRA Residency project rendering"></div>
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" style="background-image:url('Project Photo/IRA/IRA\ RESIDENCY\ E\ BROCHURE\ NIG_page-0001.jpg');" role="img" aria-label="IRA Residency exterior rendering"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRA/IRA\ RESIDENCY\ E\ BROCHURE\ NIG_page-0002.jpg');" role="img" aria-label="IRA Residency rooftop amenities and plan"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRA/IRA\ RESIDENCY\ E\ BROCHURE\ NIG_page-0003.jpg');" role="img" aria-label="IRA Residency exterior rendering"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRA/IRA\ RESIDENCY\ E\ BROCHURE\ NIG_page-0004.jpg');" role="img" aria-label="IRA Residency rooftop amenities and plan"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRA/IRA\ RESIDENCY\ E\ BROCHURE\ NIG_page-0005.jpg');" role="img" aria-label="IRA Residency exterior rendering"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRA/IRA\ RESIDENCY\ E\ BROCHURE\ NIG_page-0006.jpg');" role="img" aria-label="IRA Residency rooftop amenities and plan"></div>
         </div>
+        </div>
+        <button class="gallery-nav gallery-prev" onclick="prevGallery()" aria-label="Previous image">&#10094;</button>
+        <button class="gallery-nav gallery-next" onclick="nextGallery()" aria-label="Next image">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
       </div>
     </div>
   </section>
@@ -250,7 +259,7 @@
         <div class="brochure-text">
           <span class="section-label">Download Brochure</span>
           <h2 class="section-title">Complete Project Information</h2>
-          <p>Get detailed floor plans, specifications, pricing, and amenities information. Request the comprehensive IRA Residency brochure.</p>
+          <p>Download the IRA Residency brochure here, or submit your details to download it after submitting.</p>
           <div class="brochure-features">
             <div class="bf-item"><i class="fa-solid fa-file-pdf"></i> Floor Plans & Layouts</div>
             <div class="bf-item"><i class="fa-solid fa-building"></i> Specifications</div>
@@ -259,15 +268,15 @@
             <div class="bf-item"><i class="fa-solid fa-map"></i> Location Map</div>
             <div class="bf-item"><i class="fa-solid fa-handshake"></i> Payment Plans</div>
           </div>
-          <form class="brochure-request-form" data-form-id="project_brochure_request" data-form-name="Project Brochure Request" data-success-message="Thank you. Your brochure request has been received. Our team will send it to you when it is available.">
+          <form class="brochure-request-form" data-form-id="project_brochure_request" data-form-name="Project Brochure Request" data-download-project="IRA Residency" data-success-message="Thank you. Your details were submitted and your brochure download should begin.">
             <input type="hidden" name="project" value="IRA Residency">
             <input type="hidden" name="message" value="IRA Residency brochure request">
-            <h3>Request the IRA Residency brochure</h3>
+            <h3>Get the IRA Residency brochure</h3>
             <div class="form-group"><label for="iraBrochureName">Full Name</label><input id="iraBrochureName" type="text" name="name" autocomplete="name" maxlength="120" required></div>
             <div class="form-group"><label for="iraBrochureMobile">Mobile Number</label><input id="iraBrochureMobile" type="tel" name="mobile" autocomplete="tel" inputmode="tel" maxlength="30" required></div>
             <div class="form-group"><label for="iraBrochureEmail">Email Address</label><input id="iraBrochureEmail" type="email" name="email" autocomplete="email" maxlength="254" required></div>
             <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
-            <button type="submit" class="form-submit"><i class="fa-solid fa-envelope"></i> Request Brochure</button>
+            <button type="submit" class="form-submit"><i class="fa-solid fa-download"></i> Submit &amp; Download Brochure</button>
           </form>
         </div>
         <div class="brochure-image">
@@ -275,6 +284,7 @@
             <i class="fa-solid fa-file-pdf"></i>
             <p>IRA Residency project brochure</p>
           </div>
+          <a class="brochure-btn" data-brochure-download="IRA Residency"><i class="fa-solid fa-download"></i> Download Brochure PDF</a>
         </div>
       </div>
     </div>
@@ -286,7 +296,7 @@
         <div class="footer-grid">
 
             <div class="footer-col footer-brand">
-                <img src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" class="footer-logo">
+                <img src="Project Photo/NI LOGO/NI GROUP COLOR LOGO.png" alt="NI Group" class="footer-logo">
                 <div class="footer-brand-divider"></div>
                 <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
                 <div class="footer-socials">

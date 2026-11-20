@@ -1,13 +1,15 @@
 import { GOOGLE_APPS_SCRIPT_URL } from './forms-config.js';
 import invictaBrochureUrl from './Project Photo/INVICTA - Kalikapur/Invicta-Brochure.pdf?url';
-import irisBrochureUrl from './All Pdf/IRIS_Brochure_20241202_155121_0000.pdf?url';
-import iqraBrochureUrl from './All Pdf/Iqra Enclave Brochure.pdf?url';
+import iraBrochureUrl from './Project Photo/IRA/IRA RESIDENCY E BROCHURE NIG.pdf?url';
+import irisBrochureUrl from './Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000.pdf?url';
+import iqraBrochureUrl from './Project Photo/IQRA Enclave/Iqra Enclave Brochure.pdf?url';
 
 const MAX_CV_FILE_SIZE = 4 * 1024 * 1024;
 const RESPONSE_TIMEOUT_MS = 30000;
 const pendingSubmissions = new Map();
 const brochureDownloads = new Map([
     ['INVICTA', { url: invictaBrochureUrl, filename: 'Invicta-Brochure.pdf' }],
+    ['IRA Residency', { url: iraBrochureUrl, filename: 'IRA-Residency-Brochure.pdf' }],
     ['IRIS', { url: irisBrochureUrl, filename: 'IRIS-Brochure.pdf' }],
     ['IQRA', { url: iqraBrochureUrl, filename: 'Iqra-Enclave-Brochure.pdf' }]
 ]);
@@ -251,6 +253,14 @@ async function submitWebsiteForm(form) {
 }
 
 export function initializeFormSubmissions() {
+    document.querySelectorAll('[data-brochure-download]').forEach(link => {
+        const brochure = brochureDownloads.get(link.dataset.brochureDownload);
+        if (!brochure) throw new Error(`No brochure download is configured for ${link.dataset.brochureDownload}.`);
+
+        link.href = brochure.url;
+        link.download = brochure.filename;
+    });
+
     document.querySelectorAll('[data-form-id] input[type="tel"]').forEach(input => {
         const validatePhone = () => {
             const digits = input.value.replace(/\D/g, '');

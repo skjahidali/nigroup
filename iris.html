@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IRIS – NI Group | Premium Residency in Kolkata</title>
   <meta name="description" content="IRIS by NI Group offers 1, 2 & 3 BHK homes across three towers, with rooftop amenities, EV charging, and 24/7 services.">
-  <link rel="icon" type="image/png" href="Project Photo/NI GROUP COLOR LOGO.png">
+  <link rel="icon" type="image/png" href="Project Photo/NI LOGO/NI GROUP COLOR LOGO.png">
   <meta name="theme-color" content="#1b3a7a">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <div class="header-container">
       <a href="index.html" class="logo" aria-label="NI Group Home">
         <div class="logo-wrapper">
-          <img class="logo-img" src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" width="260" height="96">
+          <img class="logo-img" src="Project Photo/NI LOGO/NI GROUP COLOR LOGO.png" alt="NI Group" width="260" height="96">
         </div>
       </a>
       <nav class="nav-desktop" aria-label="Main navigation">
@@ -97,7 +97,7 @@
   </div>
 
   <section class="project-hero" id="top">
-    <div class="project-hero-bg" style="background-image:url('Project Photo/IRIS.jpeg');"></div>
+    <div class="project-hero-bg" style="background-image:url('Project Photo/Projects Front Photo/IRIS.jpeg');"></div>
     <div class="project-hero-content">
       <div class="container">
         <nav class="project-breadcrumb">
@@ -210,12 +210,12 @@
       </div>
       <div class="location-grid">
         <div class="location-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.738662471491!2d88.49066842346932!3d22.574052479361727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277e5b5b5b5b5%3A0x1234567890abcdef!2sKalikapur%2C%20Newtown%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1690000000000" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://maps.app.goo.gl/Ww1nNHcAZnbua9gG6" width="100%" height="400" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="location-details">
           <div class="location-address">
             <p><strong>IRIS</strong><br>Kolkata. Contact NI Group for the exact project location and directions.</p>
-            <a href="https://maps.app.goo.gl/xfuLmzunjZTeyNkN7" target="_blank" rel="noopener noreferrer" class="location-map-btn">
+            <a href="https://maps.app.goo.gl/Ww1nNHcAZnbua9gG6" target="_blank" rel="noopener noreferrer" class="location-map-btn">
               <i class="fa-solid fa-directions"></i> Open in Google Maps
             </a>
           </div>
@@ -242,9 +242,20 @@
         <p class="section-desc">Explore the beauty of IRIS through our curated photo collection</p>
       </div>
       <div class="gallery-carousel">
-        <div class="gallery-grid gallery-grid-single" id="galleryGrid">
-          <div class="gallery-item" style="background-image:url('Project Photo/IRIS.jpeg');" role="img" aria-label="IRIS project rendering"></div>
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" style="background-image:url('Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000-3.jpg');" role="img" aria-label="IRIS residential complex rendering"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000-4.jpg');" role="img" aria-label="IRIS project location map"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000-5.jpg');" role="img" aria-label="IRIS residential complex rendering"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000-6.jpg');" role="img" aria-label="IRIS project location map"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000-7.jpg');" role="img" aria-label="IRIS residential complex rendering"></div>
+          <div class="gallery-item" style="background-image:url('Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000-8.jpg');" role="img" aria-label="IRIS project location map"></div>
         </div>
+        </div>
+        </div>
+        </div>
+        <button class="gallery-nav gallery-prev" onclick="prevGallery()" aria-label="Previous image">&#10094;</button>
+        <button class="gallery-nav gallery-next" onclick="nextGallery()" aria-label="Next image">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
       </div>
     </div>
   </section>
@@ -256,7 +267,7 @@
         <div class="brochure-text">
           <span class="section-label">Download Brochure</span>
           <h2 class="section-title">Complete Project Information</h2>
-          <p>Get detailed floor plans, specifications, pricing, and amenities information. Request the comprehensive IRIS brochure.</p>
+          <p>Download the IRIS brochure here, or submit your details to download it after submitting.</p>
           <div class="brochure-features">
             <div class="bf-item"><i class="fa-solid fa-file-pdf"></i> Floor Plans & Layouts</div>
             <div class="bf-item"><i class="fa-solid fa-building"></i> Specifications</div>
@@ -281,6 +292,7 @@
             <i class="fa-solid fa-file-pdf"></i>
             <p>IRIS project brochure</p>
           </div>
+          <a class="brochure-btn" data-brochure-download="IRIS"><i class="fa-solid fa-download"></i> Download Brochure PDF</a>
         </div>
       </div>
     </div>
@@ -292,7 +304,7 @@
         <div class="footer-grid">
 
             <div class="footer-col footer-brand">
-                <img src="Project Photo/NI GROUP COLOR LOGO.png" alt="NI Group" class="footer-logo">
+                <img src="Project Photo/NI LOGO/NI GROUP COLOR LOGO.png" alt="NI Group" class="footer-logo">
                 <div class="footer-brand-divider"></div>
                 <p class="footer-desc">NI Group crafts quality living spaces that inspire lifestyles and transform communities across Kolkata and beyond.</p>
                 <div class="footer-socials">

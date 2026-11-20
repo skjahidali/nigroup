@@ -681,12 +681,12 @@ opacity:0;
 }
 
 @keyframes heroSlider {
-    0%,16%   { background-image: url('Project Photo/INARA.jpeg'); transform: scale(1.04); }
-    18%,34%  { background-image: url('Project Photo/Paradizia.jpeg'); transform: scale(1.10); }
-    36%,52%  { background-image: url('Project Photo/Invicta.jpg'); transform: scale(1.06); }
-    54%,70%  { background-image: url('Project Photo/IRIS.jpeg'); transform: scale(1.10); }
-    72%,88%  { background-image: url('Project Photo/IRA.jpeg'); transform: scale(1.06); }
-    90%,100% { background-image: url('Project Photo/iqra.jpg'); transform: scale(1.10); }
+    0%,16%   { background-image: url('Project Photo/Projects Front Photo/INARA.jpeg'); transform: scale(1.04); }
+    18%,34%  { background-image: url('Project Photo/Projects Front Photo/Paradizia.jpeg'); transform: scale(1.10); }
+    36%,52%  { background-image: url('Project Photo/Projects Front Photo/Invicta.jpg'); transform: scale(1.06); }
+    54%,70%  { background-image: url('Project Photo/Projects Front Photo/IRIS.jpeg'); transform: scale(1.10); }
+    72%,88%  { background-image: url('Project Photo/Projects Front Photo/IRA.jpeg'); transform: scale(1.06); }
+    90%,100% { background-image: url('Project Photo/Projects Front Photo/iqra.jpg'); transform: scale(1.10); }
 }
 .hero-content {
     position: relative;
@@ -2626,7 +2626,7 @@ opacity:0;
     .footer-brand-divider { margin: 16px auto; }
 
     .hero::before {
-        background-image: url('Project Photo/INARA.jpeg');
+        background-image: url('Project Photo/Projects Front Photo/INARA.jpeg');
         animation: heroSlider 30s infinite ease-in-out !important;
         transform: scale(1.01) !important;
         background-position: center 32% !important;
