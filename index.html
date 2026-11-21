@@ -135,10 +135,11 @@
         <a href="index.html"  class="nav-link">Home</a>
 
         <div class="nav-link-wrap">
-            <span class="nav-link mobile-dropdown-toggle" aria-expanded="false">
-                Projects <span class="m-chevron">&#9660;</span>
-            </span>
-            <div class="mobile-sub-menu">
+            <button type="button" class="nav-link mobile-dropdown-toggle"
+                    aria-expanded="false" aria-controls="mobileProjectsMenu">
+                Projects <span class="m-chevron" aria-hidden="true">&#9660;</span>
+            </button>
+            <div class="mobile-sub-menu" id="mobileProjectsMenu">
                 <a href="invicta.html"   class="nav-link">INVICTA</a>
                 <a href="iris.html"      class="nav-link">IRIS</a>
                 <a href="iqra.html"      class="nav-link">IQRA</a>
@@ -833,5 +834,6 @@
 </footer>
 
 <script src="standalone.js" type="module"></script>
+<script src="standalone-nav-fix.js" type="module"></script>
 </body>
 </html>

@@ -2896,3 +2896,132 @@ input, select, textarea { font-size: 16px; }
 /* keep object-fit behavior consistent */
 .project-image img, .project-image-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+
+/* =========================================================
+   NI GROUP — SITE-WIDE TOUCH NAVIGATION FIX
+   Keep this block at the very end of standalone.css.
+   ========================================================= */
+.header {
+    isolation: isolate;
+}
+.header-container {
+    position: relative;
+    z-index: 2;
+}
+.nav-desktop {
+    position: relative;
+    z-index: 3;
+}
+.nav-dropdown {
+    touch-action: manipulation;
+}
+.nav-dropdown > .nav-link,
+.nav-mobile .nav-link,
+.menu-toggle {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+}
+.nav-dropdown-menu {
+    top: 100%;
+    padding-top: 16px;
+}
+.nav-dropdown-menu::before {
+    top: 10px;
+}
+.nav-dropdown.open > .nav-dropdown-menu {
+    pointer-events: auto;
+}
+.nav-dropdown > .nav-link:focus-visible,
+.dropdown-item:focus-visible,
+.nav-mobile .nav-link:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+@media (max-width: 1023px) {
+    .header {
+        z-index: 10000;
+    }
+    .header-container {
+        min-height: 72px;
+    }
+    .menu-toggle {
+        position: relative;
+        z-index: 10002;
+        flex: 0 0 46px;
+        min-width: 46px;
+        min-height: 46px;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+    .nav-mobile {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 10001 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        max-height: calc(100dvh - 72px);
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate3d(0, -8px, 0);
+        transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    }
+    .nav-mobile.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+    .nav-mobile .nav-link {
+        width: 100%;
+        min-height: 48px;
+        text-align: left;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+    .nav-mobile .mobile-dropdown-toggle {
+        appearance: none;
+        -webkit-appearance: none;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border: 1px solid rgba(15,23,42,.08) !important;
+        background: transparent !important;
+        font: inherit;
+        color: #111 !important;
+    }
+    .nav-link-wrap {
+        width: 100%;
+    }
+    .mobile-sub-menu {
+        display: none !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        pointer-events: none;
+    }
+    .mobile-sub-menu.open {
+        display: block !important;
+        pointer-events: auto !important;
+    }
+    .mobile-sub-menu .nav-link {
+        min-height: 44px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav-mobile,
+    .mobile-sub-menu,
+    .m-chevron {
+        transition: none !important;
+    }
+}
