@@ -98,15 +98,18 @@
 }
 /* ─── LOGO IMAGE — BIG & CLEAR ────────────────────── */
 .logo-img {
-    height: 200px;      /* was 72px — notably bigger */
+    height: 76px;
     width: auto;
-    transition: all .45s cubic-bezier(.4,0,.2,1);
+    transition: all .35s cubic-bezier(.4,0,.2,1);
     object-fit: contain;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
-.header.scrolled .logo-img { height: 88px; }
+.header.scrolled .logo-img { height: 60px; }
+
+@media (max-width: 768px) {
+    .logo-img { height: 56px; }
+    .header.scrolled .logo-img { height: 48px; }
+}
 
 .about-hero-cta:hover { transform: translateY(-5px); box-shadow: 0 26px 60px rgba(227,30,36,.5); }
 
@@ -162,6 +165,49 @@
 .director-card:hover .director-image{
     transform:scale(1.05);
 }
+
+.director-info {
+    padding: 26px 28px 30px;
+}
+.director-name {
+    font-size: 1.35rem;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+.director-role {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary, #1b3a7a);
+    margin-bottom: 14px;
+}
+.director-bio {
+    font-size: 0.94rem;
+    color: #64748b;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+.director-socials {
+    display: flex;
+    gap: 12px;
+}
+.director-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary, #1b3a7a);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+.director-socials a:hover {
+    background: var(--primary, #1b3a7a);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
 
 .director-badge{
     position:absolute;

@@ -3025,3 +3025,151 @@ input, select, textarea { font-size: 16px; }
         transition: none !important;
     }
 }
+
+
+/* =========================================================
+   NI GROUP — COMPLETE SITE-WIDE BUG & UX FIXES
+   (Animations, Mobile Nav, Scroll, Gallery Lightbox, Forms)
+   ========================================================= */
+
+/* 1. Ensure scroll-reveal elements are ALWAYS visible & animate smoothly */
+.js-enabled .project-card,
+.js-enabled .service-card,
+.js-enabled .director-card,
+.js-enabled .step-card,
+.js-enabled .section-header,
+.js-enabled .value-card,
+.js-enabled .wj-card,
+.js-enabled .blog-card,
+.js-enabled .amenity-card,
+.js-enabled .pii-item,
+.js-enabled .project-detail-item {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1), box-shadow .35s ease;
+}
+
+.js-enabled .project-card.active,
+.js-enabled .service-card.active,
+.js-enabled .director-card.active,
+.js-enabled .step-card.active,
+.js-enabled .section-header.active,
+.js-enabled .value-card.active,
+.js-enabled .wj-card.active,
+.js-enabled .blog-card.active,
+.js-enabled .amenity-card.active,
+.js-enabled .pii-item.active,
+.js-enabled .project-detail-item.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 2. Smooth scrolling & anchor offset */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body.nav-menu-open {
+    overflow: hidden;
+}
+
+/* 3. Mobile navigation open state compatibility (.open and .active) */
+@media (max-width: 1023px) {
+    .nav-mobile.open,
+    .nav-mobile.active {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+
+    .mobile-dropdown-toggle.open .m-chevron,
+    .mobile-dropdown-toggle[aria-expanded="true"] .m-chevron {
+        transform: rotate(180deg) !important;
+    }
+}
+
+/* 4. AI Panel open state */
+.ai-panel.open {
+    display: flex !important;
+    flex-direction: column;
+}
+
+/* 5. Fullscreen Project Photo Gallery Lightbox */
+.ni-gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000000;
+    background: rgba(2, 6, 23, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.ni-gallery-lightbox.open {
+    display: flex;
+}
+
+.ni-gallery-lightbox img {
+    max-width: 92vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    object-fit: contain;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+    user-select: none;
+}
+
+.ni-lightbox-caption {
+    margin-top: 14px;
+    color: #f8fafc;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.ni-lightbox-close,
+.ni-lightbox-prev,
+.ni-lightbox-next {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.ni-lightbox-close:hover,
+.ni-lightbox-prev:hover,
+.ni-lightbox-next:hover {
+    background: var(--accent, #e31e24);
+    border-color: var(--accent, #e31e24);
+}
+
+.ni-lightbox-close { top: 20px; right: 22px; }
+.ni-lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.ni-lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 640px) {
+    .ni-lightbox-prev, .ni-lightbox-next {
+        width: 42px;
+        height: 42px;
+        bottom: 24px;
+        top: auto;
+        transform: none;
+    }
+    .ni-lightbox-prev { left: 24%; }
+    .ni-lightbox-next { right: 24%; }
+}

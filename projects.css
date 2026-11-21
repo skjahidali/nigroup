@@ -1799,3 +1799,75 @@ a {
     }
 }
 
+
+
+/* =========================================================
+   NI GROUP — PROJECTS CSS ANIMATION, SCROLL & GALLERY FIXES
+   ========================================================= */
+.gallery-item {
+    cursor: zoom-in !important;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.gallery-item::before {
+    content: "\f00e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.72);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    z-index: 2;
+    opacity: 0.85;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.gallery-item:hover::before {
+    background: #e31e24;
+    transform: scale(1.1);
+}
+
+/* Fix mobile carousel touch-scrolling so vertical page scroll never gets stuck */
+@media (max-width: 768px) {
+    .amenities-carousel,
+    .gallery-carousel {
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 10px;
+    }
+
+    .amenities-carousel::-webkit-scrollbar,
+    .gallery-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .amenities-grid,
+    .gallery-grid {
+        transform: none !important;
+        touch-action: pan-x pan-y !important;
+    }
+
+    .gallery-nav,
+    .carousel-nav {
+        display: grid !important;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        background: rgba(27, 58, 122, 0.9);
+    }
+}
+
+.brochure-btn {
+    margin-top: 14px;
+}

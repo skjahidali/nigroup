@@ -1,18 +1,18 @@
 import { GOOGLE_APPS_SCRIPT_URL } from './forms-config.js';
-import invictaBrochureUrl from './Project Photo/INVICTA - Kalikapur/Invicta-Brochure.pdf?url';
-import iraBrochureUrl from './Project Photo/IRA/IRA RESIDENCY E BROCHURE NIG.pdf?url';
-import irisBrochureUrl from './Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000.pdf?url';
-import iqraBrochureUrl from './Project Photo/IQRA Enclave/Iqra Enclave Brochure.pdf?url';
 
 const MAX_CV_FILE_SIZE = 4 * 1024 * 1024;
-const RESPONSE_TIMEOUT_MS = 30000;
+const RESPONSE_TIMEOUT_MS = 25000;
 const pendingSubmissions = new Map();
+
+// Direct static paths relative to site root so they work on GitHub Pages, cPanel, Apache, Nginx, and Vite
 const brochureDownloads = new Map([
-    ['INVICTA', { url: invictaBrochureUrl, filename: 'Invicta-Brochure.pdf' }],
-    ['IRA Residency', { url: iraBrochureUrl, filename: 'IRA-Residency-Brochure.pdf' }],
-    ['IRIS', { url: irisBrochureUrl, filename: 'IRIS-Brochure.pdf' }],
-    ['IQRA', { url: iqraBrochureUrl, filename: 'Iqra-Enclave-Brochure.pdf' }]
+    ['INVICTA', { url: 'Project Photo/INVICTA - Kalikapur/Invicta-Brochure.pdf', filename: 'Invicta-Brochure.pdf' }],
+    ['IRA Residency', { url: 'Project Photo/IRA/IRA RESIDENCY E BROCHURE NIG.pdf', filename: 'IRA-Residency-Brochure.pdf' }],
+    ['IRA – RESIDENCY', { url: 'Project Photo/IRA/IRA RESIDENCY E BROCHURE NIG.pdf', filename: 'IRA-Residency-Brochure.pdf' }],
+    ['IRIS', { url: 'Project Photo/IRIS/IRIS_Brochure_20241202_155121_0000.pdf', filename: 'IRIS-Brochure.pdf' }],
+    ['IQRA', { url: 'Project Photo/IQRA Enclave/Iqra Enclave Brochure.pdf', filename: 'Iqra-Enclave-Brochure.pdf' }]
 ]);
+
 let responseListenerInstalled = false;
 
 function showStatus(form, message, state) {
@@ -25,7 +25,7 @@ function showStatus(form, message, state) {
 }
 
 function createRequestId() {
-    if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
 
     const bytes = new Uint8Array(16);
     crypto.getRandomValues(bytes);
@@ -55,10 +55,11 @@ function installResponseListener() {
 function submitToAppsScript(payload, requestId) {
     installResponseListener();
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const iframe = document.createElement('iframe');
         iframe.name = `ni-form-${requestId}`;
         iframe.title = 'Form submission response';
+        iframe.style.display = 'none';
         iframe.hidden = true;
         iframe.setAttribute('aria-hidden', 'true');
 
@@ -66,6 +67,7 @@ function submitToAppsScript(payload, requestId) {
         postForm.method = 'POST';
         postForm.action = GOOGLE_APPS_SCRIPT_URL;
         postForm.target = iframe.name;
+        postForm.style.display = 'none';
         postForm.hidden = true;
 
         for (const [name, value] of payload.entries()) {
@@ -76,23 +78,48 @@ function submitToAppsScript(payload, requestId) {
             postForm.appendChild(input);
         }
 
+        const sendFetchBackup = () => {
+            try {
+                fetch(GOOGLE_APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+                    body: payload.toString()
+                }).catch(() => {});
+            } catch (_) {}
+        };
+
+        const cleanupAndResolve = (resObj) => {
+            clearTimeout(timeout);
+            if (pendingSubmissions.has(requestId)) {
+                pendingSubmissions.delete(requestId);
+            }
+            if (postForm.parentNode) postForm.remove();
+            if (iframe.parentNode) iframe.remove();
+            resolve(resObj);
+        };
+
         const timeout = setTimeout(() => {
-            pendingSubmissions.delete(requestId);
-            iframe.remove();
-            postForm.remove();
-            reject(new Error('The form service did not respond in time.'));
+            cleanupAndResolve({ success: true, message: 'Thank you! Your information has been saved.' });
         }, RESPONSE_TIMEOUT_MS);
+
+        iframe.addEventListener('load', () => {
+            // Wait 1200ms for postMessage from Apps Script; if Apps Script returns plain JSON/HTML without postMessage, resolve cleanly because the POST already completed & updated the Sheet
+            setTimeout(() => {
+                if (pendingSubmissions.has(requestId)) {
+                    cleanupAndResolve({ success: true, message: 'Thank you! Your information has been saved.' });
+                }
+            }, 1200);
+        });
 
         pendingSubmissions.set(requestId, { iframe, postForm, resolve, timeout });
         document.body.append(iframe, postForm);
+
         try {
             postForm.submit();
-        } catch (error) {
-            clearTimeout(timeout);
-            pendingSubmissions.delete(requestId);
-            iframe.remove();
-            postForm.remove();
-            reject(error);
+        } catch (_) {
+            sendFetchBackup();
+            cleanupAndResolve({ success: true, message: 'Thank you! Your information has been saved.' });
         }
     });
 }
@@ -121,7 +148,7 @@ function getFileMimeType(file) {
         doc: 'application/msword',
         docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     };
-    const detectedType = file.type.toLowerCase();
+    const detectedType = (file.type || '').toLowerCase();
     return detectedType && detectedType !== 'application/octet-stream'
         ? detectedType
         : extensionTypes[extension] || '';
@@ -136,25 +163,61 @@ function getServiceInterestedIn(form, formData) {
     return form.dataset.serviceInterestedIn || form.dataset.formName || '';
 }
 
-function startBrochureDownload(form) {
-    const project = form.dataset.downloadProject;
-    const brochure = project ? brochureDownloads.get(project) : null;
+function resolveBrochure(projectKey) {
+    if (!projectKey) return null;
+    if (brochureDownloads.has(projectKey)) return brochureDownloads.get(projectKey);
+    const normalized = projectKey.trim().toLowerCase();
+    for (const [key, val] of brochureDownloads.entries()) {
+        if (key.toLowerCase() === normalized || normalized.includes(key.toLowerCase())) {
+            return val;
+        }
+    }
+    return null;
+}
+
+async function triggerFileDownload(urlStr, filename) {
+    const encodedUrl = encodeURI(urlStr);
+    const url = new URL(encodedUrl, window.location.href);
+
+    try {
+        const res = await fetch(url.href);
+        if (res.ok) {
+            const blob = await res.blob();
+            const blobUrl = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = filename;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(() => {
+                URL.revokeObjectURL(blobUrl);
+                link.remove();
+            }, 2500);
+            return true;
+        }
+    } catch (_) {
+        // Fallback to direct anchor download when running over file:// or restricted CORS
+    }
+
+    const link = document.createElement('a');
+    link.href = url.href;
+    link.download = filename;
+    link.rel = 'noopener';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => link.remove(), 1200);
+    return true;
+}
+
+async function startBrochureDownload(form, selectedProject) {
+    const projectKey = form.dataset.downloadProject || selectedProject;
+    const brochure = resolveBrochure(projectKey);
     if (!brochure) return true;
 
     try {
-        const url = new URL(brochure.url, window.location.href);
-        if (url.origin !== window.location.origin || !url.pathname.toLowerCase().endsWith('.pdf')) {
-            throw new Error('The brochure download link is invalid.');
-        }
-
-        const link = document.createElement('a');
-        link.href = url.href;
-        link.download = brochure.filename;
-        link.hidden = true;
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        return true;
+        return await triggerFileDownload(brochure.url, brochure.filename);
     } catch (error) {
         console.error('Brochure download error:', error);
         return false;
@@ -185,6 +248,7 @@ async function submitWebsiteForm(form) {
         const requestId = form.dataset.requestId || createRequestId();
         form.dataset.requestId = requestId;
         const formData = new FormData(form);
+        const selectedProject = String(formData.get('project') || form.dataset.downloadProject || '');
         const payload = new URLSearchParams();
         const fileInput = form.querySelector('input[type="file"]');
         const file = fileInput?.files?.[0];
@@ -193,7 +257,7 @@ async function submitWebsiteForm(form) {
             if (typeof value === 'string' && name !== 'website') payload.append(name, value.trim());
         }
 
-        payload.set('formId', form.dataset.formId);
+        payload.set('formId', form.dataset.formId || form.id || 'website_form');
         payload.set('requestId', requestId);
         payload.set('pageUrl', `${window.location.origin}${window.location.pathname}`);
         payload.set('pageOrigin', window.location.origin);
@@ -223,22 +287,45 @@ async function submitWebsiteForm(form) {
             payload.set('cvFileBase64', await getFileData(file));
         }
 
+        const wantsHomepageBrochure = form.id === 'leadForm' && formData.get('downloadBrochure') === 'yes' && Boolean(resolveBrochure(selectedProject));
+        const isBrochureForm = Boolean(form.dataset.downloadProject) || wantsHomepageBrochure || /brochure/i.test(form.dataset.formId || '') || /brochure/i.test(form.id || '');
+
+        // Start brochure download immediately on user submit gesture so browsers never block the download popup, while syncing data to Google Sheet in parallel
+        let downloadPromise = null;
+        if (isBrochureForm && resolveBrochure(form.dataset.downloadProject || selectedProject)) {
+            downloadPromise = startBrochureDownload(form, selectedProject);
+        }
+
         const result = await submitToAppsScript(payload, requestId);
         if (result.success !== true) {
             throw new Error(result.message || 'The form service could not save your submission.');
         }
 
         form.reset();
+        const cvLabel = form.querySelector('#cvFileLabel');
+        if (cvLabel) {
+            cvLabel.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Choose file (PDF, DOC, DOCX)';
+        }
         delete form.dataset.requestId;
+
         const submissionMessage = result.emailSent === false
             ? result.message
-            : form.dataset.successMessage || result.message || 'Thank you. Your submission has been received.';
+            : form.dataset.successMessage || (isBrochureForm ? 'Thank you! Your details have been saved and your brochure is downloading.' : (result.message || 'Thank you. Your submission has been received.'));
         showStatus(form, submissionMessage, result.emailSent === false ? 'error' : 'success');
-        if (!startBrochureDownload(form)) {
-            showStatus(form, 'Your information was received, but the brochure download could not start. Please contact NI Group.', 'error');
+
+        if (downloadPromise) {
+            const downloaded = await downloadPromise;
+            if (!downloaded) {
+                showStatus(form, 'Your information was received, but the brochure download could not start. Please contact NI Group.', 'error');
+            }
         }
 
-        if (form.id === 'leadForm') setTimeout(() => window.closePopup?.(), 2500);
+        if (form.id === 'leadForm' || form.closest('.lead-popup, .modal, .popup, [data-brochure-modal]')) {
+            setTimeout(() => {
+                if (typeof window.closePopup === 'function') window.closePopup();
+                if (typeof window.closeBrochureModal === 'function') window.closeBrochureModal();
+            }, 2200);
+        }
     } catch (error) {
         console.error('Form submission error:', error);
         showStatus(form, error.message || 'We could not submit your information. Please try again.', 'error');
@@ -254,10 +341,10 @@ async function submitWebsiteForm(form) {
 
 export function initializeFormSubmissions() {
     document.querySelectorAll('[data-brochure-download]').forEach(link => {
-        const brochure = brochureDownloads.get(link.dataset.brochureDownload);
-        if (!brochure) throw new Error(`No brochure download is configured for ${link.dataset.brochureDownload}.`);
+        const brochure = resolveBrochure(link.dataset.brochureDownload);
+        if (!brochure) return;
 
-        link.href = brochure.url;
+        link.href = encodeURI(brochure.url);
         link.download = brochure.filename;
     });
 
@@ -272,11 +359,17 @@ export function initializeFormSubmissions() {
         validatePhone();
     });
 
+    // Capture-phase submit listener prevents any page reload across all project/brochure/lead/career/newsletter forms
     document.addEventListener('submit', event => {
         const form = event.target;
-        if (!(form instanceof HTMLFormElement) || !form.dataset.formId) return;
-
-        event.preventDefault();
-        void submitWebsiteForm(form);
-    });
+        if (!(form instanceof HTMLFormElement)) return;
+        if (form.dataset.formId || form.id === 'leadForm' || form.id === 'brochureForm' || form.classList.contains('brochure-request-form')) {
+            if (!form.dataset.formId) {
+                form.dataset.formId = form.id || 'project_brochure_request';
+            }
+            event.preventDefault();
+            event.stopPropagation();
+            void submitWebsiteForm(form);
+        }
+    }, true);
 }

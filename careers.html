@@ -138,14 +138,14 @@
           
           <div class="job-right">
             <div class="job-salary">Negotiable</div>
-            <a href="mailto:info@nigrouprealty.com?subject=Accountant Application" class="btn btn-primary btn-sm">Apply Now</a>
+            <a href="#applyFormSection" onclick="document.querySelector('#careerApplicationForm input[name=name]')?.focus();" class="btn btn-primary btn-sm">Apply Now</a>
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- APPLY SECTION -->
-  <section class="apply-section">
+  <section class="apply-section" id="applyFormSection">
     <div class="container">
       <div style="max-width: 700px; margin: 0 auto; text-align: center;">
         <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Don't See Your Role?</h2>
@@ -162,7 +162,7 @@
             <label for="careerCv" style="display: block; color: white; margin-bottom: 10px; font-weight: 500;">Upload Your CV (PDF, DOC, or DOCX; max 4 MB)</label>
             <div class="file-upload">
               <input id="careerCv" type="file" name="cvFile" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
-              <span><i class="fa-solid fa-cloud-arrow-up"></i> Choose file</span>
+              <span id="cvFileLabel"><i class="fa-solid fa-cloud-arrow-up"></i> Choose file (PDF, DOC, DOCX)</span>
             </div>
           </div>
           <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
@@ -258,5 +258,20 @@
         </div>
     </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var cvInput = document.getElementById('careerCv');
+  var cvLabel = document.getElementById('cvFileLabel');
+  if (cvInput && cvLabel) {
+    cvInput.addEventListener('change', function() {
+      if (this.files && this.files.length > 0) {
+        cvLabel.innerHTML = '<i class="fa-solid fa-file-check"></i> ' + this.files[0].name;
+      } else {
+        cvLabel.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Choose file (PDF, DOC, DOCX)';
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
