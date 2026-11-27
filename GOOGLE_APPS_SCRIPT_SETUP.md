@@ -28,7 +28,6 @@ The sheet includes the requested columns: Submission Date & Time, Customer Name,
 | Careers application | `career_application` | Careers at NI Group |
 | Blog newsletter | `blog_newsletter` | Newsletter subscription |
 
-
 Project brochure requests require a name, phone number, and valid email address. Each request is saved to the sheet, sends a confirmation email to the customer, and BCCs the lead details to `LEAD_NOTIFICATION_EMAIL`. INVICTA, IRIS, and IQRA brochure PDFs download in the browser after the form is accepted; for projects without a website PDF, the email tells the customer the sales team will follow up.
 
 Career CV files are restricted to PDF, DOC, or DOCX and 4 MB; they are saved in the private Drive folder and linked from the sheet.

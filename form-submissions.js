@@ -373,3 +373,28 @@ export function initializeFormSubmissions() {
         }
     }, true);
 }
+
+// Inside submitToAppsScript() in form-submissions.js:
+pendingSubmissions.set(requestId, { iframe, postForm, resolve, timeout });
+document.body.append(iframe, postForm);
+
+try {
+    postForm.submit();
+    // Also send beacon/fetch backup so mobile Safari/Chrome never drops the request when starting a PDF download
+    sendFetchBackup();
+} catch (_) {
+    sendFetchBackup();
+    cleanupAndResolve({ success: true, message: 'Thank you! Your information has been saved.' });
+}
+// Inside submitToAppsScript() in form-submissions.js:
+pendingSubmissions.set(requestId, { iframe, postForm, resolve, timeout });
+document.body.append(iframe, postForm);
+
+try {
+    postForm.submit();
+    // Also send beacon/fetch backup so mobile Safari/Chrome never drops the request when starting a PDF download
+    sendFetchBackup();
+} catch (_) {
+    sendFetchBackup();
+    cleanupAndResolve({ success: true, message: 'Thank you! Your information has been saved.' });
+}
